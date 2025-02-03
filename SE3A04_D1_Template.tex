@@ -177,31 +177,47 @@
 \subsection{Constraints}
 \label{sub:constraints}
 % Begin SubSection
-\begin{itemize}
-	\item Provide a general description of any constraints that will limit the developer's options
-\end{itemize}
+\begin{enumerate}
+	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following Android data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
+	\item \textbf{Budget Constraints: }The project has a limited budget, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized to minimize costs.
+	\item \textbf{Timeline Constraints: }The system must be developed within the allocated course duration, limiting the scope of certain advanced features such as restaurant API integration pr expanded multilingual support may need to be postponed to future versions.
+\end{enumerate}
 % End SubSection
 
 \subsection{Assumptions and Dependencies}
 \label{sub:assumptions_and_dependencies}
 % Begin SubSection
-\begin{itemize}
-	\item List any assumptions you made in interpreting what the software being developed is aiming to achieve
-	\item List any other assumptions you made that, if it fails to hold, could require you to change the requirements
+Assumptions made in interpreting what the software being developed is aiming to achieve:
+	\begin{enumerate}
+		\item The user will provide clear and distinguishable images of food items to enable accurate identification by the Image Recognition Expert.
+		\item The Text Description Expert assumes that users will provide detailed descriptions of food items, including key attributes such as color, texture, or preparation method.
+		\item The Ingredient-Based Expert assumes that users will provide a complete and accurate ingredient list for identification to work correctly.
+		\item Users will have an active internet connection when interacting with the system for real-time processing and recommendations.
+		\item The personalized recommendation system assumes that users submit multiple food items over time to generate tailored suggestions.
+		\item The application assumes that it will operate on Android devices with a minimum required processing power and storage space to handle food image recognition and database queries.
+	\end{enumerate}
+
+Any other assumptions made that, if it fails to hold, could require you to change the requirements:
 	%\item List each of the factors that affect the requirements stated in the SRS
 	%\item These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS
-	\begin{itemize}
-		\item \textbf{Example}: An assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not available, the SRS would then have to change accordingly.
-	\end{itemize}
-\end{itemize}
+	\begin{enumerate}
+		\item The system shall support the latest version of the Android operating system.
+		\item Assume that the cost, availability, and accessibility of third-party APIs will remain unchanged.
+		\item The system complies with the latest version of GDPR, PIPEDA, and other data protection regulations.
+		\item The food database used for identification is accurate, regularly updated, and includes a diverse range of cuisines.
+	\end{enumerate}
+
 % End SubSection
 
 \subsection{Apportioning of Requirements}
 \label{sub:apportioning_of_requirements}
 % Begin SubSection
-\begin{itemize}
-	\item Identify requirements that may be delayed until future versions of the system
-\end{itemize}
+\begin{enumerate}
+    \item \textbf{Multilingual Support: } The initial version of the system will support English only, with additional language options planned for future updates.
+    \item \textbf{Offline Mode: } Future versions will introduce offline functionality with local storage or caching for limited food recognition.
+    \item \textbf{Integration with Third-Party Applications: } The system will expand to integrate with food-related services, including restaurants, delivery platforms like UberEats, and meal planning applications.
+    \item \textbf{Voice Input and Accessibility Enhancements: } Later iterations will incorporate voice recognition, assisted voice input, and screen reader compatibility for improved accessibility.
+\end{enumerate}
 % End SubSection
 
 % End Section
