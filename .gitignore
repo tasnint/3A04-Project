@@ -18,6 +18,7 @@
 
 # PDF files
 *.pdf
+!image/*.pdf
 
 # SyncTeX files
 *.synctex.gz
