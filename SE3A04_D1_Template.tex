@@ -127,51 +127,93 @@
 
 \section{Overall Product Description}
 \label{sec:overall_description}
-% Begin Section
-
-\begin{itemize}
-	\item This section should describe the general factors that affect the product and its requirements. 
-	\item It does not state specific requirements.
-	\item It provides a \emph{background} for those requirements and makes them easier to understand.
-\end{itemize}
-
 
 \subsection{Product Perspective}
 \label{sub:product_perspective}
-% Begin SubSection
-\begin{itemize}
-	\item Put the product into perspective with other related products, i.e., context
-	\item If the product is independent and totally self-contained, it should be stated here
-	\item If the SRS defines a product that is a component of a larger system, then this subsection should relate the requirements of that larger system to the functionality of the software being developed. Identify interfaces between that larger system and the software to be developed.
-	\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
-\end{itemize}
-% End SubSection
+
+Our dish-identification application is a mobile service designed to let users identify and learn more about any food item they see online—whether it’s a screenshot from Instagram, a Facebook post, or any image in their phone’s gallery. Although tools like Google Lens or Pinterest Lens can identify various objects, our software specializes in food recognition and goes a step further by providing cultural context and recipe suggestions once the dish is identified. This tailored approach offers an experience that is both more focused and more informative than general-purpose image-recognition apps.
+
+Unlike solutions that rely on separate web platforms or location-based data, our application is entirely self-contained. Users simply download the app from the store onto their Android or iOS device and can begin identifying dishes right away. The app’s core functionality is powered by three built-in “expert” modules—each integrated with a different AI API (for example, GPT-4.0, Gemini, or a specialized image-analysis model). These modules work in unison to determine the name of the dish based on an image, text description, or list of ingredients, then provide relevant insights such as cultural background and recipes. All connections to these AI services are handled securely within the code, so the user sees only a streamlined interface and results.
+
+Because our primary goal is to operate as a standalone mobile app, we do not currently interface with third-party systems or social-media platforms for direct data exchange. Future enhancements might include more advanced sharing features or optional integration with external APIs, but for the scope of this product, the functionality remains localized to the device. By keeping external dependencies to a minimum, we aim to deliver an application that is both reliable and user-friendly, ensuring that anyone with a smartphone can identify foods and explore the stories behind them without any extra setup.
 
 \subsection{Product Functions}
 \label{sub:product_functions}
-% Begin SubSection
+
+The application's core features are divided into several modules. Each module contains functions that address the main needs of the user, such as creating an account or identifying unknown dishes.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2} % Adjust row spacing
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Module} & \textbf{Functions} \\
+\hline
+\textbf{Account Management} &
 \begin{itemize}
-	\item Provide a \emph{summary} of the major functions that the software will perform.
-	\begin{itemize}
-		\item \textbf{Example}: An SRS for an accounting program may use this part to address customer account maintenance, customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.
-	\end{itemize}
-	\item Functions should be organized in a way that makes the list of functions understandable to the customer or to anyone else reading the document for the first time 
-	\item Present the functions in a list format - each item should be one function, with a brief description of it
-	\item Textual or graphical methods can be used to show the different functions and their relationships
-	\begin{itemize}
-		\item Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables
-	\end{itemize} 
-\end{itemize}
-% End SubSection
+    \item \textbf{Create Account} – Allows new users to register within the app
+    \item \textbf{Login} – Authenticates returning users for personalized features
+    \item \textbf{Deactivate Account} – Removes or deactivates user data upon request
+\end{itemize} \\
+\hline
+\textbf{Dish Inquiry} &
+\begin{itemize}
+    \item \textbf{Inquire About Unknown Food} – User provides an image, description, or ingredients for identification
+    \item \textbf{Confirm or Reject Results} – User feedback helps refine AI accuracy
+    \item \textbf{Handle Expert Conflicts} – Resolves differing predictions among the three AI experts
+\end{itemize} \\
+\hline
+\textbf{Food Info \& Recipes} &
+\begin{itemize}
+    \item \textbf{Search Food Information} – Displays cultural background, recipe ideas, and dietary notes
+    \item \textbf{Add Custom Recipe} – Allows users to submit personal recipes for future reference
+    \item \textbf{Register Restaurant} – Enables addition of official dish details from restaurants
+\end{itemize} \\
+\hline
+\textbf{Recommendation Engine} &
+\begin{itemize}
+    \item \textbf{Ask for Food Recommendations} – Suggests dishes based on user preferences
+    \item \textbf{Refine Recommendations} – Improves suggestions using user feedback on accuracy
+\end{itemize} \\
+\hline
+\textbf{Data Management} &
+\begin{itemize}
+    \item \textbf{Store User Interactions} – Logs confirmed/rejected identifications for AI training
+    \item \textbf{Manage API Keys} – Secures AI service credentials within the codebase
+    \item \textbf{Maintain Expert Models} – Coordinates updates among the three AI modules
+\end{itemize} \\
+\hline
+\end{tabular}
+\caption{Modules and Major Functions of the Dish-Identification App}
+\label{tab:dish-functions}
+\end{table}
 
 \subsection{User Characteristics}
 \label{sub:user_characteristics}
-% Begin SubSection
-\begin{itemize}
-	\item Describe those general characteristics of the intended users of the product including educational level, experience, and technical expertise 
-	\item Since there will be many users, you may wish to divide into different user types or personas
-%	\item Do not state specific requirements, but rather provide the reasons why certain specific requirements are later specified
-\end{itemize}
+
+The target users for this dish-identification app are smartphone owners who enjoy discovering or learning more about various foods. Below is a general outline of their likely educational level, experience, and technical expertise:
+
+\begin{enumerate}
+    \item \textbf{Education Level:}
+    \begin{itemize}
+        \item \textbf{Basic to Moderate General Education}: Most users will have at least basic literacy, as they need to read short instructions and interpret on-screen results.
+        \item \textbf{Above-Average Food Interest}: Given the nature of the app, users are likely more curious about cuisine than the average person. They may already recognize a variety of dishes or want to expand their knowledge of international foods and recipes.
+    \end{itemize}
+    
+    \item \textbf{Experience:}
+    \begin{itemize}
+        \item \textbf{Familiar with Smartphone Apps}: Users typically have some background in using social media or taking screenshots of images. Since they capture food photos or screenshots, they already demonstrate comfort with basic smartphone functions.
+        \item \textbf{No Special Experience Required}: The app is designed to be straightforward, so even someone using a food-discovery tool for the first time should be able to navigate features without difficulty (e.g., uploading an image, viewing results, and providing feedback).
+    \end{itemize}
+    
+    \item \textbf{Technical Expertise:}
+    \begin{itemize}
+        \item \textbf{Basic App Navigation Skills}: The target user should know how to tap, swipe, or browse their camera roll. This covers a standard range of smartphone interactions.
+        \item \textbf{Minimal Learning Curve}: The user interface is kept simple, with clear instructions and intuitive steps for uploading images or entering dish descriptions. Even older or less tech-savvy individuals can easily figure out how to identify a dish.
+    \end{itemize}
+\end{enumerate}
+
+Overall, we expect a single user type or “persona” who is interested in identifying dishes and exploring information about them. Advanced technical or culinary knowledge is not a requirement, although a curiosity about world cuisines is common among most users of this application.
 % End SubSection
 
 \subsection{Constraints}
@@ -1111,6 +1153,6 @@ Include a Division of Labour sheet which indicates the contributions of each tea
 %	\item For Deliverable 1, please highlight, in some fashion, all (you may have more than one) creative and innovative features. Your creative and innovative features will generally be described in Section~2.2 (\textbf{Product Functions}), but it will depend on the type of creative or innovative features you are including.
 %\end{itemize}
 
-
 \end{document}
+
 %------------------------------------------------------------------------------
