@@ -16,6 +16,7 @@
 \usepackage{color}
 \usepackage{float}
 \usepackage{svg}
+\usepackage{hyperref}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -840,9 +841,10 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:appearance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LF-A}1. ]
-    \item The application shall use a visually appealing colour scheme
-    \item The application shall have a high contrast between all text and background elements so users can easily read the text.
-    \item No special prompt shall be required to display photos in application pages
+    \item \textit{The application shall use a visually appealing color scheme.} \\ \textbf{Rationale:} A visually unappealing color scheme will drive users away from the application.
+    \item \textit{The application shall have a high contrast between all text and background elements so users can easily read the text.} \\
+    \textbf{Rationale:} If the text is not easily readable, users will be discouraged from using the application
+    \item \textit{No special prompt shall be required to display photos in application pages.} \\ \textbf{Rationale:} Requesting photos will make the usage more cumbersome, especially when browsing images of other food items in the library.
 \end{enumerate}
 % End SubSubSection
 
@@ -850,9 +852,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:style_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LF-S}1. ]
-    \item The application shall use sans-serif for all its text, as studies indicate it is more readable than serif counterparts
-    \item The application shall use the same font for the same text category.
-    \item All text in the application shall conform to standard writing practices, including the ones for capitalization, spelling, grammar, bold text, italics, and underlining.
+    \item \textit{The application shall use sans-serif for all its text.} \\ \textbf{Rationale:} Studies indicate it is more readable than serif counterparts \footnote{\href{https://www.adobe.com/creativecloud/design/discover/serif-vs-sans-serif.html?msockid=01fdfd2fd30062062dabe84fd2aa630e}{Adobe: Serif vs. sans serif}}
+    \item \textit{The application shall use the same font for the same text category.} \\ \textbf{Rationale:} Unexplained variances in font will make the user experience needlessly more complex, which will discourage usage of the application.
+    \item \textit{All text in the application shall conform to standard writing practices, including capitalization, spelling, grammar, bold text, italics, and underlining.} \\ \textbf{Rationale:} Deviating from standard writing convention will make the text needlessly harder to understand, which will discourage usage of the application.
 \end{enumerate}
 % End SubSubSection
 
@@ -866,8 +868,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:ease_of_use_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-EOU}1. ]
-    \item The application shall have an intuitive user interface  (UI) such that a user will grasp how to use the application almost instantly by providing a tutorial at initial startup.
-    \item The user experience (UX) shall be pleasant and incentivize users to return to the application.
+    \item \textit{The application shall have an intuitive user interface (UI) such that a user will easily grasp how to use the application.} \\ \textbf{Rationale:} If a user struggles to use the application, they will most likely not use it.
+    \item \textit{The user experience (UX) shall be pleasant.}  \\ \textbf{Rationale:} If the user interface is not pleasant, it will incentivize users not to return to the application, and vice versa.
 \end{enumerate}
 % End SubSubSection
 
@@ -875,10 +877,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:personalization_and_internationalization_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-PI}1. ]
-	\item The application shall be available both in light mode and dark mode, although one mode may be hidden behind a paywall.
-    \item Users data shall be stored and only linked to the user's account so that users can get personalized food recommendations based on their activity history.
-    \item The system shall adapt to each user's dietary restirictions, allergies and food personalization, ensuring that food returns comply with the user's specified preferences. \\
-    \textbf{Rationale:} Each user has different food and ingredient restrictions and preferences and the system needs to adapt to these user personalization for user adaptability.
+    \item The application shall be available both in light mode and dark mode. \\ \textbf{Rationale:} Some end users prefer light mode and some prefer dark mode, and having both modes will capture the full gamut. \footnote{\href{https://www.nngroup.com/articles/dark-mode/}{NN Group: Dark Mode}}. 
+    \item Users shall be able to create accounts and have their public activity on the application tied to their account.
 \end{enumerate}
 % End SubSubSection
 
@@ -886,8 +886,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:learning_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-L}1. ]
-	\item The system shall continuously learn and understand the custom recipes that are added by users so that it can suggest these new recipes to other users with similar queries. \\
-	\textbf{Rationale:} To enhance user engagement and foster community interaction within the application, the system needs to learn and know the receipes that are being added to its database so that it can share these recipes with the most relevant users based on their preferences and activity.
+	\item N/A
 \end{enumerate}
 % End SubSubSection
 
@@ -895,8 +894,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:understandability_and_politeness_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-UP}1. ]
-	\item Responses shall be easily understood by the end user, including users that have a professional but not fluent understanding of English.
-        \item Prompts should use polite phrases such as "please" when requesting and "thank you" after a user fulfills a request.
+	\item \textit{Responses shall be easily understood by the end user, including users with an advanced but not fluent understanding of English.} \\ \textbf{Rationale:} This application will be initially available only in English. Many people have an advanced but not fluent understanding of English \footnote{\href{https://www.census.gov/library/visualizations/interactive/people-that-speak-english-less-than-very-well.html}{US Census Bureau - People that Speak English Less than Very Well}} and simplifying the language will accommodate them without reducing the application's quality.
+        \item \textit{Prompts should use polite phrases such as "please" when requesting and "thank you" after a user fulfills a request.} \\ \textbf{Rationale:} People appreciate polite language.\footnote{\href{https://www.gsb.stanford.edu/insights/magic-words-change-what-you-say-inspire-influence-others}{Stanford Graduate School of Business}}
 \end{enumerate}
 % End SubSubSection
 
@@ -904,8 +903,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:accessibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-A}1. ]
-	\item The application shall have a large text mode to accommodate users with severe nearsightedness.
-    \item The application shall be compatible with screen readers for blind people.
+	\item \textit{The application shall have a large text mode.} \\\textbf{Rationale:} This will accommodate users with severe nearsightedness.
+    \item \textit{The application shall be compatible with screen readers.} \\ \textbf{Rationale}: This will accommodate blind users who cannot see the application's visual content.
 \end{enumerate}
 % End SubSubSection
 
@@ -919,9 +918,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:speed_and_latency_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SL}1. ]
-	\item The latency between sending a request for classification and getting the response, assuming a stable internet connection shall be no greater than ten (10) seconds.
-    \item The application's loading time shall not exceed twenty (20) seconds.
-    \item The latency between changing pages within an application shall be negligible, assuming a stable internet connection.
+	\item The latency between sending a request for classification and getting the response, assuming a stable internet connection shall be no greater than three (3) seconds. \\ \textbf{Rationale:} Image processing standards demand a response within three (3) seconds. \footnote{\href{https://eumentis.com/blog/evaluating-the-performance-of-an-image-classification-model}{Eumentis: Evaluating the performance of an image classification model}}
+    \item \textit{The application's loading time shall not exceed two (2) seconds}. \\ \textbf{Rationale:} Roughly half of users will abandon an application that takes three (3) or more seconds.\footnote{\href{https://www.storyly.io/glossary/app-loading}{Storyly - App Loading}}
+    \item \textit{The latency between changing windows within an application shall be negligible, assuming a stable internet connection.} \\ \textbf{Rationale:} Users will readily abandon an application that takes a significant amount of time to load an application page.
 \end{enumerate}
 % End SubSubSection
 
@@ -929,8 +928,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:safety_critical_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SC}1. ]
-	\item The system shall not treat non-food items as food, which may lead a naive user to consume the non-food item and suffer adverse affects
-	\item The system shall include allergen information, or warn users to ensure they are not allergic or intolerant to a food before trying it.
+	\item \textit{The application shall reject attempts to classify non-food items as food} \\ \textbf{Rationale:} Naive users may believe the non-food classified as food is edible and eat it, which will lead to adverse effects.
+    \item \textit{The system shall include allergen information, or warn users to ensure they are not allergic or intolerant to a food before trying it.} \\ \textbf{Rationale:} Users that eat food they are allergic or intolerant to may suffer adverse effects.
 \end{enumerate}
 % End SubSubSection
 
@@ -938,7 +937,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
-	\item All information given in the application shall be verifiable by subject matter experts or generally reliable sources.
+	\item \textit{Virtually all information given in the application shall be verifiable by subject matter experts or generally reliable sources.} \\ \textbf{Rationale:} Incorrect information will mislead users, which may lead to devastating consequences and users may stop using the application after discovering it duped them.
 \end{enumerate}
 % End SubSubSection
 
@@ -946,8 +945,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:reliability_and_availability_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RA}1. ]
-	\item The application shall be available 99\% of the time.
-        \item The application shall inform users of any failure encountered, along with easily understandable advice to succeed on the next attempt. Usually, the advice would be to restart the application.
+	\item \textit{The application shall be available 99\% of the time.} \\ \textbf{Rationale:} This is a standard for a non-critical application, like this one. \footnote{\href{https://www.concretecms.com/about/blog/digital-business/uptime}{Concrete CMS - Uptime}}
+        \item \textit{The application shall inform users of any failure encountered, along with easily understandable advice to succeed on the next attempt. Usually, the advice would be to restart the application.} \\ \textbf{Rationale:} Users get frustrated when the application fails and should be given easy, reliable instructions to how to succeed on their next try to prevent disillusionment.
 \end{enumerate}
 % End SubSubSection
 
@@ -955,7 +954,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:robustness_or_fault_tolerance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RFT}1. ]
-	\item The application shall correct minor input and output errors when the intended meaning is obvious, including spelling.
+	\item \textit{The application shall correct minor input and output errors when the intended meaning is obvious.} \\ \textbf{Rationale:} Humans and artificial intelligence make mistakes, and correcting minor errors will provide a smoother experience.
 \end{enumerate}
 % End SubSubSection
 
@@ -963,13 +962,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:capacity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
-	\item No human experts shall be required to compliment the non-human experts when a user uploads a picture of a dish and data about it to achieve a response.
-	\item The system shall accept at most 1 picture at a time. \\
-	\textbf{Rationale:} The application is a light system and needs to be able to process data at high speeds.
-	\item The system shall accept no more than 50 ingredients at a time. \\
-	\textbf{Rationale:} The application is a light system and needs to be able to process data at high speeds.
-	\item The system shall accept no more than 500 character of textual input at a time. \\
-	\textbf{Rationale:} The application is a light system and needs to be able to process data at high speeds.
+	\item \textit{No human experts shall be required to compliment the non-human experts when a user uploads a picture of a food item, potentially with data about it to achieve a response.} \\ \textbf{Rationale:} This is part of the specification.
 \end{enumerate}
 % End SubSubSection
 
@@ -977,7 +970,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:scalability_or_extensibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SE}1. ]
-	\item The application shall be able to handle one hundred (100) requests per second without any added latency.
+    \item \textit{The application shall be able to handle ten (10) classification requests per second without any added latency.} \\ \textbf{Rationale:} This is a reasonable upper bound for a non-critical system, like this one.
 \end{enumerate}
 % End SubSubSection
 
@@ -985,7 +978,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:longevity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-L}1. ]
-	\item The application shall last at least two years without any major updates, besides adding new functionality not in the initial release.
+	\item \textit{The application shall last at least two years without any major updates, besides adding new functionality not in the initial release.} \\ \textbf{Rationale:} Software engineering principles should be utilized to make this extensive labor profitable.
 \end{enumerate}
 % End SubSubSection
 
@@ -999,7 +992,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:expected_physical_environment}
 % Begin SubSubSection
 \begin{enumerate}[{OE-EPE}1. ]
-	\item This application shall be compatible with all internal databases and artificial intelligence used by the system's non-human experts. 
+	\item \textit{This application shall be compatible with all internal databases and artificial intelligence used by the system's non-human experts.} \\ \textbf{Rationale:} If the application is incompatible with the non-human experts, it will not work.
 \end{enumerate}
 % End SubSubSection
 
@@ -1007,10 +1000,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:requirements_for_interfacing_with_adjacent_systems}
 % Begin SubSubSection
 \begin{enumerate}[{OE-IA}1. ]
-	\item This application shall be compatible with mobile devices running the Android platform.
-	\item This application shall conform to the terms of service of the Android Application store.
-	\item The appication shall be able to be deployed on IOS in the future to expand the audience.
-	\item The application shall conform to the terms of service of the Apple Application store.
+	\item \textit{This application shall be compatible with mobile devices running the Android platform.} \\ \textbf{Rationale:} This is part of the specification.
+        \item \textit{This application shall conform to the terms of service of the Android Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous \footnote{\href{https://www.trio.so/blog/app-sideloading/}{Trio - App Sideloading}} and will discourage users from downloading the application. The only way for Android users to download it without sideloading is to be approved by the Android Application Store.
+        \item \textit{If a parallel iOS mobile application is developed, it shall conform to the terms of service of the Apple Application store.} \textbf{Rationale:} Sideloading may be dangerous \footnote{\href{https://www.trio.so/blog/app-sideloading/}{Trio - App Sideloading}} and will discourage users from downloading the application. The only way for Apple users to download it without sideloading is to be approved by the Apple Application Store.
     
 \end{enumerate}
 % End SubSubSection
@@ -1027,7 +1019,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:release_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{OE-R}1. ]
-	\item This application shall be released for Android devices by April 8, 2025.
+	\item \textit{This application shall be released for Android devices by April 8, 2025.} \\ \textbf{Rationale:} This is the release deadline given by the specification.
 \end{enumerate}
 % End SubSubSection
 
