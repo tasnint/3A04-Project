@@ -866,7 +866,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:ease_of_use_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-EOU}1. ]
-    \item The application shall have an intuitive user interface  (UI) such that a user will grasp how to use the application almost instantly.
+    \item The application shall have an intuitive user interface  (UI) such that a user will grasp how to use the application almost instantly by providing a tutorial at initial startup.
     \item The user experience (UX) shall be pleasant and incentivize users to return to the application.
 \end{enumerate}
 % End SubSubSection
@@ -876,7 +876,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{UH-PI}1. ]
 	\item The application shall be available both in light mode and dark mode, although one mode may be hidden behind a paywall.
-    \item Users shall be able to create accounts and have their public activity on the application tied to their account.
+    \item Users data shall be stored and only linked to the user's account so that users can get personalized food recommendations based on their activity history.
+    \item The system shall adapt to each user's dietary restirictions, allergies and food personalization, ensuring that food returns comply with the user's specified preferences. \\
+    \textbf{Rationale:} Each user has different food and ingredient restrictions and preferences and the system needs to adapt to these user personalization for user adaptability.
 \end{enumerate}
 % End SubSubSection
 
@@ -884,7 +886,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:learning_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-L}1. ]
-	\item Not applicable.
+	\item The system shall continuously learn and understand the custom recipes that are added by users so that it can suggest these new recipes to other users with similar queries. \\
+	\textbf{Rationale:} To enhance user engagement and foster community interaction within the application, the system needs to learn and know the receipes that are being added to its database so that it can share these recipes with the most relevant users based on their preferences and activity.
 \end{enumerate}
 % End SubSubSection
 
@@ -916,9 +919,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:speed_and_latency_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SL}1. ]
-	\item The latency between sending a request for classification and getting the response, assuming a stable internet connection shall be no greater than five (5) minutes.
-    \item The application's loading time shall not exceed thirty (30) seconds.
-    \item The latency between changing windows within an application shall be negligible, assuming a stable internet connection.
+	\item The latency between sending a request for classification and getting the response, assuming a stable internet connection shall be no greater than ten (10) seconds.
+    \item The application's loading time shall not exceed twenty (20) seconds.
+    \item The latency between changing pages within an application shall be negligible, assuming a stable internet connection.
 \end{enumerate}
 % End SubSubSection
 
@@ -961,6 +964,12 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
 	\item No human experts shall be required to compliment the non-human experts when a user uploads a picture of a dish and data about it to achieve a response.
+	\item The system shall accept at most 1 picture at a time. \\
+	\textbf{Rationale:} The application is a light system and needs to be able to process data at high speeds.
+	\item The system shall accept no more than 50 ingredients at a time. \\
+	\textbf{Rationale:} The application is a light system and needs to be able to process data at high speeds.
+	\item The system shall accept no more than 500 character of textual input at a time. \\
+	\textbf{Rationale:} The application is a light system and needs to be able to process data at high speeds.
 \end{enumerate}
 % End SubSubSection
 
@@ -999,8 +1008,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{OE-IA}1. ]
 	\item This application shall be compatible with mobile devices running the Android platform.
-        \item This application shall conform to the terms of service of the Android Application store.
-        \item If a parallel iOS mobile application is developed, it shall conform to the terms of service of the Apple Application store.
+	\item This application shall conform to the terms of service of the Android Application store.
+	\item The appication shall be able to be deployed on IOS in the future to expand the audience.
+	\item The application shall conform to the terms of service of the Apple Application store.
     
 \end{enumerate}
 % End SubSubSection
@@ -1070,6 +1080,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{SR-INT}1. ]
 	\item Data stored in the system shall be protected from unauthorized modification using cryptographic hashing and validation mechanisms.
+	\item The system shall delete all data associated to a user when the user deletes their account. \\
+	\textbf{Rationale:} The application stores the user's food preference which is sensitive information. Thus the application needs to get rid of all information of the user when they are not on the system anymore.
 \end{enumerate}
 % End SubSubSection
 
