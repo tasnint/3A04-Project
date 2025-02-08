@@ -328,7 +328,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 	\item VP5 Customer Retention
 \end{itemize}
 
-\noindent {\bf Interpretation:} Specify any liberties you took in interpreting business events, if necessary.\\
+\noindent {\bf Interpretation:} N/A \\
 
 \begin{enumerate}[{\bf BE1.}]
 	% Business Event 1.
@@ -356,7 +356,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\begin{enumerate}
 					\item[4.i.] User does not provide a photo.
 					\begin{enumerate}
-						\item[4.i.1.] System does not store any picture and continues to BE1.5.
+						\item[4.i.1.] System does not store any picture.
 					\end{enumerate}
 					\item[4.ii.] User provides a blury picture.
 					\begin{enumerate}
@@ -366,13 +366,13 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\begin{enumerate}
 					\item[7.i.] User does not provide any textual description.
 					\begin{enumerate}
-						\item[7.i.1.] System stores an empty text and continues to BE1.6.
+						\item[7.i.1.] System stores an empty text.
 					\end{enumerate}
 				\end{enumerate}
 				\begin{enumerate}
 					\item[10.i.] User does not provide any ingredient.
 					\begin{enumerate}
-						\item[10.i.1.] System stores an empty ingredient list and continues to BE1.11.
+						\item[10.i.1.] System stores an empty ingredient list.
 					\end{enumerate}
 				\end{enumerate}
 				\begin{enumerate}
@@ -420,7 +420,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\textbf{Main Success Scenario:} 
 				\begin{enumerate}[{1.}]
 					\item System prompts user to enter email address and password.
-					\item User enters email and password for the app
+					\item User enters email and password for the application.
 					\item System verifies user email has not been registed and emails a verification code.
 					\item User enters emailed verification code on the application.
 					\item System verifies verification code.
@@ -482,7 +482,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\item[2.i.] User forgets password.
 					\begin{enumerate}
 						\item[2.i.1.] User presses button to reset password.
-						\item[2.i.2.] System sends password reset link to email the user provided if email is registered.
+						\item[2.i.2.] System sends password reset link to the email that the user provided if the email is registered.
 					\end{enumerate}
 				\end{enumerate}
 			\item Health Canada  \#2 \\
@@ -493,7 +493,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 			\begin{enumerate}
 				\item[3.i.] System authentication fails.
 				\begin{enumerate}
-					\item[3.i.1.] System prompts warns user of invalid login.
+					\item[3.i.1.] System warns user of invalid login.
 					\item[3.i.2.] System permits retry of maximum 3 times before locking login feature for some time.
 				\end{enumerate}
 			\end{enumerate}
@@ -514,7 +514,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\textbf{Main Success Scenario:} 
 					\begin{enumerate}[{1.}]
 						\item User presses button to add a recipe.
-						\item System prompts to enter name of recipe.
+						\item \hypertarget{BE4.VP1.2} System prompts to enter name of recipe.
 						\item User enters name of recipe.
 						\item System prompts serving size info.
 						\item User enters serving size info.
@@ -526,10 +526,10 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\end{enumerate}
 					\textbf{Secondary Scenario:}
 					\begin{enumerate}
-						\item[2.i.] User types in food that is not known to the system.
+						\item[6.i.] User types in ingredient that is not known to the system.
 						\begin{enumerate}
-							\item[2.i.1.] System notifies user that food does not exist in the database.
-							\item[2.i.2.] System suggests user to add a custom recipe of the food they search, return to BE4.VP1.2.
+							\item[6.i.1.] System notifies user that ingredient does not exist in the database.
+							\item[6.i.2.] System does not add ingredient and ask user to provide a subsitute.
 						\end{enumerate}
 					\end{enumerate}
 				\item Health Canada  \#2
@@ -546,15 +546,65 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					N/A
 				\item Customer Retention \#5
 					\begin{enumerate}
-						\item[10.ii.] System should prompt an appreciation page.
+						\item[10.ii.] System should prompt an appreciation page for successful recipe that is added.
 					\end{enumerate}
 			\end{enumerate}
 	
 			{\bf Global Scenario:} \\
 			TODO: Combine to global scenario once team agrees with each viewpoint.
 
-	% Business Event 5.
-	\item Search food data \#5
+		% Business Event 5.
+		\item Ask for food recommendation \#5
+
+		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in.
+			% Viewpoints
+			\begin{enumerate}[{\bf VP1.}]
+				\item User \#1 \\
+					\textbf{Main Success Scenario:} 
+					\begin{enumerate}[{1.}]
+						\item User presses button for system to recommend food.
+						\item System analyzes user data from user's database to recommend food and stores result in user history.
+						\item \hypertarget{BE5.VP.1.3} System displays the recommened food with pictures and text.
+					\end{enumerate}
+					\textbf{Secondary Scenario:}
+					\begin{enumerate}
+						\item[2.i.] System does not have any user data..
+						\begin{enumerate}
+							\item[2.i.1.] System asks user for a cuisine category.
+							\item[2.i.2.] System randomly picks a food from the selected cuisine category.
+							\item[2.i.3.] System stores randomly chosen food in user history. 
+						\end{enumerate}
+					\end{enumerate}
+				\item Health Canada  \#2
+					\begin{enumerate}
+						\item [2.ii.] System recommends food that respects the user's allergies and dietary restrictions.
+					\end{enumerate}
+				\item Restaurant \#3
+					\begin{enumerate}
+						\item[4.ii.] User presses button to get restaurant recommendation.
+						\begin{enumerate}
+							\item[4.ii.1.] System asks user to enter a postal code to serach in.
+							\item[4.ii.2.] User enters postal code.
+							\item[4.ii.3.] System provides top restaurants within the provided location.
+						\end{enumerate}
+					\end{enumerate}
+				\item Security \#4 \\
+					N/A
+				\item Customer Retention \#5
+					\begin{enumerate}
+						\item[3.iii.] User likes the recommendation.
+						\begin{enumerate}
+							\item[3.iii.1.] System saves the recommended food in back-end data storage under user favorites.
+							\item[3.iii.2.] System provides similar recommendations.
+						\end{enumerate}
+					\end{enumerate}
+			\end{enumerate}
+	
+			{\bf Global Scenario:} \\
+			TODO: Combine to global scenario once team agrees with each viewpoint.
+
+	% Business Event 6.
+	\item Search food data \#6
 	
 	\textbf{Pre-Condition:} User opens the application; they have an account and are logged in.
 		% Viewpoints
@@ -572,7 +622,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\item[2.i.] User types in food that is not known to the system.
 					\begin{enumerate}
 						\item[2.i.1.] System notifies user that food does not exist in the database.
-						\item[2.i.2.] System suggests user to add a custom recipe of the food they search, return to BE4.VP1.2.
+						\item[2.i.2.] System suggests user to add a custom recipe of the food they search, return to \hyperlink{BE4.VP1.2}{BE4.VP1.2}.
 					\end{enumerate}
 				\end{enumerate}
 			\item Health Canada  \#2
@@ -596,56 +646,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\item[3.iii.] User likes the food information page.
 					\begin{enumerate}
 						\item[3.iii.1.] System saves the searched food in back-end data storage under user favorites.
-						\item[3.iii.2.] System provides some recommendations, return to BE6.VP.1.3.
-					\end{enumerate}
-				\end{enumerate}
-		\end{enumerate}
-
-		{\bf Global Scenario:} \\
-		TODO: Combine to global scenario once team agrees with each viewpoint.
-
-	% Business Event 6.
-	\item Ask for food recommendation \#6	
-	\textbf{Pre-Condition:} User opens the application; they have an account and are logged in.
-		% Viewpoints
-		\begin{enumerate}[{\bf VP1.}]
-			\item User \#1 \\
-				\textbf{Main Success Scenario:} 
-				\begin{enumerate}[{1.}]
-					\item User presses button for system to recommend food.
-					\item System analyzes user data from user's database to recommend food and stores result in user history.
-					\item System displays the recommened food with pictures and text.
-				\end{enumerate}
-				\textbf{Secondary Scenario:}
-				\begin{enumerate}
-					\item[2.i.] System does not have any user data..
-					\begin{enumerate}
-						\item[2.i.1.] System asks user for a cuisine.
-						\item[2.i.2.] System randomly picks a food from the selected cuisine.
-						\item[2.i.3.] System stores randomly chosen food in user history. 
-					\end{enumerate}
-				\end{enumerate}
-			\item Health Canada  \#2
-				\begin{enumerate}
-					\item [2.ii.] System shall avoid recommending food that contains the user's allergies or is part of user's dietary restrictions.
-				\end{enumerate}
-			\item Restaurant \#3
-				\begin{enumerate}
-					\item[4.ii.] User presses button to get restaurant recommendation.
-					\begin{enumerate}
-						\item[4.ii.1.] System asks user to enter a postal code to serach in.
-						\item[4.ii.2.] User enters postal code.
-						\item[4.ii.3.] System provides top restaurants within the provided location.
-					\end{enumerate}
-				\end{enumerate}
-			\item Security \#4 
-				N/A
-			\item Customer Retention \#5
-				\begin{enumerate}
-					\item[3.iii.] User likes the recommendation.
-					\begin{enumerate}
-						\item[3.iii.1.] System saves the recommended food in back-end data storage under user favorites.
-						\item[3.iii.2.] System provides similar recommendations, return to BE6.VP.1.3.
+						\item[3.iii.2.] System provides some recommendations, return to \hyperlink{BE5.VP.1.3}{BE5.VP.1.3}.
 					\end{enumerate}
 				\end{enumerate}
 		\end{enumerate}
@@ -654,7 +655,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 		TODO: Combine to global scenario once team agrees with each viewpoint.
 
 	% Business Event 7.
-	\item Delete account \#6	
+	\item Delete account \#7
+	
 	\textbf{Pre-Condition:} User opens the application; they have an account and are logged in.
 		% Viewpoints
 		\begin{enumerate}[{\bf VP1.}]
