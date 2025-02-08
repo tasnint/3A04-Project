@@ -103,13 +103,6 @@
 \subsection{References}
 \label{sub:references}
 % Begin SubSection
-\begin{itemize}
-	\item Provide a complete list of all documents referenced elsewhere in the SRS.
-	\item Identify each document by title, report number (if applicable), date, and publishing organization.
-	\item Specify the sources from which the references can be obtained.
-	\item Order this list in some sensible manner (alphabetical by author, or something else that makes more sense).
-\end{itemize}
-
 \bibliographystyle{IEEEtran}
 \renewcommand{\refname}{}  % Remove "References" title
 \vspace{-7mm}  % Adjust spacing before bibliography
@@ -134,11 +127,11 @@
 \subsection{Product Perspective}
 \label{sub:product_perspective}
 
-Our dish-identification application is a mobile service designed to let users identify and learn more about any food item they see online—whether it’s a screenshot from Instagram, a Facebook post, or any image in their phone’s gallery. Although tools like Google Lens or Pinterest Lens can identify various objects, our software specializes in food recognition and goes a step further by providing cultural context and recipe suggestions once the dish is identified. This tailored approach offers an experience that is both more focused and more informative than general-purpose image-recognition apps.
+The dish-identification application is a mobile service designed to let users identify and learn more about any food item they see online; whether it’s a screenshot from Instagram, a Facebook post, or any image in their phone’s gallery. Although tools like Google Lens or Pinterest Lens can identify various objects, the application specializes in food recognition and goes a step further by providing cultural context and recipe suggestions once the dish is identified. This tailored approach offers an experience that is both focused and informative than general-purpose image-recognition apps.
 
-Unlike solutions that rely on separate web platforms or location-based data, our application is entirely self-contained. Users simply download the app from the store onto their Android or iOS device and can begin identifying dishes right away. The app’s core functionality is powered by three built-in “expert” modules—each integrated with a different AI API (for example, GPT-4.0, Gemini, or a specialized image-analysis model). These modules work in unison to determine the name of the dish based on an image, text description, or list of ingredients, then provide relevant insights such as cultural background and recipes. All connections to these AI services are handled securely within the code, so the user sees only a streamlined interface and results.
+Unlike solutions that rely on separate web platforms or location-based data, our application is entirely self-contained. Users simply download the app from the store onto their Android device and can begin identifying dishes right away. The app’s core functionality is powered by three built-in “expert” modules, each having expertise in identifying food in their own ways. These modules work in unison to determine the name of the dish based on an image, text description, or list of ingredients, then provide relevant insights such as cultural background and recipes. All connections to these experts are handled securely within the code, so the user sees only a streamlined interface and results.
 
-Because our primary goal is to operate as a standalone mobile app, we do not currently interface with third-party systems or social-media platforms for direct data exchange. Future enhancements might include more advanced sharing features or optional integration with external APIs, but for the scope of this product, the functionality remains localized to the device. By keeping external dependencies to a minimum, we aim to deliver an application that is both reliable and user-friendly, ensuring that anyone with a smartphone can identify foods and explore the stories behind them without any extra setup.
+Since the primary goal is to operate as a standalone mobile app, we do not currently interface with third-party systems or social-media platforms for direct data exchange. Future enhancements might include more advanced sharing features or optional integration with external APIs, but for the scope of this product, the functionality remains localized to the device. By keeping external dependencies to a minimum, we aim to deliver an application that is both reliable and user-friendly, ensuring that anyone with a smartphone can identify foods and explore the stories behind them without any extra setup.
 
 \subsection{Product Functions}
 \label{sub:product_functions}
@@ -163,7 +156,7 @@ The application's core features are divided into several modules. Each module co
 \begin{itemize}
     \item \textbf{Inquire About Unknown Food} – User provides an image, description, or ingredients for identification
     \item \textbf{Confirm or Reject Results} – User feedback helps refine AI accuracy
-    \item \textbf{Handle Expert Conflicts} – Resolves differing predictions among the three AI experts
+    \item \textbf{Handle Expert Conflicts} – Resolves differing predictions among the three experts
 \end{itemize} \\
 \hline
 \textbf{Food Info \& Recipes} &
@@ -183,7 +176,7 @@ The application's core features are divided into several modules. Each module co
 \begin{itemize}
     \item \textbf{Store User Interactions} – Logs confirmed/rejected identifications for AI training
     \item \textbf{Manage API Keys} – Secures AI service credentials within the codebase
-    \item \textbf{Maintain Expert Models} – Coordinates updates among the three AI modules
+    \item \textbf{Maintain Expert Models} – Coordinates updates among the three expert modules
 \end{itemize} \\
 \hline
 \end{tabular}
@@ -226,6 +219,7 @@ Overall, we expect a single user type or “persona” who is interested in iden
 	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following Android data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
 	\item \textbf{Budget Constraints: }The project has a limited budget, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized to minimize costs.
 	\item \textbf{Timeline Constraints: }The system must be developed within the allocated course duration, limiting the scope of certain advanced features such as restaurant API integration pr expanded multilingual support may need to be postponed to future versions.
+	\item \textbf{Food Constraints: } They system will only work with and process foods and recipes that are edible by humans.
 \end{enumerate}
 % End SubSection
 
@@ -235,7 +229,7 @@ Overall, we expect a single user type or “persona” who is interested in iden
 Assumptions made in interpreting what the software being developed is aiming to achieve:
 	\begin{enumerate}
 		\item The user will provide clear and distinguishable images of food items to enable accurate identification by the Image Recognition Expert.
-		\item The Text Description Expert assumes that users will provide detailed descriptions of food items, including key attributes such as color, texture, or preparation method.
+		\item The Text Description Expert assumes that users will provide detailed descriptions of food items, including key attributes such as color, texture, taste, smell, or preparation method.
 		\item The Ingredient-Based Expert assumes that users will provide a complete and accurate ingredient list for identification to work correctly.
 		\item Users will have an active internet connection when interacting with the system for real-time processing and recommendations.
 		\item The personalized recommendation system assumes that users submit multiple food items over time to generate tailored suggestions.
@@ -258,10 +252,10 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{sub:apportioning_of_requirements}
 % Begin SubSection
 \begin{enumerate}
-    \item \textbf{Multilingual Support: } The initial version of the system will support English only, with additional language options planned for future updates.
-    \item \textbf{Offline Mode: } Future versions will introduce offline functionality with local storage or caching for limited food recognition.
-    \item \textbf{Integration with Third-Party Applications: } The system will expand to integrate with food-related services, including restaurants, delivery platforms like UberEats, and meal planning applications.
-    \item \textbf{Voice Input and Accessibility Enhancements: } Later iterations will incorporate voice recognition, assisted voice input, and screen reader compatibility for improved accessibility.
+    \item \textbf{Multilingual Support:} The initial version of the system will support English only, with additional language options planned for future updates.
+    \item \textbf{Offline Mode:} Future versions will introduce offline functionality with local storage or caching for limited food recognition.
+    \item \textbf{Integration with Third-Party Applications:} The system will expand to integrate with food-related services, including restaurants, delivery platforms like UberEats, and meal planning applications.
+    \item \textbf{Voice Input and Accessibility Enhancements:} Later iterations will incorporate voice recognition, assisted voice input, and screen reader compatibility for improved accessibility.
 \end{enumerate}
 % End SubSection
 
@@ -895,7 +889,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \begin{enumerate}[{OE-IA}1. ]
 	\item \textit{This application shall be compatible with mobile devices running the Android platform.} \\ \textbf{Rationale:} This is part of the specification.
         \item \textit{This application shall conform to the terms of service of the Android Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for Android users to download it without sideloading is to be approved by the Android Application Store.
-        \item \textit{If a parallel iOS mobile application is developed, it shall conform to the terms of service of the Apple Application store.} \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for Apple users to download it without sideloading is to be approved by the Apple Application Store.
+        \item \textit{If a parallel iOS mobile application is developed, it shall conform to the terms of service of the Apple Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for Apple users to download it without sideloading is to be approved by the Apple Application Store.
     
 \end{enumerate}
 % End SubSubSection
