@@ -325,7 +325,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 	\item VP2 Health Canada
 	\item VP3 Restaurant
 	\item VP4 Security
-	\item Customer Retention
+	\item VP5 Customer Retention
 \end{itemize}
 
 \noindent {\bf Interpretation:} Specify any liberties you took in interpreting business events, if necessary.\\
@@ -395,7 +395,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\end{enumerate}
 			\item Restaurant \#3
 				\begin{enumerate}
-					\item[11.iii.] System provides 5 star restaurants serving the returned dish.
+					\item[11.iii.] System provides 4-5 star restaurants serving the returned dish.
 				\end{enumerate}
 			\item Security \#4 
 				\begin{enumerate}
@@ -533,14 +533,13 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 						\end{enumerate}
 					\end{enumerate}
 				\item Health Canada  \#2
-					\item \begin{enumerate}
+					\begin{enumerate}
 						\item[10.i.] Provided recipe is poisonous or hazardous.
 						\begin{enumerate}
 							\item[10.i.1.] System rejects recipe and does not add to the database.
 							\item[10.i.2.] System provides information to user of why recipe is rejected.
 						\end{enumerate}
 					\end{enumerate}
-					\item 
 				\item Restaurant \#3 \\
 					N/A
 				\item Security \#4 
@@ -594,7 +593,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				N/A
 			\item Customer Retention \#5
 				\begin{enumerate}
-					\item[3.iii.] User likes the page.
+					\item[3.iii.] User likes the food information page.
 					\begin{enumerate}
 						\item[3.iii.1.] System saves the searched food in back-end data storage under user favorites.
 						\item[3.iii.2.] System provides some recommendations, return to BE6.VP.1.3.
@@ -614,15 +613,16 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\textbf{Main Success Scenario:} 
 				\begin{enumerate}[{1.}]
 					\item User presses button for system to recommend food.
-					\item System analyzes user data from database to recommend food. and stores result in user history.
+					\item System analyzes user data from user's database to recommend food and stores result in user history.
 					\item System displays the recommened food with pictures and text.
 				\end{enumerate}
 				\textbf{Secondary Scenario:}
 				\begin{enumerate}
 					\item[2.i.] System does not have any user data..
 					\begin{enumerate}
-						\item[2.i.1.] System randomly picks a food.
-						\item[2.i.2.] System stores randomly chosen food in user history. 
+						\item[2.i.1.] System asks user for a cuisine.
+						\item[2.i.2.] System randomly picks a food from the selected cuisine.
+						\item[2.i.3.] System stores randomly chosen food in user history. 
 					\end{enumerate}
 				\end{enumerate}
 			\item Health Canada  \#2
