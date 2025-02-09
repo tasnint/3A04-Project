@@ -732,6 +732,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
     \item \textit{The application shall have a high contrast between all text and background elements so users can easily read the text.} \\
     \textbf{Rationale:} If the text is not easily readable, users will be discouraged from using the application
     \item \textit{No special prompt shall be required to display photos in application pages.} \\ \textbf{Rationale:} Requesting photos will make the usage more cumbersome, especially when browsing images of other food items in the library.
+	\item \textit{The application shall mimic the layout, font and colour scheme of widely-used food ordering applications} \\ \textbf{Rationale:} Widely-used food ordering applications have conducted psychological studies to determine the best layout, font, and color 
 \end{enumerate}
 % End SubSubSection
 
@@ -756,7 +757,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{UH-EOU}1. ]
     \item \textit{The application shall have an intuitive user interface (UI) such that a user will easily grasp how to use the application.} \\ \textbf{Rationale:} If a user struggles to use the application, they will most likely not use it.
-    \item \textit{The user experience (UX) shall be pleasant.}  \\ \textbf{Rationale:} If the user interface is not pleasant, it will incentivize users not to return to the application, and vice versa.
+    \item \textit{The user experience (UX) shall be pleasant, especially for common use cases (e.g. taking or uploading pictures of a food item, inputting data for a food item, recieving the classification for a food item).}  \\ \textbf{Rationale:} If the user interface is not pleasant, it will incentivize users not to return to the application, and vice versa. Common use cases are emphasized because they occur far more often than their rare counterparts.
 \end{enumerate}
 % End SubSubSection
 
@@ -765,7 +766,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{UH-PI}1. ]
     \item The application shall be available both in light mode and dark mode. \\ \textbf{Rationale:} Some end users prefer light mode and some prefer dark mode, and having both modes will capture the full gamut \cite{NNgroup}. 
-    \item Users shall be able to create accounts and have their public activity on the application tied to their account.
+    \item Users shall be able to create accounts and have their public activity on the application tied to their account. \\ \textbf{Rationale:} The benefits (cross-device support, sunk cost and user data collection), outweight the costs users are very familar with (increased friction and overhead) \cite{Phiture}.
 \end{enumerate}
 % End SubSubSection
 
@@ -790,12 +791,12 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:accessibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-A}1. ]
-	\item \textit{The application shall have a large text mode.} \\\textbf{Rationale:} This will accommodate users with severe nearsightedness.
+	\item \textit{The application shall have a large text mode, where the size of the text is 18 points or greater.} \\\textbf{Rationale:} This will accommodate users with severe nearsightedness. The size of 18 pt is per the Web Content Accessibility Guidelines \cite{W3}
     \item \textit{The application shall be compatible with screen readers.} \\ \textbf{Rationale}: This will accommodate blind users who cannot see the application's visual content.
 \end{enumerate}
 % End SubSubSection
 
-% End SubSection
+% End SubSection.
 
 \subsection{Performance Requirements}
 \label{sub:performance_requirements}
@@ -824,7 +825,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
-	\item \textit{Virtually all information given in the application shall be verifiable by subject matter experts or generally reliable sources.} \\ \textbf{Rationale:} Incorrect information will mislead users, which may lead to devastating consequences and users may stop using the application after discovering it duped them.
+	\item \textit{Virtually all information given in the application shall be verifiable by subject matter experts or generally reliable sources. The threshold for "virtually all" shall be no lesser than 99\% } \\ \textbf{Rationale:} Incorrect information will mislead users, which may lead to devastating consequences and users may stop using the application after discovering it duped them.
 \end{enumerate}
 % End SubSubSection
 
@@ -850,6 +851,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
 	\item \textit{No human experts shall be required to compliment the non-human experts when a user uploads a picture of a food item, potentially with data about it to achieve a response.} \\ \textbf{Rationale:} This is part of the specification.
+	\item \textit{The application shall be scalable to handle up to five million (5,000,000) concurrent users.} \\ \textbf{Rationale:} This is an upper bound for a growing mobile application, which may become very popular rapidly and would thus would have to scale rapidly \cite{Zeba}.
 \end{enumerate}
 % End SubSubSection
 
