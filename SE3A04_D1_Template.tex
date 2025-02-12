@@ -1141,6 +1141,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{MS-M}1. ]
 	\item The system shall be designed for easy debugging and troubleshooting, with clear logs and error reports.
+	\\ \textbf{Rationale:} Developers must be able to efficiently identify and resolve issues within the system. Clear logs and error reports provide essential information for troubleshooting and fixing bugs, ensuring smooth system operation and reducing downtime. This helps maintain app stability and performance over time.
 \end{enumerate}
 % End SubSubSection
 
@@ -1149,6 +1150,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{MS-S}1. ]
 	\item The application shall be compatible with at least the last three major versions of Android and iOS.
+	\\ \textbf{Rationale:} Users must be able to access the app on a range of devices, including those running recent but not necessarily the latest operating system versions. Ensuring compatibility with at least the last three major versions of Android and iOS allows more users to access the app without requiring immediate upgrades, improving accessibility and usability while maintaining app performance and security.
 \end{enumerate}
 % End SubSubSection
 
@@ -1157,6 +1159,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{MS-A}1. ]
 	\item The system architecture shall support future expansion by allowing the addition of new expert modules without requiring significant refactoring.
+	\\ \textbf{Rationale:} The system must be designed to accommodate future growth and enhancements. Allowing new expert modules to be added without major structural changes ensures scalability, reduces development effort, and maintains system stability as new features are introduced. This will help extend the system’s lifecycle and adaptability to evolving requirements.
 \end{enumerate}
 % End SubSubSection
 
@@ -1171,16 +1174,19 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{SR-AC}1. ]
 	\item User authentication shall be required for storing identification history, ensuring only authorized users access their data.
+	\\ \textbf{Rationale:} To protect user privacy and security, only authenticated users must be able to store and access their identification history. This prevents unauthorized access to sensitive information and ensures that personal data remains secure within the system.
 \end{enumerate}
 % End SubSubSection
 
 \subsubsection{Integrity Requirements}
 \label{ssub:integrity_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{SR-INT}1. ]
-	\item Data stored in the system shall be protected from unauthorized modification using cryptographic hashing and validation mechanisms.
-	\item The system shall delete all data associated to a user when the user deletes their account. \\
-	\textbf{Rationale:} The application stores the user's food preference which is sensitive information. Thus the application needs to get rid of all information of the user when they are not on the system anymore.
+\begin{enumerate}[{SR-P}1. ]
+    \item The app must inform and ask users for the usage of their information.
+    \\ \textbf{Rationale:} This is a requirement under the Google Play Developer Distribution Agreement \cite{GooglePlayAgreement}. Users must be explicitly informed about how their data will be used, ensuring transparency and compliance with privacy policies.
+
+    \item The app must provide users a legally adequate privacy notice.
+    \\ \textbf{Rationale:} This is a requirement under the Google Play Developer Distribution Agreement \cite{GooglePlayAgreement}. A clear and legally adequate privacy notice ensures users understand their rights and how their personal data is managed, promoting trust and regulatory compliance.
 \end{enumerate}
 % End SubSubSection
 
@@ -1189,6 +1195,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{SR-P}1. ]
 	\item The system shall allow users to delete their stored identification history on request.
+	\\ \textbf{Rationale:}  Users must have control over their personal data. Allowing users to delete their stored identification history ensures compliance with privacy regulations and enhances user trust. This feature provides transparency and empowers users to manage their data as needed.
 \end{enumerate}
 % End SubSubSection
 
@@ -1197,6 +1204,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{SR-AU}1. ]
 	\item The system shall log all expert consultations and final decisions, including timestamps and user interactions, for auditing purposes.
+	\\ \textbf{Rationale:} Maintaining logs of expert consultations and decisions ensures accountability and traceability. These logs help track system usage, detect potential issues, and support compliance with regulatory or internal audit requirements. Proper logging also enhances transparency and trust in the system’s decision-making process.
 \end{enumerate}
 % End SubSubSection
 
@@ -1204,7 +1212,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:immunity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{SR-IM}1. ]
-	\item The system shall be resistant to SQL injection, cross-site scripting (XSS), and other common cyber threats.
+	\item The system must not accept unexpected input.
+	\\ \textbf{Rationale:} The system must be protected against security vulnerabilities caused by invalid or malicious input. Preventing unexpected input helps mitigate risks such as SQL injection, cross-site scripting (XSS), and buffer overflow attacks, ensuring the system remains secure and reliable for users.
 \end{enumerate}
 % End SubSubSection
 
@@ -1219,6 +1228,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{CP-C}1. ]
 	\item The application shall ensure that identifications are culturally sensitive and do not promote stereotypes or biases.
+	\\ \textbf{Rationale:} sers must feel respected and represented fairly when using the application. Ensuring that identifications are culturally sensitive helps prevent discrimination, reduces potential harm, and promotes inclusivity. This approach fosters a positive user experience and aligns with ethical and legal standards for diversity and equity.
 \end{enumerate}
 % End SubSubSection
 
@@ -1227,6 +1237,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{CP-P}1. ]
 	\item The application shall remain politically neutral and shall not classify or provide recommendations based on politically sensitive topics, ideologies, or national symbols.
+	\\ \textbf{Rationale:} The system must ensure fairness and avoid influencing users based on political views. Maintaining political neutrality prevents bias, reduces potential conflicts, and promotes inclusivity, allowing users to engage with the application without concerns about ideological influence or discrimination.
 \end{enumerate}
 % End SubSubSection
 
@@ -1240,7 +1251,19 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:compliance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LR-COMP}1. ]
-	\item The system shall comply with data protection laws such as GDPR, CCPA, and other applicable regulations regarding user data storage and processing.
+	\item All personal information collected (including personal information given to third parties for processing purposes) must be protected.
+	\\ \textbf{Rationale:} Users must have confidence that their personal data is secure. Protecting collected information ensures compliance with privacy regulations, such as PIPEDA Fair Information Principle 1 - Accountability\cite{PIPEDA1}.
+	\item The purposes for all personal information being collected (including personal information given to third parties for processing purposes) must be identified before or at the time it is being collected.
+    \\ \textbf{Rationale:} Users must be informed about why their personal information is being collected. Clearly identifying data collection purposes ensures transparency, builds user trust, and aligns with PIPEDA Fair Information Principle 2 - Identifying Purposes \cite{PIPEDA2}.  
+
+    \item The knowledge and consent of the user for all personal information collected (including personal information given to third parties for processing purposes) is required.
+    \\ \textbf{Rationale:} Users must have control over their personal data. Obtaining their knowledge and consent before collecting information ensures informed decision-making and aligns with PIPEDA Fair Information Principle 3 - Consent \cite{PIPEDA3}.  
+
+    \item Only the personal information that is needed to fulfill a legitimate identified purpose must be collected.
+    \\ \textbf{Rationale:} Collecting only necessary personal information reduces privacy risks and enhances user confidence in the system. This ensures compliance with data minimization principles and follows PIPEDA Fair Information Principle 4 - Limiting Collection \cite{PIPEDA4}.  
+
+    \item All the personal information collected (including personal information given to third parties for processing purposes) may be used or disclosed only for identified purposes (purposes for which it was collected) except when user consents or under any legal obligation(s).
+    \\ \textbf{Rationale:} Users must have clarity on how their data is used. Restricting the use or disclosure of personal information to its identified purposes prevents misuse and aligns with PIPEDA Fair Information Principle 5 - Limiting Use, Disclosure, and Retention \cite{PIPEDA5}.  
 \end{enumerate}
 % End SubSubSection
 
@@ -1248,7 +1271,17 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:standards_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LR-STD}1. ]
-	\item The application shall follow ISO/IEC 27001 security standards for data protection and secure communication.
+    \item The app should not use notifications for promotional/advertisement purposes.
+    \\ \textbf{Rationale:} This is a standard for app quality in terms of the visual experience, as defined by Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. Notifications should be used appropriately to enhance user experience and should not be misused for cross-promotion or advertisements.
+
+    \item Touch targets in the app should have a size of at least 48dp.
+    \\ \textbf{Rationale:} Ensuring that touch targets are at least 48dp improves accessibility and usability, as recommended by Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. This helps users interact more easily with UI elements and reduces frustration.
+
+    \item Any personal or sensitive data should not be logged to the system log or a log specific to the app.
+    \\ \textbf{Rationale:} This is a standard for app quality in terms of privacy and security, as outlined in Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. Logging sensitive data can lead to security vulnerabilities and data exposure, which must be avoided.
+
+    \item The app’s internal storage should be used to store any sensitive data.
+    \\ \textbf{Rationale:} Storing sensitive data in internal storage enhances security and prevents unauthorized access, as per best practices defined in Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}.
 \end{enumerate}
 % End SubSubSection
 
