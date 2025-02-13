@@ -84,12 +84,12 @@ This document outlines What's That Dish, an Android mobile application for ident
 \subsection{Scope}
 \label{sub:scope}
 % Begin SubSection
-\begin{itemize}
-	\item Identify the software product(s) to be produced, and name each (e.g., Host DBMS, Report Generator, etc.)
-	\item Explain what the software product(s) will do (and, if necessary, also state what they will not do).
-	\item Describe the application of the software being specified, including relevant benefits, objectives, and goals.
-%	\item Be consistent with similar statements in higher-level specifications (e.g., the system requirements specification), if they exist
-\end{itemize}
+What’s That Dish, the intelligent food identification application, helps users identify dishes based on their input of an image, text description, or ingredients list submission. The system utilizes three expert modules, Image Recognition, Text Description, and Ingredient-Based Experts for identification. Additionally, the system provides nutritional information and restaurant recommendations while storing user data to deliver personalized food suggestions.
+
+Users are required to create an account on What’s That Dish to access its features. “What’s that dish?!”, the app’s primary and default mode, allows users to submit dish details (photo, text, and/or ingredient list), and the system processes the input through the combined effort of the three expert modules. “Add Custom Recipe” and “Personalized Recommendations” serve as secondary features that expand the functionality of the platform. In “Add Custom Recipe,” the system prompts users to provide detailed recipes of their unique dishes including ingredients, portion sizes, and preparation steps. This feature contributes to the development of a diverse and comprehensive food database for the What’s That Dish community. Meanwhile, the “Personalized Recommendations” mode curates a tailored experience by suggesting dishes based on a user’s previous inquiries and preferences, while also recommending local restaurants based on location data.
+
+What’s That Dish aims to be every foodie’s go-to solution when they stumble upon a dish on Instagram, in real life, or anywhere else that sparks their curiosity, yet they have no idea what it is or where it originates from. By offering multiple input options, the platform ensures flexibility and accessibility for a wide range of users. The application seeks to foster an interactive community where users contribute recipes, enriching the platform’s database and promoting food discovery. By cultivating a user-driven ecosystem, the application not only enhances personalized recommendations but also encourages cultural exchange through shared recipes. Additionally, the system aims to establish partnerships with local restaurants, increasing food exploration opportunities while supporting the restaurant industry.
+
 % End SubSection
 
 \subsection{Definitions, Acronyms, and Abbreviations}
@@ -128,11 +128,10 @@ This document outlines What's That Dish, an Android mobile application for ident
 \subsection{Product Perspective}
 \label{sub:product_perspective}
 
-The dish-identification application is a mobile service designed to let users identify and learn more about any food item they see online; whether it’s a screenshot from Instagram, a Facebook post, or any image in their phone’s gallery. Although tools like Google Lens or Pinterest Lens can identify various objects, the application specializes in food recognition and goes a step further by providing cultural context and recipe suggestions once the dish is identified. This tailored approach offers an experience that is both focused and informative than general-purpose image-recognition apps.
+"What’s That Dish" is an Android-based mobile application for food identification, allowing users to recognize and learn about any dish they come across online, whether it's a screenshot from Instagram or a Facebook post. Similar to Google Lens, Yuka, and MyFitnessPal, it enables users to scan food items for nutritional information or perform image-based searches. However, "What’s That Dish?!" sets itself apart with a multi-modal identification approach, letting users identify dishes via photos, text descriptions, or ingredient lists, rather than relying solely on image recognition. The platform integrates Google Maps API to recommend nearby restaurants serving identified dishes, sharing similarities with applications like OpenTable and Zomato. Additionally, the application connects to external resources through third-party APIs, such as the Canada Nutrient File database for nutrition data aligned with Health Canada guidelines and machine learning models for image and natural language processing.
 
-Unlike solutions that rely on separate web platforms or location-based data, our application is entirely self-contained. Users simply download the app from the store onto their Android device and can begin identifying dishes right away. The app’s core functionality is powered by three built-in “expert” modules, each having expertise in identifying food in their own ways. These modules work in unison to determine the name of the dish based on an image, text description, or list of ingredients, then provide relevant insights such as cultural background and recipes. All connections to these experts are handled securely within the code, so the user sees only a streamlined interface and results.
+The application also includes two secondary features: Custom Recipe Submission, which allows users to add recipes by providing ingredients, portions, and preparation steps, and Personalized Recommendations, which uses machine learning to suggest dishes based on user preferences and search history. These features expand the food database with community-generated content while delivering a personalized and engaging food discovery experience.
 
-Since the primary goal is to operate as a standalone mobile app, we do not currently interface with third-party systems or social-media platforms for direct data exchange. Future enhancements might include more advanced sharing features or optional integration with external APIs, but for the scope of this product, the functionality remains localized to the device. By keeping external dependencies to a minimum, we aim to deliver an application that is both reliable and user-friendly, ensuring that anyone with a smartphone can identify foods and explore the stories behind them without any extra setup.
 
 \subsection{Product Functions}
 \label{sub:product_functions}
