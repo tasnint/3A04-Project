@@ -116,7 +116,7 @@ Finally, section 6 describes the innovative features of the application.
 \subsection{Product Perspective}
 \label{sub:product_perspective}
 
-\hyperref[WTD]{\textbf{WTD}} is an \hyperref[Android]{\textbf{Android}}-based mobile application for \hyperref[Dish]{\textbf{dish}} identification, allowing users to recognize and learn about any \hyperref[dish]{\textbf{dish}} they come across in real life or even online, whether it's a screenshot from a social media application or a Facebook post. Similar to Google Lens, Yuka, and MyFitnessPal, it enables users to scan \hyperref[dish]{\textbf{dishes}} for nutritional information or perform image-based searches. However, \hyperref[WTD]{\textbf{WTD}} sets itself apart with a multi-modal identification approach, letting users identify \hyperref[Dish]{\textbf{dishes}} via photos, text descriptions, or ingredient lists, rather than relying solely on image recognition. The platform integrates Google Maps API to recommend nearby restaurants serving identified \hyperref[Dish]{\textbf{dishes}}, sharing similarities with applications like OpenTable and Zomato. Additionally, the application connects to external resources through third-party APIs, such as the Canada Nutrient File database for nutrition data aligned with Health Canada guidelines and open-source image and natural language processing models.
+\hyperref[WTD]{\textbf{WTD}} is an \hyperref[Android]{\textbf{Android}}-based mobile application for \hyperref[Dish]{\textbf{dish}} identification, allowing users to recognize and learn about any \hyperref[dish]{\textbf{dish}} they come across in real life or even online, whether it's a screenshot from a social media application or a blog post. Similar to Google Lens, Yuka, and MyFitnessPal, it enables users to scan \hyperref[dish]{\textbf{dishes}} for nutritional information or perform image-based searches. However, \hyperref[WTD]{\textbf{WTD}} sets itself apart with a multi-modal identification approach, letting users identify \hyperref[Dish]{\textbf{dishes}} via photos, text descriptions, or ingredient lists, rather than relying solely on image recognition. The platform integrates Google Maps API to recommend nearby restaurants serving identified \hyperref[Dish]{\textbf{dishes}}, sharing similarities with applications like OpenTable and Zomato. Additionally, the application connects to external resources through third-party APIs, such as the Canada Nutrient File database for nutrition data aligned with Health Canada guidelines and open-source image and natural language processing models.
 
 The application also includes two secondary features: Custom \hyperref[Recipe]{\textbf{Recipe}} Submission, which allows users to add \hyperref[Recipe]{\textbf{recipes}} by providing ingredients, portions, and preparation steps, and Personalized Recommendations, which suggests \hyperref[Dish]{\textbf{dishes}} based on user preferences and search history. These features expand the food database with community-generated content while delivering a personalized and engaging food discovery experience.
 
@@ -150,7 +150,7 @@ The application's core features are divided into several modules. Each module co
 	\begin{itemize}
 		\item \textbf{Inquire About Unknown Dish} – User provides an image, description, or ingredients for identification
 		\item \textbf{Confirm or Reject Results} – User feedback helps refine identification accuracy 
-		\item \textbf{Handle Expert Conflicts} – Resolves differing predictions among the three experts
+		\item \textbf{Handle Expert Conflicts} – Reconciles differing predictions among the three experts
 	\end{itemize} \\
 	\hline
 	\textbf{Food Information \& Recipes} &
@@ -218,7 +218,7 @@ Overall, we expect a single user type or “persona” who is interested in iden
 % Begin SubSection
 \begin{enumerate}
 	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following Android data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
-	\item \textbf{Budget Constraints: }The project has a budget of 0 dollars, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized.
+	\item \textbf{Budget Constraints: }The project has no monetary budget, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized.
 	\item \textbf{Timeline Constraints: }The system must be developed within the allocated course duration, limiting the scope of certain advanced features such as restaurant API integration or expanded multilingual support may need to be postponed to future versions.
 	\item \textbf{Food Constraints: } The system will only work with foods and recipes that are edible by humans.
 \end{enumerate}
@@ -237,7 +237,7 @@ Assumptions made in interpreting what the software being developed is aiming to 
 		\item The application assumes that it will operate on \hyperref[Android]{\textbf{Android}} devices with a minimum required processing power and storage space to handle \hyperref[Dish]{\textbf{dish}} image recognition and database queries.
 	\end{enumerate}
 
-Any other assumptions made that, if it fails to hold, could require you to change the requirements:
+Any other assumptions made that, if it fails to hold, could require changes in the requirements:
 	\begin{enumerate}
 		\item The system shall support the latest version of the Android operating system.
 		\item Assume that the cost, availability, and accessibility of free-tier APIs will remain unchanged.
@@ -447,7 +447,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\item System verifies verification code.
 					\item System creates an account and stores in database.
 					\item System prompts user to enter any allergies or dietary restrictions.
-					\item User enters allergis or dietary restrictions or skips.
+					\item User enters allergies or dietary restrictions or skips.
 					\item Systems opens the application's home page.
 				\end{enumerate}
 				\textbf{Secondary Scenario:}
@@ -911,7 +911,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
     \item \textit{The application shall have a high contrast between all text and background elements so users can easily read the text.} \\
     \textbf{Rationale:} If the text is not easily readable, users will be discouraged from using the application
     \item \textit{No special prompt shall be required to display photos in application pages.} \\ \textbf{Rationale:} Requesting photos will make the usage more cumbersome, especially when browsing images of other \hyperref[Dish]{\textbf{dishes}} in the library.
-	\item \textit{The application shall mimic the layout, font and colour scheme of widely-used food ordering applications} \\ \textbf{Rationale:} Widely-used food ordering applications have conducted psychological studies to determine the best layout, font, and color 
+	%\item \textit{The application shall mimic the layout, font and colour scheme of widely-used food ordering applications} \\ \textbf{Rationale:} Widely-used food ordering applications have conducted psychological studies to determine the best layout, font, and color 
 \end{enumerate}
 % End SubSubSection
 
@@ -1004,7 +1004,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
-	\item \textit{Virtually all information given in the application shall be verifiable by subject matter experts or generally reliable sources. The threshold for "virtually all" shall be no lesser than 99\% } \\ \textbf{Rationale:} Incorrect information will mislead users, which may lead to devastating consequences and users may stop using the application after discovering it duped them.
+	\item \textit{Virtually all information given in the application shall be verifiable by subject matter experts or generally reliable sources. The threshold for "virtually all" shall be no lesser than 99\%.} \\ \textbf{Rationale:} Incorrect information will mislead users, which may lead to devastating consequences and users may stop using the application after discovering it duped them.
 \end{enumerate}
 % End SubSubSection
 
@@ -1069,8 +1069,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{OE-IA}1. ]
 	\item \textit{This application shall be compatible with mobile devices running the \hyperref[Android]{\textbf{Android}} platform.} \\ \textbf{Rationale:} This is part of the specification.
-    \item \textit{This application shall conform to the terms of service of the \hyperref[Android]{\textbf{Android}} Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for \hyperref[Android]{\textbf{Android}} users to download it without sideloading is to be approved by the \hyperref[Android]{\textbf{Android}} Application Store.
-    \item \textit{If a parallel iOS mobile application is developed, it shall conform to the terms of service of the Apple Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for Apple users to download it without sideloading is to be approved by the Apple Application Store.
+    \item \textit{This application shall conform to the terms of service of the \hyperref[Android]{\textbf{Android}} Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for \hyperref[Android]{\textbf{Android}} users to download it without sideloading is for the application to be approved by the \hyperref[Android]{\textbf{Android}} Application Store.
+    \item \textit{If a parallel iOS mobile application is developed, it shall conform to the terms of service of the Apple Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for Apple users to download it without sideloading is for the application to be approved by the Apple Application Store.
     
 \end{enumerate}
 % End SubSubSection
@@ -1270,7 +1270,7 @@ Other innovative features we came up with include:
 \begin{itemize}
 	\item Ability to add custom \hyperref[Recipe]{\textbf{recipe}} to the system, allowing users to share their creation with others.
 	\item Request \hyperref[Dish]{\textbf{dish}} recommendations based on the user's previous searches.
-	\item Considerations of user's allergies and dietary restrictions.
+	\item Considerations of user's allergies, and dietary restrictions.
 	\item A browsing format enabling users to see \hyperref[Dish]{\textbf{dishes}} previously classified by the application.
 	\item A rating system, allowing users to recommend to others which \hyperref[Dish]{\textbf{dishes}} to try and which to avoid
 	\item Partnerships with restaurants, with an emphasis on small, local restaurants, which will support the restaraunt industry
@@ -1293,10 +1293,17 @@ Other innovative features we came up with include:
 
 \textbf{Michael Roberts:}
 \begin{enumerate}
-	\item TODO
+	\item Section 5.1-5.4: Created non-functional requirements and their rationales. Improved them based on peer feedback.
+	\item Section 6: Created and wrote the section.
+	\item Section 3: Critiqued and improved the use case diagram.
+	\item Section 5.5-5.8: Provided extensive feedback for the non-functional requirements and their rationales.
+	\item Section 1.2, 2.1-2: Rephrased a few words.
 \end{enumerate}
 
-\textbf{Signature:} TODO \\
+\begin{figure}[H]
+ 	\centering
+    \includegraphics[width=\textwidth]{image/A_Michael_Roberts_Signature.png}
+\end{figure}
 
 \textbf{Sathurshan Arulmohan:}
 \begin{enumerate}
