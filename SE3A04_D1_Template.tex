@@ -1129,10 +1129,14 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:access_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{SR-AC}1. ]
-	\item \textit{User authentication shall be required for storing identification history, ensuring only authorized users access their data.}
-	\\ \textbf{Rationale:} To protect user privacy and security, only authenticated users must be able to store and access their identification history. This prevents unauthorized access to sensitive information and ensures that personal data remains secure within the system.
+	\item \textit{Users must be authenticated before accessing their stored data.}
+	\\ \textbf{Rationale:} To safeguard user privacy and security, authentication is required before granting access to stored identification history. This prevents unauthorized individuals from viewing or modifying sensitive user information.
+
+	\item \textit{Only the account owner may log in, provided that their password and/or two-factor authentication device has not been compromised.}
+	\\ \textbf{Rationale:} Secure authentication mechanisms must ensure that only the rightful owner of an account can gain access. This measure mitigates the risk of unauthorized access in cases where login credentials or authentication devices remain uncompromised.
 \end{enumerate}
 % End SubSubSection
+
 
 \subsubsection{Integrity Requirements}
 \label{ssub:integrity_requirements}
