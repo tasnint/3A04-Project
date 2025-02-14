@@ -1142,24 +1142,27 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:integrity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{SR-INT}1. ]
-    \item \textit{The app must inform and ask users for the usage of their information.}
-    \\ \textbf{Rationale:} This is a requirement under the Google Play Developer Distribution Agreement \cite{GooglePlayAgreement}. Users must be explicitly informed about how their data will be used, ensuring transparency and compliance with privacy policies.
-
-    \item \textit{The app must provide users a legally adequate privacy notice.}
-    \\ \textbf{Rationale:} This is a requirement under the Google Play Developer Distribution Agreement \cite{GooglePlayAgreement}. A clear and legally adequate privacy notice ensures users understand their rights and how their personal data is managed, promoting trust and regulatory compliance.
+    \item \textit{User data transmitted within the app must be encrypted.}
+    \\ \textbf{Rationale:} Data encryption is essential to prevent user data from being intercepted or stolen. Leading applications like WhatsApp implement encryption to secure user information \cite{EncryptionBestPractices}.
 \end{enumerate}
 % End SubSubSection
+
 
 \subsubsection{Privacy Requirements}
 \label{ssub:privacy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{SR-P}1. ]
-	\item \textit{The system shall allow users to delete their stored identification history on request.}
-	\\ \textbf{Rationale:} Users must have control over their personal data. Allowing users to delete their stored identification history ensures compliance with privacy regulations and enhances user trust. This feature provides transparency and empowers users to manage their data as needed.
-	\item \textit{The system shall permanently delete all user data when a user account is removed from the system.}
-	\\ \textbf{Rationale:} Retaining user data after account deletion serves no functional purpose and poses potential privacy risks. To ensure compliance with data protection principles outlined in PIPEDA \cite{PIPEDA1}, the application shall enforce complete data removal upon account deletion.
+    \item \textit{The app must inform and ask users for the usage of their information.}
+    \\ \textbf{Rationale:} This is a requirement under the Google Play Developer Distribution Agreement \cite{GooglePlayAgreement}. Users must be explicitly informed about how their data will be used, ensuring transparency and compliance with privacy policies.
+
+    \item \textit{The app must provide users a legally adequate privacy notice.}
+    \\ \textbf{Rationale:} This is a requirement under the Google Play Developer Distribution Agreement \cite{GooglePlayAgreement}. A clear and legally adequate privacy notice ensures users understand their rights and how their personal data is managed, promoting trust and regulatory compliance.
+
+    \item \textit{The app must allow users to delete their stored identification history upon request.}
+    \\ \textbf{Rationale:} This is a requirement to ensure user control over their personal data in compliance with privacy regulations \cite{GooglePlayAgreement}. Users must be given the ability to delete their stored identification history to maintain transparency and data protection.
 \end{enumerate}
 % End SubSubSection
+
 
 \subsubsection{Audit Requirements}
 \label{ssub:audit_requirements}
