@@ -80,8 +80,8 @@ Users are required to create an account on \hyperref[WTD]{\textbf{WTD}} to acces
 % Begin SubSection
 
 \begin{itemize}
-	\item \label{Android}{\textbf{Android:}} Open source mobile operating system based on the Linux kernal.
-	\item \label{Dish}{\textbf{Dish:}} A specific preparation of food, consisting a combination of ingredients and cooked in a particular manner.
+	\item \label{Android}{\textbf{Android:}} Open source mobile operating system based on the Linux kernel.
+	\item \label{Dish}{\textbf{Dish:}} A specific preparation of food, consisting of a combination of ingredients and cooked in a particular manner.
 	\item \label{Recipe}{\textbf{Recipe:}} A set of instructions detailing the ingredients, quantities and steps required to prepare a specific \hyperref[Dish]{\textbf{dish}}.
 	\item \label{WTD}{\textbf{WTD:}} What’s That Dish; the name of the application.
 \end{itemize}
@@ -101,11 +101,11 @@ Users are required to create an account on \hyperref[WTD]{\textbf{WTD}} to acces
 \label{sub:overview}
 % Begin SubSection
 
-Section 2 talks about the overall product description from product perspective, product functions, user characteristics, constrains, assumptions and dependencies, and apportioning of requirements.
+Section 2 provides a summary of the overall system from a product perspective including functions, user characteristics, constraints, assumptions and dependencies, and apportioning of requirements. 
 Section 3 presents a Use Case Diagram outlining the use case for the \hyperref[Dish]{\textbf{dish}} identifier.
 Section 4 highlights the functional requirements by detailing the Business Events and all viewpoints.
 Section 5 outlines the non-functional requirements of the application.
-Finally, section 6 describes the innovative feature of the application.
+Finally, section 6 describes the innovative features of the application.
 % End SubSection
 
 % End Section
@@ -116,9 +116,9 @@ Finally, section 6 describes the innovative feature of the application.
 \subsection{Product Perspective}
 \label{sub:product_perspective}
 
-\hyperref[WTD]{\textbf{WTD}} is an \hyperref[Android]{\textbf{Android}}-based mobile application for \hyperref[Dish]{\textbf{dish}} identification, allowing users to recognize and learn about any \hyperref[Dish]{\textbf{dish}} they come across online, whether it's a screenshot from a social media applcation or a Facebook post. Similar to Google Lens, Yuka, and MyFitnessPal, it enables users to scan \hyperref[Dish]{\textbf{dishes}} for nutritional information or perform image-based searches. However, "What’s That Dish?!" sets itself apart with a multi-modal identification approach, letting users identify \hyperref[Dish]{\textbf{dishes}} via photos, text descriptions, or ingredient lists, rather than relying solely on image recognition. The platform integrates Google Maps API to recommend nearby restaurants serving identified \hyperref[Dish]{\textbf{dishes}}, sharing similarities with applications like OpenTable and Zomato. Additionally, the application connects to external resources through third-party APIs, such as the Canada Nutrient File database for nutrition data aligned with Health Canada guidelines and machine learning models for image and natural language processing.
+\hyperref[WTD]{\textbf{WTD}} is an \hyperref[Android]{\textbf{Android}}-based mobile application for \hyperref[Dish]{\textbf{dish}} identification, allowing users to recognize and learn about any \hyperref[dish]{\textbf{dish}} they come across in real life or even online, whether it's a screenshot from a social media application or a Facebook post. Similar to Google Lens, Yuka, and MyFitnessPal, it enables users to scan \hyperref[dish]{\textbf{dishes}} for nutritional information or perform image-based searches. However, \hyperref[WTD]{\textbf{WTD}} sets itself apart with a multi-modal identification approach, letting users identify \hyperref[Dish]{\textbf{dishes}} via photos, text descriptions, or ingredient lists, rather than relying solely on image recognition. The platform integrates Google Maps API to recommend nearby restaurants serving identified \hyperref[Dish]{\textbf{dishes}}, sharing similarities with applications like OpenTable and Zomato. Additionally, the application connects to external resources through third-party APIs, such as the Canada Nutrient File database for nutrition data aligned with Health Canada guidelines and open-source image and natural language processing models.
 
-The application also includes two secondary features: Custom \hyperref[Recipe]{\textbf{Recipe}} Submission, which allows users to add \hyperref[Recipe]{\textbf{recipes}} by providing ingredients, portions, and preparation steps, and Personalized Recommendations, which uses machine learning to suggest \hyperref[Dish]{\textbf{dishes}} based on user preferences and search history. These features expand the food database with community-generated content while delivering a personalized and engaging food discovery experience.
+The application also includes two secondary features: Custom \hyperref[Recipe]{\textbf{Recipe}} Submission, which allows users to add \hyperref[Recipe]{\textbf{recipes}} by providing ingredients, portions, and preparation steps, and Personalized Recommendations, which suggests \hyperref[Dish]{\textbf{dishes}} based on user preferences and search history. These features expand the food database with community-generated content while delivering a personalized and engaging food discovery experience.
 
 
 \begin{figure}[H]
@@ -218,9 +218,9 @@ Overall, we expect a single user type or “persona” who is interested in iden
 % Begin SubSection
 \begin{enumerate}
 	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following Android data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
-	\item \textbf{Budget Constraints: }The project has budget of 0 dollars, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized to minimize costs.
-	\item \textbf{Timeline Constraints: }The system must be developed within the allocated course duration, limiting the scope of certain advanced features such as restaurant API integration pr expanded multilingual support may need to be postponed to future versions.
-	\item \textbf{Food Constraints: } They system will only work with and foods and recipes that are edible by humans.
+	\item \textbf{Budget Constraints: }The project has a budget of 0 dollars, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized.
+	\item \textbf{Timeline Constraints: }The system must be developed within the allocated course duration, limiting the scope of certain advanced features such as restaurant API integration or expanded multilingual support may need to be postponed to future versions.
+	\item \textbf{Food Constraints: } The system will only work with foods and recipes that are edible by humans.
 \end{enumerate}
 % End SubSection
 
@@ -238,8 +238,6 @@ Assumptions made in interpreting what the software being developed is aiming to 
 	\end{enumerate}
 
 Any other assumptions made that, if it fails to hold, could require you to change the requirements:
-	%\item List each of the factors that affect the requirements stated in the SRS
-	%\item These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS
 	\begin{enumerate}
 		\item The system shall support the latest version of the Android operating system.
 		\item Assume that the cost, availability, and accessibility of free-tier APIs will remain unchanged.
@@ -255,7 +253,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \begin{enumerate}
     \item \textbf{Multilingual Support:} The initial version of the system will support English only, with additional language options planned for future updates.
     \item \textbf{Offline Mode:} The first phase of offline functionality will include basic food recognition and ingredient lookup, while advanced offline recommendations will be introduced in later versions.
-    \item \textbf{Integration with Third-Party Applications:} The system will expand to integrate with food-related services, including restaurants, delivery platforms like UberEats, and meal planning applications.
+    \item \textbf{Integration with Third-Party Applications:} The system will expand to integrate with a wider range of food-relevant services, including delivery platforms like UberEats, and meal planning applications.
     \item \textbf{Voice Input and Accessibility Enhancements:} Later iterations will incorporate voice recognition, assisted voice input, and screen reader compatibility for improved accessibility.
 \end{enumerate}
 % End SubSection
