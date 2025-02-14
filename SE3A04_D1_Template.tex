@@ -132,51 +132,58 @@ The application also includes two secondary features: Custom \hyperref[Recipe]{\
 
 The application's core features are divided into several modules. Each module contains functions that address the main needs of the user, such as creating an account or identifying unknown \hyperref[Dish]{\textbf{dishes}}.
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.2} % Adjust row spacing
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
-\textbf{Module} & \textbf{Functions} \\
-\hline
-\textbf{Account Management} &
-\begin{itemize}
-    \item \textbf{Create Account} – Allows new users to register within the app
-    \item \textbf{Login} – Authenticates returning users for personalized features
-    \item \textbf{Deactivate Account} – Removes or deactivates user data upon request
-\end{itemize} \\
-\hline
-\textbf{Dish Inquiry} &
-\begin{itemize}
-    \item \textbf{Inquire About Unknown Food} – User provides an image, description, or ingredients for identification
-    \item \textbf{Confirm or Reject Results} – User feedback helps refine AI accuracy
-    \item \textbf{Handle Expert Conflicts} – Resolves differing predictions among the three experts
-\end{itemize} \\
-\hline
-\textbf{Food Info \& Recipes} &
-\begin{itemize}
-    \item \textbf{Search Food Information} – Displays cultural background, \hyperref[Recipe]{\textbf{recipe}} ideas, and dietary notes
-    \item \textbf{Add Custom Recipe} – Allows users to submit personal \hyperref[Recipe]{\textbf{recipes}} for future reference
-    \item \textbf{Register Restaurant} – Enables addition of official \hyperref[Dish]{\textbf{dish}} details from restaurants
-\end{itemize} \\
-\hline
-\textbf{Recommendation Engine} &
-\begin{itemize}
-    \item \textbf{Ask for Food Recommendations} – Suggests \hyperref[Dish]{\textbf{dishes}} based on user preferences
-    \item \textbf{Refine Recommendations} – Improves suggestions using user feedback on accuracy
-\end{itemize} \\
-\hline
-\textbf{Data Management} &
-\begin{itemize}
-    \item \textbf{Store User Interactions} – Logs confirmed/rejected identifications for AI training
-    \item \textbf{Manage API Keys} – Secures AI service credentials within the codebase
-    \item \textbf{Maintain Expert Models} – Coordinates updates among the three expert modules
-\end{itemize} \\
-\hline
-\end{tabular}
-\caption{Modules and Major Functions of the \hyperref[Dish]{\textbf{dish}}-Identification App}
-\label{tab:dish-functions}
-\end{table}
+\\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.2} % Adjust row spacing
+	\begin{tabular}{|p{4cm}|p{10cm}|}
+	\hline
+	\textbf{Module} & \textbf{Functions} \\
+	\hline
+	\textbf{Account Management} &
+	\begin{itemize}
+		\item \textbf{Create Account} – Allows new users to register within the app
+		\item \textbf{Login} – Authenticates returning users to access their account
+		\item \textbf{Delete User Account} – Removes user account and associated data upon request
+	\end{itemize} \\
+	\hline
+	\textbf{Dish Inquiry} &
+	\begin{itemize}
+		\item \textbf{Inquire About Unknown Dish} – User provides an image, description, or ingredients for identification
+		\item \textbf{Confirm or Reject Results} – User feedback helps refine identification accuracy 
+		\item \textbf{Handle Expert Conflicts} – Resolves differing predictions among the three experts
+	\end{itemize} \\
+	\hline
+	\textbf{Food Information \& Recipes} &
+	\begin{itemize}
+		\item \textbf{Search Food Information} – Displays searched dish and its associated recipe, cultural background, and nutritional information
+		\item \textbf{Add Custom Recipe} – Allows users to submit personal
+	recipes for future reference
+		\item \textbf{Register Restaurant} – Enables addition of official dish details from restaurants
+	\end{itemize} \\
+	\hline
+	\textbf{Recommendation Engine} &
+	\begin{itemize}
+		\item \textbf{Ask for Food Recommendations} – Suggests dishes based on user preferences and activity history
+		\item \textbf{Refine Recommendations} – Improves suggestions using user feedback on accuracy
+	\end{itemize} \\
+	\hline
+	\textbf{Data Management} &
+	\begin{itemize}
+		\item \textbf{Store User Interactions} – Logs confirmed/rejected identifications for AI training
+		\item \textbf{Manage API Keys} – Secures AI service credentials within the codebase
+		\item \textbf{Maintain Expert Models} – Coordinates updates among the three expert modules
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+	\caption{Modules and Major Functions of the Dish-Identification App}
+	\label{tab:dish-functions}
+	\end{table}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{image/2.2_State-Diagram.pdf}
+		\caption{\textbf{Figure 2: }State Diagram}
+	\end{figure}
 
 \subsection{User Characteristics}
 \label{sub:user_characteristics}
@@ -210,10 +217,10 @@ Overall, we expect a single user type or “persona” who is interested in iden
 \label{sub:constraints}
 % Begin SubSection
 \begin{enumerate}
-	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following \hyperref[Android]{\textbf{Android}} data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
-	\item \textbf{Budget Constraints: }The project has a limited budget, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized to minimize costs.
+	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following Android data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
+	\item \textbf{Budget Constraints: }The project has budget of 0 dollars, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized to minimize costs.
 	\item \textbf{Timeline Constraints: }The system must be developed within the allocated course duration, limiting the scope of certain advanced features such as restaurant API integration pr expanded multilingual support may need to be postponed to future versions.
-	\item \textbf{Food Constraints: } They system will only work with and process \hyperref[Dish]{\textbf{dishes}} and \hyperref[Recipe]{\textbf{recipes}} that are edible by humans.
+	\item \textbf{Food Constraints: } They system will only work with and foods and recipes that are edible by humans.
 \end{enumerate}
 % End SubSection
 
@@ -222,8 +229,8 @@ Overall, we expect a single user type or “persona” who is interested in iden
 % Begin SubSection
 Assumptions made in interpreting what the software being developed is aiming to achieve:
 	\begin{enumerate}
-		\item The user will provide clear and distinguishable images of \hyperref[Dish]{\textbf{dishes}} to enable accurate identification by the Image Recognition Expert.
-		\item The Text Description Expert assumes that users will provide detailed descriptions of \hyperref[Dish]{\textbf{dishes}}, including key attributes such as color, texture, taste, smell, or preparation method.
+		\item The Image Recognition Expert assumes that users will provide clear and distinguishable images of food items to enable accurate identification.
+		\item The Text Description Expert assumes that users will provide detailed descriptions of food items, including key attributes such as color, texture, taste, smell, or smell.
 		\item The Ingredient-Based Expert assumes that users will provide a complete and accurate ingredient list for identification to work correctly.
 		\item Users will have an active internet connection when interacting with the system for real-time processing and recommendations.
 		\item The personalized recommendation system assumes that users submit multiple \hyperref[Dish]{\textbf{dishes}} over time to generate tailored suggestions.
@@ -234,9 +241,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 	%\item List each of the factors that affect the requirements stated in the SRS
 	%\item These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS
 	\begin{enumerate}
-		\item The system shall support the latest version of the \hyperref[Android]{\textbf{Android}} operating system.
-		\item Assume that the cost, availability, and accessibility of third-party APIs will remain unchanged.
-		\item The system complies with the latest version of GDPR \cite{GDPR}, PIPEDA \cite{PIPEDA1}, and other data protection regulations.
+		\item The system shall support the latest version of the Android operating system.
+		\item Assume that the cost, availability, and accessibility of free-tier APIs will remain unchanged.
+		\item The system complies with the latest version of GDPR, PIPEDA, and other data protection regulations.
 		\item The food database used for identification is accurate, regularly updated, and includes a diverse range of cuisines.
 	\end{enumerate}
 
@@ -247,7 +254,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSection
 \begin{enumerate}
     \item \textbf{Multilingual Support:} The initial version of the system will support English only, with additional language options planned for future updates.
-    \item \textbf{Offline Mode:} Future versions will introduce offline functionality with local storage or caching for limited \hyperref[Dish]{\textbf{dish}} recognition.
+    \item \textbf{Offline Mode:} The first phase of offline functionality will include basic food recognition and ingredient lookup, while advanced offline recommendations will be introduced in later versions.
     \item \textbf{Integration with Third-Party Applications:} The system will expand to integrate with food-related services, including restaurants, delivery platforms like UberEats, and meal planning applications.
     \item \textbf{Voice Input and Accessibility Enhancements:} Later iterations will incorporate voice recognition, assisted voice input, and screen reader compatibility for improved accessibility.
 \end{enumerate}
@@ -1305,7 +1312,13 @@ Other innovative features we came up with include:
 
 \textbf{Tanisha Tasnin:}
 \begin{enumerate}
-	\item TODO
+	\item 2.4 - 2.6
+	\item Section 3
+	\item Created diagrams for 2.1 and 2.2
+	\item Incorporated feedback and provided edits for 2.1 and 2.2 with Imran
+	\item Provided feedback for Section 4
+	\item Wrote 1.2 as a group
+	\item Incoporated group's feedback and edits to produce a revised version of 1.2
 \end{enumerate}
 
 \textbf{Signature:} \\
