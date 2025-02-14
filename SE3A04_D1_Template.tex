@@ -1186,7 +1186,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \subsubsection{Integrity Requirements}
 \label{ssub:integrity_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{SR-P}1. ]
+\begin{enumerate}[{SR-INT}1. ]
     \item \textit{The app must inform and ask users for the usage of their information.}
     \\ \textbf{Rationale:} This is a requirement under the Google Play Developer Distribution Agreement \cite{GooglePlayAgreement}. Users must be explicitly informed about how their data will be used, ensuring transparency and compliance with privacy policies.
 
@@ -1200,7 +1200,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{SR-P}1. ]
 	\item \textit{The system shall allow users to delete their stored identification history on request.}
-	\\ \textbf{Rationale:}  Users must have control over their personal data. Allowing users to delete their stored identification history ensures compliance with privacy regulations and enhances user trust. This feature provides transparency and empowers users to manage their data as needed.
+	\\ \textbf{Rationale:} Users must have control over their personal data. Allowing users to delete their stored identification history ensures compliance with privacy regulations and enhances user trust. This feature provides transparency and empowers users to manage their data as needed.
+	\item \textit{The system shall permanently delete all user data when a user account is removed from the system.}
+	\\ \textbf{Rationale:} Retaining user data after account deletion serves no functional purpose and poses potential privacy risks. To ensure compliance with data protection principles outlined in PIPEDA \cite{PIPEDA1}, the application shall enforce complete data removal upon account deletion.
 \end{enumerate}
 % End SubSubSection
 
@@ -1209,7 +1211,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{SR-AU}1. ]
 	\item \textit{The system shall log all expert consultations and final decisions, including timestamps and user interactions, for auditing purposes.}
-	\\ \textbf{Rationale:} Maintaining logs of expert consultations and decisions ensures accountability and traceability. These logs help track system usage, detect potential issues, and support compliance with regulatory or internal audit requirements. Proper logging also enhances transparency and trust in the system’s decision-making process.
+	\\ \textbf{Rationale:} Maintaining logs of expert consultations and decisions ensures accountability and traceability. These logs help track system usage, detect potential issues, and support compliance with regulatory or internal audit requirements.
 \end{enumerate}
 % End SubSubSection
 
@@ -1233,7 +1235,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{CP-C}1. ]
 	\item \textit{The application shall ensure that identifications are culturally sensitive and do not promote stereotypes or biases.}
-	\\ \textbf{Rationale:} sers must feel respected and represented fairly when using the application. Ensuring that identifications are culturally sensitive helps prevent discrimination, reduces potential harm, and promotes inclusivity. This approach fosters a positive user experience and aligns with ethical and legal standards for diversity and equity.
+	\\ \textbf{Rationale:} Users must feel respected and represented fairly when using the application. Ensuring that identifications are culturally sensitive helps prevent discrimination, reduces potential harm, and promotes inclusivity. This approach fosters a positive user experience and aligns with ethical and legal standards for diversity and equity.
 \end{enumerate}
 % End SubSubSection
 
@@ -1276,7 +1278,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:standards_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LR-STD}1. ]
-    \item \textit{The app should not use notifications for promotional/advertisement purposes.}
+    \item \textit{The application should not use notifications for promotional or advertisement purposes.}
     \\ \textbf{Rationale:} This is a standard for app quality in terms of the visual experience, as defined by Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. Notifications should be used appropriately to enhance user experience and should not be misused for cross-promotion or advertisements.
 
     \item \textit{Touch targets in the app should have a size of at least 48dp.}
@@ -1285,7 +1287,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
     \item \textit{Any personal or sensitive data should not be logged to the system log or a log specific to the app.}
     \\ \textbf{Rationale:} This is a standard for app quality in terms of privacy and security, as outlined in Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. Logging sensitive data can lead to security vulnerabilities and data exposure, which must be avoided.
 
-    \item \textit{The app’s internal storage should be used to store any sensitive data.}
+    \item \textit{The application's internal storage should be used to store any sensitive data.}
     \\ \textbf{Rationale:} Storing sensitive data in internal storage enhances security and prevents unauthorized access, as per best practices defined in Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}.
 \end{enumerate}
 % End SubSubSection
@@ -1321,8 +1323,6 @@ preparation styles of food or trying a new dish from a familar one. Other innova
 \section{Division of Labour}
 \label{sec:division_of_labour}
 % Begin Section
-Include a Division of Labour sheet which indicates the contributions of each team member. This sheet must be signed by all team members.
-% End Section
 
 \textbf{Imran Chowdhury:}
 \begin{enumerate}
@@ -1351,17 +1351,7 @@ Include a Division of Labour sheet which indicates the contributions of each tea
 	\item TODO
 \end{enumerate}
 
-%\newpage
-%\section*{IMPORTANT NOTES}
-%\begin{itemize}
-%	\item Be sure to include all sections of the template in your document regardless whether you have something to write for each or not
-%	\begin{itemize}
-%		\item If you do not have anything to write in a section, indicate this by the \emph{N/A}, \emph{void}, \emph{none}, etc.
-%	\end{itemize}
-%	\item Uniquely number each of your requirements for easy identification and cross-referencing
-%	\item Highlight terms that are defined in Section~1.3 (\textbf{Definitions, Acronyms, and Abbreviations}) with \textbf{bold}, \emph{italic} or \underline{underline}
-%	\item For Deliverable 1, please highlight, in some fashion, all (you may have more than one) creative and innovative features. Your creative and innovative features will generally be described in Section~2.2 (\textbf{Product Functions}), but it will depend on the type of creative or innovative features you are including.
-%\end{itemize}
+% End Section
 
 \end{document}
 
