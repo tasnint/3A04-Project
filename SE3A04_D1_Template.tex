@@ -55,33 +55,37 @@
 \label{sec:introduction}
 % Begin Section
 
-This document outlines What's That Dish, an Android mobile application for identifying food and dishes. The document will cover the application's purpose, overall product description, stakeholder use cases, main business events from perspective of various viewpoints, and product requirements.
+This document outlines \textbf{What's That Dish}, an \hyperref[Android]{\textbf{Android}} mobile application for identifying \hyperref[Dish]{\textbf{dishes}}. The document will cover the application's purpose, overall product description, stakeholder use cases, main business events from perspective of various viewpoints, and product requirements.
 
 
 \subsection{Purpose}
 \label{sub:purpose}
 % Begin SubSection
-This document focuses on the functional and non-functional requirements of What's That Dish. The intended audience includes internal stakeholders such as the client, software developers, and software architects.
+This document focuses on the functional and non-functional requirements of \textbf{What's That Dish}. The intended audience includes internal stakeholders such as the client, software developers, and software architects.
 % End SubSection
 
 \subsection{Scope}
 \label{sub:scope}
 % Begin SubSection
-What’s That Dish, the intelligent food identification application, helps users identify dishes based on their input of an image, text description, or ingredients list submission. The system utilizes three expert modules, Image Recognition, Text Description, and Ingredient-Based Experts for identification. Additionally, the system provides nutritional information and restaurant recommendations while storing user data to deliver personalized food suggestions.
+\textbf{What’s That Dish}, \hyperref[WTD]{\textbf{WTD}}, is an intelligent \hyperref[Dish]{\textbf{dish}} identification application that helps users identify \hyperref[Dish]{\textbf{dishes}} based on their input of an image, text description, or ingredients list submission. The system utilizes three expert modules, Image Recognition, Text Description, and Ingredient-Based Experts for identification. Additionally, the system provides nutritional information and restaurant recommendations while storing user data to deliver personalized \hyperref[Dish]{\textbf{dish}} suggestions.
 
-Users are required to create an account on What’s That Dish to access its features. “What’s that dish?!”, the app’s primary and default mode, allows users to submit dish details (photo, text, and/or ingredient list), and the system processes the input through the combined effort of the three expert modules. “Add Custom Recipe” and “Personalized Recommendations” serve as secondary features that expand the functionality of the platform. In “Add Custom Recipe,” the system prompts users to provide detailed recipes of their unique dishes including ingredients, portion sizes, and preparation steps. This feature contributes to the development of a diverse and comprehensive food database for the What’s That Dish community. Meanwhile, the “Personalized Recommendations” mode curates a tailored experience by suggesting dishes based on a user’s previous inquiries and preferences, while also recommending local restaurants based on location data.
+Users are required to create an account on \hyperref[WTD]{\textbf{WTD}} to access its features. “What’s that dish?!”, the app’s primary and default mode, allows users to submit \hyperref[Dish]{\textbf{dish}} details (photo, text, and/or ingredient list), and the system processes the input through the combined effort of the three expert modules. “Add Custom \hyperref[Recipe]{\textbf{Recipe}}" and “Personalized Recommendations” serve as secondary features that expand the functionality of the platform. In “Add Custom Recipe,” the system prompts users to provide detailed \hyperref[Recipe]{\textbf{recipes}} of their unique \hyperref[Dish]{\textbf{dishes}} including ingredients, portion sizes, and preparation steps. This feature contributes to the development of a diverse and comprehensive food database for the \hyperref[WTD]{\textbf{WTD}} community. Meanwhile, the “Personalized Recommendations” mode curates a tailored experience by suggesting \hyperref[Dish]{\textbf{dishes}} based on a user’s previous inquiries and preferences, while also recommending local restaurants based on location data.
 
-What’s That Dish aims to be every foodie’s go-to solution when they stumble upon a dish on a social media applcation, in real life, or anywhere else that sparks their curiosity, yet they have no idea what it is or where it originates from. By offering multiple input options, the platform ensures flexibility and accessibility for a wide range of users. The application seeks to foster an interactive community where users contribute recipes, enriching the platform’s database and promoting food discovery. By cultivating a user-driven ecosystem, the application not only enhances personalized recommendations but also encourages cultural exchange through shared recipes. Additionally, the system aims to establish partnerships with local restaurants, increasing food exploration opportunities while supporting the restaurant industry.
+\hyperref[WTD]{\textbf{WTD}} aims to be every foodie’s go-to solution when they stumble upon a dish on a social media applcation, in real life, or anywhere else that sparks their curiosity, yet they have no idea what it is or where it originates from. By offering multiple input options, the platform ensures flexibility and accessibility for a wide range of users. The application seeks to foster an interactive community where users contribute \hyperref[Recipe]{\textbf{recipes}}, enriching the platform’s database and promoting \hyperref[Dish]{\textbf{dish}} discovery. By cultivating a user-driven ecosystem, the application not only enhances personalized recommendations but also encourages cultural exchange through shared \hyperref[Recipe]{\textbf{recipes}}. Additionally, the system aims to establish partnerships with local restaurants, increasing food exploration opportunities while supporting the restaurant industry.
 
 % End SubSection
 
 \subsection{Definitions, Acronyms, and Abbreviations}
 \label{sub:definitions_acronyms_and_abbreviations}
 % Begin SubSection
+
 \begin{itemize}
-	\item Provide the definitions of all terms, acronyms, and abbreviations required to properly interpret the SRS.
-	\item This should be in alphabetical order.
+	\item \label{Android}{\textbf{Android:}} Open source mobile operating system based on the Linux kernal.
+	\item \label{Dish}{\textbf{Dish:}} A specific preparation of food, consisting a combination of ingredients and cooked in a particular manner.
+	\item \label{Recipe}{\textbf{Recipe:}} A set of instructions detailing the ingredients, quantities and steps required to prepare a specific \hyperref[Dish]{\textbf{dish}}.
+	\item \label{WTD}{\textbf{WTD:}} What’s That Dish; the name of the application.
 \end{itemize}
+
 % End SubSection
 
 \subsection{References}
@@ -111,9 +115,9 @@ What’s That Dish aims to be every foodie’s go-to solution when they stumble 
 \subsection{Product Perspective}
 \label{sub:product_perspective}
 
-"What’s That Dish" is an Android-based mobile application for food identification, allowing users to recognize and learn about any dish they come across online, whether it's a screenshot from a social media applcation or a Facebook post. Similar to Google Lens, Yuka, and MyFitnessPal, it enables users to scan food items for nutritional information or perform image-based searches. However, "What’s That Dish?!" sets itself apart with a multi-modal identification approach, letting users identify dishes via photos, text descriptions, or ingredient lists, rather than relying solely on image recognition. The platform integrates Google Maps API to recommend nearby restaurants serving identified dishes, sharing similarities with applications like OpenTable and Zomato. Additionally, the application connects to external resources through third-party APIs, such as the Canada Nutrient File database for nutrition data aligned with Health Canada guidelines and machine learning models for image and natural language processing.
+\hyperref[WTD]{\textbf{WTD}} is an \hyperref[Android]{\textbf{Android}}-based mobile application for \hyperref[Dish]{\textbf{dish}} identification, allowing users to recognize and learn about any \hyperref[Dish]{\textbf{dish}} they come across online, whether it's a screenshot from a social media applcation or a Facebook post. Similar to Google Lens, Yuka, and MyFitnessPal, it enables users to scan \hyperref[Dish]{\textbf{dishes}} for nutritional information or perform image-based searches. However, "What’s That Dish?!" sets itself apart with a multi-modal identification approach, letting users identify \hyperref[Dish]{\textbf{dishes}} via photos, text descriptions, or ingredient lists, rather than relying solely on image recognition. The platform integrates Google Maps API to recommend nearby restaurants serving identified \hyperref[Dish]{\textbf{dishes}}, sharing similarities with applications like OpenTable and Zomato. Additionally, the application connects to external resources through third-party APIs, such as the Canada Nutrient File database for nutrition data aligned with Health Canada guidelines and machine learning models for image and natural language processing.
 
-The application also includes two secondary features: Custom Recipe Submission, which allows users to add recipes by providing ingredients, portions, and preparation steps, and Personalized Recommendations, which uses machine learning to suggest dishes based on user preferences and search history. These features expand the food database with community-generated content while delivering a personalized and engaging food discovery experience.
+The application also includes two secondary features: Custom \hyperref[Recipe]{\textbf{Recipe}} Submission, which allows users to add \hyperref[Recipe]{\textbf{recipes}} by providing ingredients, portions, and preparation steps, and Personalized Recommendations, which uses machine learning to suggest \hyperref[Dish]{\textbf{dishes}} based on user preferences and search history. These features expand the food database with community-generated content while delivering a personalized and engaging food discovery experience.
 
 
 \begin{figure}[H]
@@ -125,7 +129,7 @@ The application also includes two secondary features: Custom Recipe Submission, 
 \subsection{Product Functions}
 \label{sub:product_functions}
 
-The application's core features are divided into several modules. Each module contains functions that address the main needs of the user, such as creating an account or identifying unknown dishes.
+The application's core features are divided into several modules. Each module contains functions that address the main needs of the user, such as creating an account or identifying unknown \hyperref[Dish]{\textbf{dishes}}.
 
 \begin{table}[H]
 \centering
@@ -150,14 +154,14 @@ The application's core features are divided into several modules. Each module co
 \hline
 \textbf{Food Info \& Recipes} &
 \begin{itemize}
-    \item \textbf{Search Food Information} – Displays cultural background, recipe ideas, and dietary notes
-    \item \textbf{Add Custom Recipe} – Allows users to submit personal recipes for future reference
-    \item \textbf{Register Restaurant} – Enables addition of official dish details from restaurants
+    \item \textbf{Search Food Information} – Displays cultural background, \hyperref[Recipe]{\textbf{recipe}} ideas, and dietary notes
+    \item \textbf{Add Custom Recipe} – Allows users to submit personal \hyperref[Recipe]{\textbf{recipes}} for future reference
+    \item \textbf{Register Restaurant} – Enables addition of official \hyperref[Dish]{\textbf{dish}} details from restaurants
 \end{itemize} \\
 \hline
 \textbf{Recommendation Engine} &
 \begin{itemize}
-    \item \textbf{Ask for Food Recommendations} – Suggests dishes based on user preferences
+    \item \textbf{Ask for Food Recommendations} – Suggests \hyperref[Dish]{\textbf{dishes}} based on user preferences
     \item \textbf{Refine Recommendations} – Improves suggestions using user feedback on accuracy
 \end{itemize} \\
 \hline
@@ -169,46 +173,46 @@ The application's core features are divided into several modules. Each module co
 \end{itemize} \\
 \hline
 \end{tabular}
-\caption{Modules and Major Functions of the Dish-Identification App}
+\caption{Modules and Major Functions of the \hyperref[Dish]{\textbf{dish}}-Identification App}
 \label{tab:dish-functions}
 \end{table}
 
 \subsection{User Characteristics}
 \label{sub:user_characteristics}
 
-The target users for this dish-identification app are smartphone owners who enjoy discovering or learning more about various foods. Below is a general outline of their likely educational level, experience, and technical expertise:
+The target users for this \hyperref[Dish]{\textbf{dish}}-Identification app are smartphone owners who enjoy discovering or learning more about various \hyperref[Dish]{\textbf{dishes}}. Below is a general outline of their likely educational level, experience, and technical expertise:
 
 \begin{enumerate}
     \item \textbf{Education Level:}
     \begin{itemize}
         \item \textbf{Basic to Moderate General Education}: Most users will have at least basic literacy, as they need to read short instructions and interpret on-screen results.
-        \item \textbf{Above-Average Food Interest}: Given the nature of the app, users are likely more curious about cuisine than the average person. They may already recognize a variety of dishes or want to expand their knowledge of international foods and recipes.
+        \item \textbf{Above-Average Food Interest}: Given the nature of the app, users are likely more curious about cuisine than the average person. They may already recognize a variety of \hyperref[Dish]{\textbf{dishes}} or want to expand their knowledge of international \hyperref[Dish]{\textbf{dishes}} and \hyperref[Recipe]{\textbf{recipes}}.
     \end{itemize}
     
     \item \textbf{Experience:}
     \begin{itemize}
-        \item \textbf{Familiar with Smartphone Apps}: Users typically have some background in using social media or taking screenshots of images. Since they capture food photos or screenshots, they already demonstrate comfort with basic smartphone functions.
+        \item \textbf{Familiar with Smartphone Apps}: Users typically have some background in using social media or taking screenshots of images. Since they capture \hyperref[Dish]{\textbf{dish}} photos or screenshots, they already demonstrate comfort with basic smartphone functions.
         \item \textbf{No Special Experience Required}: The app is designed to be straightforward, so even someone using a food-discovery tool for the first time should be able to navigate features without difficulty (e.g., uploading an image, viewing results, and providing feedback).
     \end{itemize}
     
     \item \textbf{Technical Expertise:}
     \begin{itemize}
         \item \textbf{Basic App Navigation Skills}: The target user should know how to tap, swipe, or browse their camera roll. This covers a standard range of smartphone interactions.
-        \item \textbf{Minimal Learning Curve}: The user interface is kept simple, with clear instructions and intuitive steps for uploading images or entering dish descriptions. Even older or less tech-savvy individuals can easily figure out how to identify a dish.
+        \item \textbf{Minimal Learning Curve}: The user interface is kept simple, with clear instructions and intuitive steps for uploading images or entering \hyperref[Dish]{\textbf{dish}} descriptions. Even older or less tech-savvy individuals can easily figure out how to identify a \hyperref[Dish]{\textbf{dish}}.
     \end{itemize}
 \end{enumerate}
 
-Overall, we expect a single user type or “persona” who is interested in identifying dishes and exploring information about them. Advanced technical or culinary knowledge is not a requirement, although a curiosity about world cuisines is common among most users of this application.
+Overall, we expect a single user type or “persona” who is interested in identifying \hyperref[Dish]{\textbf{dishes}} and exploring information about them. Advanced technical or culinary knowledge is not a requirement, although a curiosity about world cuisines is common among most users of this application.
 % End SubSection
 
 \subsection{Constraints}
 \label{sub:constraints}
 % Begin SubSection
 \begin{enumerate}
-	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following Android data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
+	\item \textbf{Data and Storage Constraints: }Data submitted by the user must be stored locally or in a cloud database, following \hyperref[Android]{\textbf{Android}} data storage best practices. Storage limitations must be considered when handling high-resolution images to prevent excessive memory usage. If a cloud-based solution is used, the system must comply with API rate limits and data quotas.
 	\item \textbf{Budget Constraints: }The project has a limited budget, which impacts the choice of third-party APIs, storage solutions, and computational resources. This means that free or open-source image recognition and NLP models should be prioritized to minimize costs.
 	\item \textbf{Timeline Constraints: }The system must be developed within the allocated course duration, limiting the scope of certain advanced features such as restaurant API integration pr expanded multilingual support may need to be postponed to future versions.
-	\item \textbf{Food Constraints: } They system will only work with and process foods and recipes that are edible by humans.
+	\item \textbf{Food Constraints: } They system will only work with and process \hyperref[Dish]{\textbf{dishes}} and \hyperref[Recipe]{\textbf{recipes}} that are edible by humans.
 \end{enumerate}
 % End SubSection
 
@@ -217,19 +221,19 @@ Overall, we expect a single user type or “persona” who is interested in iden
 % Begin SubSection
 Assumptions made in interpreting what the software being developed is aiming to achieve:
 	\begin{enumerate}
-		\item The user will provide clear and distinguishable images of food items to enable accurate identification by the Image Recognition Expert.
-		\item The Text Description Expert assumes that users will provide detailed descriptions of food items, including key attributes such as color, texture, taste, smell, or preparation method.
+		\item The user will provide clear and distinguishable images of \hyperref[Dish]{\textbf{dishes}} to enable accurate identification by the Image Recognition Expert.
+		\item The Text Description Expert assumes that users will provide detailed descriptions of \hyperref[Dish]{\textbf{dishes}}, including key attributes such as color, texture, taste, smell, or preparation method.
 		\item The Ingredient-Based Expert assumes that users will provide a complete and accurate ingredient list for identification to work correctly.
 		\item Users will have an active internet connection when interacting with the system for real-time processing and recommendations.
-		\item The personalized recommendation system assumes that users submit multiple food items over time to generate tailored suggestions.
-		\item The application assumes that it will operate on Android devices with a minimum required processing power and storage space to handle food image recognition and database queries.
+		\item The personalized recommendation system assumes that users submit multiple \hyperref[Dish]{\textbf{dishes}} over time to generate tailored suggestions.
+		\item The application assumes that it will operate on \hyperref[Android]{\textbf{Android}} devices with a minimum required processing power and storage space to handle \hyperref[Dish]{\textbf{dish}} image recognition and database queries.
 	\end{enumerate}
 
 Any other assumptions made that, if it fails to hold, could require you to change the requirements:
 	%\item List each of the factors that affect the requirements stated in the SRS
 	%\item These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS
 	\begin{enumerate}
-		\item The system shall support the latest version of the Android operating system.
+		\item The system shall support the latest version of the \hyperref[Android]{\textbf{Android}} operating system.
 		\item Assume that the cost, availability, and accessibility of third-party APIs will remain unchanged.
 		\item The system complies with the latest version of GDPR, PIPEDA, and other data protection regulations.
 		\item The food database used for identification is accurate, regularly updated, and includes a diverse range of cuisines.
@@ -242,7 +246,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSection
 \begin{enumerate}
     \item \textbf{Multilingual Support:} The initial version of the system will support English only, with additional language options planned for future updates.
-    \item \textbf{Offline Mode:} Future versions will introduce offline functionality with local storage or caching for limited food recognition.
+    \item \textbf{Offline Mode:} Future versions will introduce offline functionality with local storage or caching for limited \hyperref[Dish]{\textbf{dish}} recognition.
     \item \textbf{Integration with Third-Party Applications:} The system will expand to integrate with food-related services, including restaurants, delivery platforms like UberEats, and meal planning applications.
     \item \textbf{Voice Input and Accessibility Enhancements:} Later iterations will incorporate voice recognition, assisted voice input, and screen reader compatibility for improved accessibility.
 \end{enumerate}
@@ -267,12 +271,12 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 
 \noindent {\bf Main Business Events:}
 \begin{itemize}
-	\item BE1 Inquiry of dish
+	\item BE1 Inquiry of \hyperref[Dish]{\textbf{dish}}
 	\item BE2 Create an account
 	\item BE3 Login
-	\item BE4 Add custom recipe
-	\item BE5 Search food data
-	\item BE6 Ask food recommendation
+	\item BE4 Add custom \hyperref[Recipe]{\textbf{recipe}}
+	\item BE5 Search \hyperref[Dish]{\textbf{dish}} data
+	\item BE6 Ask \hyperref[Dish]{\textbf{dish}} recommendation
 	\item BE7 Delete account
 \end{itemize}
 
@@ -289,25 +293,25 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 
 \begin{enumerate}[{\bf BE1.}]
 	% Business Event 1.
-	\item Inquiry of dish \#1
+	\item Inquiry of \hyperref[Dish]{\textbf{dish}} \#1
 	
-	\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. The user also has some details of the dish to inquire about.
+	\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. The user also has some details of the \hyperref[Dish]{\textbf{dish}} to inquire about.
 		% Viewpoints
 		\begin{enumerate}[{\bf VP1.}]
 			\item User \#1 \\
 				\textbf{Main Success Scenario:} 
 				\begin{enumerate}[{1.}]
-					\item User presses a button to inquire about a dish.
-					\item System prompts user to provide a photo of the food.
-					\item User uploads a picture from their gallary or takes a photo of the food.
+					\item User presses a button to inquire about a \hyperref[Dish]{\textbf{dish}}.
+					\item System prompts user to provide a photo of the \hyperref[Dish]{\textbf{dish}}.
+					\item User uploads a picture from their gallary or takes a photo of the \hyperref[Dish]{\textbf{dish}}.
 					\item System stores the picture.
-					\item System prompts the user to provide textual description of the food.
-					\item User types in description of food and presses a button to continue.
+					\item System prompts the user to provide textual description of the \hyperref[Dish]{\textbf{dish}}.
+					\item User types in description of \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
 					\item System stores the textual description.
-					\item System prompts user to provide the ingredients found on the dish.
-					\item User enters the ingredient(s) found in the dish and presses a button to continue.
+					\item System prompts user to provide the ingredients found on the \hyperref[Dish]{\textbf{dish}}.
+					\item User enters the ingredient(s) found in the \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
 					\item System stores the ingredient list.
-					\item System identifies the dish and displays the name of dish to the user as well as nutritional information.
+					\item System identifies the \hyperref[Dish]{\textbf{dish}} and displays the name of \hyperref[Dish]{\textbf{dish}} to the user as well as nutritional information.
 				\end{enumerate}
 				\textbf{Secondary Scenario:}
 				\begin{enumerate}
@@ -339,7 +343,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 						\item[11.i.2.] System notifies user that no input data was given.
 						\item[11.i.3.] System returns to home page.
 					\end{enumerate}
-					\item[11.ii.] System requests feedback of identified food.
+					\item[11.ii.] System requests feedback of identified \hyperref[Dish]{\textbf{dish}}.
 					\begin{enumerate}
 						\item[11.ii.1.] User enters feedback
 						\item[11.ii.2.] System analyzes feedback and thanks user for feedback.
@@ -352,7 +356,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\end{enumerate}
 			\item Restaurant \#3
 				\begin{enumerate}
-					\item[11.iv.] System provides 4-5 star restaurants serving the returned dish.
+					\item[11.iv.] System provides 4-5 star restaurants serving the returned \hyperref[Dish]{\textbf{dish}}.
 				\end{enumerate}
 			\item Security \#4 
 				\begin{enumerate}
@@ -360,25 +364,25 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\end{enumerate}
 			\item Customer Retention \#5
 				\begin{enumerate}
-					\item[11.vi.] System saves identified dish in back-end data storage under user history.
+					\item[11.vi.] System saves identified \hyperref[Dish]{\textbf{dish}} in back-end data storage under user history.
 				\end{enumerate}
 		\end{enumerate}
 
 		{\bf Global Scenario:} \\
-		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. The user also has some details of the dish to inquire about. \\
+		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. The user also has some details of the \hyperref[Dish]{\textbf{dish}} to inquire about. \\
 		\textbf{Main Success Scenario:} 
 		\begin{enumerate}[{1.}]
-			\item User presses a button to inquire about a dish.
-			\item System prompts user to provide a photo of the food.
-			\item User uploads a picture from their gallary or takes a photo of the food.
+			\item User presses a button to inquire about a \hyperref[Dish]{\textbf{dish}}.
+			\item System prompts user to provide a photo of the \hyperref[Dish]{\textbf{dish}}.
+			\item User uploads a picture from their gallary or takes a photo of the \hyperref[Dish]{\textbf{dish}}.
 			\item System stores the picture.
-			\item System prompts the user to provide textual description of the food.
-			\item User types in description of food and presses a button to continue.
+			\item System prompts the user to provide textual description of the \hyperref[Dish]{\textbf{dish}}.
+			\item User types in description of \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
 			\item System stores the textual description.
-			\item System prompts user to provide the ingredients found on the dish.
-			\item User enters the ingredient(s) found in the dish and presses a button to continue.
+			\item System prompts user to provide the ingredients found on the \hyperref[Dish]{\textbf{dish}}.
+			\item User enters the ingredient(s) found in the \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
 			\item System stores the ingredient list.
-			\item System identifies the dish and displays the name of dish to the user as well as nutritional information.
+			\item System identifies the \hyperref[Dish]{\textbf{dish}} and displays the name of \hyperref[Dish]{\textbf{dish}} to the user as well as nutritional information.
 		\end{enumerate}
 		\textbf{Secondary Scenario:}
 		\begin{enumerate}
@@ -410,21 +414,21 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\item[11.i.2.] System notifies user that no input data was given.
 				\item[11.i.3.] System returns to home page.
 			\end{enumerate}
-			\item[11.ii.] System requests feedback of identified food.
+			\item[11.ii.] System requests feedback of identified \hyperref[Dish]{\textbf{dish}}.
 			\begin{enumerate}
 				\item[11.ii.1.] User enters feedback
 				\item[11.ii.2.] System analyzes feedback and thanks user for feedback.
 			\end{enumerate}
 			\item[11.iii.] System must provide nutritional data in accordance with Health Canada's nutrition labelling policies \cite{CanadaNutrition}.
-			\item[11.iv.] System provides 4-5 star restaurants serving the returned dish.
+			\item[11.iv.] System provides 4-5 star restaurants serving the returned \hyperref[Dish]{\textbf{dish}}.
 			\item[11.v.] System delete user provided photo from memory.
-			\item[11.vi.] System saves identified dish in back-end data storage under user history.
+			\item[11.vi.] System saves identified \hyperref[Dish]{\textbf{dish}} in back-end data storage under user history.
 		\end{enumerate}
 
 	% Business Event 2.
 	\item Create an account \#2
 	
-	\textbf{Pre-Condition:} User has the mobile application downloaded on their android device and they do not have an account.
+	\textbf{Pre-Condition:} User has the mobile application downloaded on their \hyperref[Android]{\textbf{Android}} device and they do not have an account.
 		% Viewpoints
 		\begin{enumerate}[{\bf VP1.}]
 			\item User \#1 \\
@@ -472,7 +476,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 		\end{enumerate}
 
 		{\bf Global Scenario:} \\
-		\textbf{Pre-Condition:} User has the mobile application downloaded on their android device and they do not have an account. \\
+		\textbf{Pre-Condition:} User has the mobile application downloaded on their \hyperref[Android]{\textbf{Android}} device and they do not have an account. \\
 		\textbf{Main Success Scenario:} 
 		\begin{enumerate}[{1.}]
 			\item System prompts user to enter email address and password.
@@ -567,7 +571,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 		\end{enumerate}
 
 		% Business Event 4.
-		\item Add custom recipe \#4
+		\item Add custom \hyperref[Recipe]{\textbf{recipe}} \#4
 	
 		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in.
 			% Viewpoints
@@ -575,16 +579,16 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\item User \#1 \\
 					\textbf{Main Success Scenario:} 
 					\begin{enumerate}[{1.}]
-						\item User presses button to add a recipe.
-						\item \hypertarget{BE4.VP1.2} System prompts to enter name of recipe.
-						\item User enters name of recipe.
+						\item User presses button to add a \hyperref[Recipe]{\textbf{recipe}}.
+						\item \hypertarget{BE4.VP1.2} System prompts to enter name of \hyperref[Recipe]{\textbf{recipe}}.
+						\item User enters name of \hyperref[Recipe]{\textbf{recipe}}.
 						\item System prompts serving size info.
 						\item User enters serving size info.
 						\item System prompts to enter ingredient list.
 						\item User enters ingredient list with their protion amount.
-						\item System prompts user to write steps to making the dish.
-						\item User provides the steps to make the dish.
-						\item System saves the dish in database and notifies user of successful save.
+						\item System prompts user to write steps to making the \hyperref[Dish]{\textbf{dish}}.
+						\item User provides the steps to make the \hyperref[Dish]{\textbf{dish}}.
+						\item System saves the \hyperref[Dish]{\textbf{dish}} in database and notifies user of successful save.
 					\end{enumerate}
 					\textbf{Secondary Scenario:}
 					\begin{enumerate}
@@ -596,10 +600,10 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\end{enumerate}
 				\item Health Canada  \#2
 					\begin{enumerate}
-						\item[10.i.] Provided recipe is poisonous or hazardous.
+						\item[10.i.] Provided \hyperref[Recipe]{\textbf{recipe}} is poisonous or hazardous.
 						\begin{enumerate}
-							\item[10.i.1.] System rejects recipe and does not add to the database.
-							\item[10.i.2.] System provides information to user of why recipe is rejected.
+							\item[10.i.1.] System rejects \hyperref[Recipe]{\textbf{recipe}} and does not add to the database.
+							\item[10.i.2.] System provides information to user of why \hyperref[Recipe]{\textbf{recipe}} is rejected.
 						\end{enumerate}
 					\end{enumerate}
 				\item Restaurant \#3 \\
@@ -608,7 +612,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					N/A
 				\item Customer Retention \#5
 					\begin{enumerate}
-						\item[10.ii.] System should prompt an appreciation page for successful recipe that is added.
+						\item[10.ii.] System should prompt an appreciation page for successful \hyperref[Recipe]{\textbf{recipe}} that is added.
 					\end{enumerate}
 			\end{enumerate}
 	
@@ -616,16 +620,16 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 			\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. \\
 			\textbf{Main Success Scenario:} 
 			\begin{enumerate}[{1.}]
-				\item User presses button to add a recipe.
-				\item \hypertarget{BE4.VP1.2} System prompts to enter name of recipe.
-				\item User enters name of recipe.
+				\item User presses button to add a \hyperref[Recipe]{\textbf{recipe}}.
+				\item \hypertarget{BE4.VP1.2} System prompts to enter name of \hyperref[Recipe]{\textbf{recipe}}.
+				\item User enters name of \hyperref[Recipe]{\textbf{recipe}}.
 				\item System prompts serving size info.
 				\item User enters serving size info.
 				\item System prompts to enter ingredient list.
 				\item User enters ingredient list with their protion amount.
-				\item System prompts user to write steps to making the dish.
-				\item User provides the steps to make the dish.
-				\item System saves the dish in database and notifies user of successful save.
+				\item System prompts user to write steps to making the \hyperref[Dish]{\textbf{dish}}.
+				\item User provides the steps to make the \hyperref[Dish]{\textbf{dish}}.
+				\item System saves the \hyperref[Dish]{\textbf{dish}} in database and notifies user of successful save.
 			\end{enumerate}
 			\textbf{Secondary Scenario:}
 			\begin{enumerate}
@@ -634,16 +638,16 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\item[6.i.1.] System notifies user that ingredient does not exist in the database.
 					\item[6.i.2.] System does not add ingredient and ask user to provide a subsitute.
 				\end{enumerate}
-				\item[10.i.] Provided recipe is poisonous or hazardous.
+				\item[10.i.] Provided \hyperref[Recipe]{\textbf{recipe}} is poisonous or hazardous.
 					\begin{enumerate}
-						\item[10.i.1.] System rejects recipe and does not add to the database.
-						\item[10.i.2.] System provides information to user of why recipe is rejected.
+						\item[10.i.1.] System rejects \hyperref[Recipe]{\textbf{recipe}} and does not add to the database.
+						\item[10.i.2.] System provides information to user of why \hyperref[Recipe]{\textbf{recipe}} is rejected.
 					\end{enumerate}
-				\item[10.ii.] System should prompt an appreciation page for successful recipe that is added.
+				\item[10.ii.] System should prompt an appreciation page for successful \hyperref[Recipe]{\textbf{recipe}} that is added.
 			\end{enumerate}
 
 		% Business Event 5.
-		\item Ask for food recommendation \#5
+		\item Ask for \hyperref[Dish]{\textbf{dish}} recommendation \#5
 
 		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in.
 			% Viewpoints
@@ -651,22 +655,22 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\item User \#1 \\
 					\textbf{Main Success Scenario:} 
 					\begin{enumerate}[{1.}]
-						\item User presses button for system to recommend food.
-						\item System analyzes user data from user's database to recommend food and stores result in user history.
-						\item \hypertarget{BE5.VP.1.3} System displays the recommened food with pictures and text.
+						\item User presses button for system to recommend \hyperref[Dish]{\textbf{dish}}.
+						\item System analyzes user data from user's database to recommend \hyperref[Dish]{\textbf{dish}} and stores result in user history.
+						\item \hypertarget{BE5.VP.1.3} System displays the recommened \hyperref[Dish]{\textbf{dish}} with pictures and text.
 					\end{enumerate}
 					\textbf{Secondary Scenario:}
 					\begin{enumerate}
 						\item[2.i.] System does not have any user data..
 						\begin{enumerate}
 							\item[2.i.1.] System asks user for a cuisine category.
-							\item[2.i.2.] System randomly picks a food from the selected cuisine category.
-							\item[2.i.3.] System stores randomly chosen food in user history. 
+							\item[2.i.2.] System randomly picks a \hyperref[Dish]{\textbf{dish}} from the selected cuisine category.
+							\item[2.i.3.] System stores randomly chosen \hyperref[Dish]{\textbf{dish}} in user history. 
 						\end{enumerate}
 					\end{enumerate}
 				\item Health Canada  \#2
 					\begin{enumerate}
-						\item [2.ii.] System recommends food that respects the user's allergies and dietary restrictions.
+						\item [2.ii.] System recommends \hyperref[Dish]{\textbf{dish}} that respects the user's allergies and dietary restrictions.
 					\end{enumerate}
 				\item Restaurant \#3
 					\begin{enumerate}
@@ -683,7 +687,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 					\begin{enumerate}
 						\item[3.iii.] User likes the recommendation.
 						\begin{enumerate}
-							\item[3.iii.1.] System saves the recommended food in back-end data storage under user favorites.
+							\item[3.iii.1.] System saves the recommended \hyperref[Dish]{\textbf{dish}} in back-end data storage under user favorites.
 							\item[3.iii.2.] System provides similar recommendations.
 						\end{enumerate}
 					\end{enumerate}
@@ -693,22 +697,22 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 			\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. \\
 			\textbf{Main Success Scenario:} 
 			\begin{enumerate}[{1.}]
-				\item User presses button for system to recommend food.
-				\item System analyzes user data from user's database to recommend food and stores result in user history.
-				\item \hypertarget{BE5.VP.1.3} System displays the recommened food with pictures and text.
+				\item User presses button for system to recommend \hyperref[Dish]{\textbf{dish}}.
+				\item System analyzes user data from user's database to recommend \hyperref[Dish]{\textbf{dish}} and stores result in user history.
+				\item \hypertarget{BE5.VP.1.3} System displays the recommened \hyperref[Dish]{\textbf{dish}} with pictures and text.
 			\end{enumerate}
 			\textbf{Secondary Scenario:}
 			\begin{enumerate}
 				\item[2.i.] System does not have any user data..
 				\begin{enumerate}
 					\item[2.i.1.] System asks user for a cuisine category.
-					\item[2.i.2.] System randomly picks a food from the selected cuisine category.
-					\item[2.i.3.] System stores randomly chosen food in user history. 
+					\item[2.i.2.] System randomly picks a \hyperref[Dish]{\textbf{dish}} from the selected cuisine category.
+					\item[2.i.3.] System stores randomly chosen \hyperref[Dish]{\textbf{dish}} in user history. 
 				\end{enumerate}
-				\item[2.ii.] System recommends food that respects the user's allergies and dietary restrictions.
+				\item[2.ii.] System recommends \hyperref[Dish]{\textbf{dish}} that respects the user's allergies and dietary restrictions.
 				\item[3.iii.] User likes the recommendation.
 					\begin{enumerate}
-						\item[3.iii.1.] System saves the recommended food in back-end data storage under user favorites.
+						\item[3.iii.1.] System saves the recommended \hyperref[Dish]{\textbf{dish}} in back-end data storage under user favorites.
 						\item[3.iii.2.] System provides similar recommendations.
 					\end{enumerate}
 				\item[4.ii.] User presses button to get restaurant recommendation.
@@ -720,7 +724,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 			\end{enumerate}
 
 	% Business Event 6.
-	\item Search food data \#6
+	\item Search \hyperref[Dish]{\textbf{dish}} data \#6
 	
 	\textbf{Pre-Condition:} User opens the application; they have an account and are logged in.
 		% Viewpoints
@@ -728,17 +732,17 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 			\item User \#1 \\
 				\textbf{Main Success Scenario:} 
 				\begin{enumerate}[{1.}]
-					\item User presses button to search a food.
-					\item System provides a text box and prompts user to enter the food name.
-					\item User types the food names and presses enter.
-					\item System searches in database and returns nutritional information of the food and a recipe.
+					\item User presses button to search a \hyperref[Dish]{\textbf{dish}}.
+					\item System provides a text box and prompts user to enter the \hyperref[Dish]{\textbf{dish}} name.
+					\item User types the \hyperref[Dish]{\textbf{dish}} names and presses enter.
+					\item System searches in database and returns nutritional information of the \hyperref[Dish]{\textbf{dish}} and a \hyperref[Recipe]{\textbf{recipe}}.
 				\end{enumerate}
 				\textbf{Secondary Scenario:}
 				\begin{enumerate}
-					\item[2.i.] User types in food that is not known to the system.
+					\item[2.i.] User types in \hyperref[Dish]{\textbf{dish}} that is not known to the system.
 					\begin{enumerate}
-						\item[2.i.1.] System notifies user that food does not exist in the database.
-						\item[2.i.2.] System suggests user to add a custom recipe of the food they search, return to \hyperlink{BE4.VP1.2}{BE4.VP1.2}.
+						\item[2.i.1.] System notifies user that \hyperref[Dish]{\textbf{dish}} does not exist in the database.
+						\item[2.i.2.] System suggests user to add a custom \hyperref[Recipe]{\textbf{recipe}} of the \hyperref[Dish]{\textbf{dish}} they search, return to \hyperlink{BE4.VP1.2}{BE4.VP1.2}.
 					\end{enumerate}
 				\end{enumerate}
 			\item Health Canada  \#2
@@ -759,9 +763,9 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				N/A
 			\item Customer Retention \#5
 				\begin{enumerate}
-					\item[3.iii.] User likes the food information page.
+					\item[3.iii.] User likes the \hyperref[Dish]{\textbf{dish}} information page.
 					\begin{enumerate}
-						\item[3.iii.1.] System saves the searched food in back-end data storage under user favorites.
+						\item[3.iii.1.] System saves the searched \hyperref[Dish]{\textbf{dish}} in back-end data storage under user favorites.
 						\item[3.iii.2.] System provides some recommendations, return to \hyperlink{BE5.VP.1.3}{BE5.VP.1.3}.
 					\end{enumerate}
 				\end{enumerate}
@@ -771,21 +775,21 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. \\
 		\textbf{Main Success Scenario:} 
 		\begin{enumerate}[{1.}]
-			\item User presses button to search a food.
-			\item System provides a text box and prompts user to enter the food name.
-			\item User types the food names and presses enter.
-			\item System searches in database and returns nutritional information of the food and a recipe.
+			\item User presses button to search a \hyperref[Dish]{\textbf{dish}}.
+			\item System provides a text box and prompts user to enter the \hyperref[Dish]{\textbf{dish}} name.
+			\item User types the \hyperref[Dish]{\textbf{dish}} names and presses enter.
+			\item System searches in database and returns nutritional information of the \hyperref[Dish]{\textbf{dish}} and a \hyperref[Recipe]{\textbf{recipe}}.
 		\end{enumerate}
 		\textbf{Secondary Scenario:}
 		\begin{enumerate}
-			\item[2.i.] User types in food that is not known to the system.
+			\item[2.i.] User types in \hyperref[Dish]{\textbf{dish}} that is not known to the system.
 			\begin{enumerate}
-				\item[2.i.1.] System notifies user that food does not exist in the database.
-				\item[2.i.2.] System suggests user to add a custom recipe of the food they search, return to \hyperlink{BE4.VP1.2}{BE4.VP1.2}.
+				\item[2.i.1.] System notifies user that \hyperref[Dish]{\textbf{dish}} does not exist in the database.
+				\item[2.i.2.] System suggests user to add a custom \hyperref[Recipe]{\textbf{recipe}} of the \hyperref[Dish]{\textbf{dish}} they search, return to \hyperlink{BE4.VP1.2}{BE4.VP1.2}.
 			\end{enumerate}
-			\item[3.iii.] User likes the food information page.
+			\item[3.iii.] User likes the \hyperref[Dish]{\textbf{dish}} information page.
 				\begin{enumerate}
-					\item[3.iii.1.] System saves the searched food in back-end data storage under user favorites.
+					\item[3.iii.1.] System saves the searched \hyperref[Dish]{\textbf{dish}} in back-end data storage under user favorites.
 					\item[3.iii.2.] System provides some recommendations, return to \hyperlink{BE5.VP.1.3}{BE5.VP.1.3}.
 				\end{enumerate}
 			\item[4.i.] System must provide nutritional data in accordance with Health Canada's nutrition labelling policies \cite{CanadaNutrition}.
@@ -843,7 +847,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 				\end{enumerate}
 			\item Customer Retention \#5
 				\begin{enumerate}
-					\item[4.i.] System shall put the user's favourite food on the feedback form.
+					\item[4.i.] System shall put the user's favourite \hyperref[Dish]{\textbf{dish}} on the feedback form.
 				\end{enumerate}
 		\end{enumerate}
 
@@ -868,7 +872,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 			\end{enumerate}
 		\end{enumerate}
 		\begin{enumerate}
-			\item[4.i.] System shall put the user's favourite food on the feedback form.
+			\item[4.i.] System shall put the user's favourite \hyperref[Dish]{\textbf{dish}} on the feedback form.
 			\item[5.i.] User cancels deletion
 			\begin{enumerate}
 				\item[5.i.1.] System returns to home page. 
@@ -900,7 +904,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
     \item \textit{The application shall use a visually appealing color scheme.} \\ \textbf{Rationale:} A visually unappealing color scheme will drive users away from the application.
     \item \textit{The application shall have a high contrast between all text and background elements so users can easily read the text.} \\
     \textbf{Rationale:} If the text is not easily readable, users will be discouraged from using the application
-    \item \textit{No special prompt shall be required to display photos in application pages.} \\ \textbf{Rationale:} Requesting photos will make the usage more cumbersome, especially when browsing images of other food items in the library.
+    \item \textit{No special prompt shall be required to display photos in application pages.} \\ \textbf{Rationale:} Requesting photos will make the usage more cumbersome, especially when browsing images of other \hyperref[Dish]{\textbf{dishes}} in the library.
 	\item \textit{The application shall mimic the layout, font and colour scheme of widely-used food ordering applications} \\ \textbf{Rationale:} Widely-used food ordering applications have conducted psychological studies to determine the best layout, font, and color 
 \end{enumerate}
 % End SubSubSection
@@ -1019,7 +1023,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:capacity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
-	\item \textit{No human experts shall be required to compliment the non-human experts when a user uploads a picture of a food item, potentially with data about it to achieve a response.} \\ \textbf{Rationale:} This is part of the specification.
+	\item \textit{No human experts shall be required to compliment the non-human experts when a user uploads a picture of a \hyperref[Dish]{\textbf{dish}} item, potentially with data about it to achieve a response.} \\ \textbf{Rationale:} This is part of the specification.
 	\item \textit{The application shall be scalable to handle up to five million (5,000,000) concurrent users.} \\ \textbf{Rationale:} This is an upper bound for a growing mobile application, which may become very popular rapidly and would thus would have to scale rapidly \cite{Zeba}.
 \end{enumerate}
 % End SubSubSection
@@ -1058,8 +1062,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:requirements_for_interfacing_with_adjacent_systems}
 % Begin SubSubSection
 \begin{enumerate}[{OE-IA}1. ]
-	\item \textit{This application shall be compatible with mobile devices running the Android platform.} \\ \textbf{Rationale:} This is part of the specification.
-    \item \textit{This application shall conform to the terms of service of the Android Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for Android users to download it without sideloading is to be approved by the Android Application Store.
+	\item \textit{This application shall be compatible with mobile devices running the \hyperref[Android]{\textbf{Android}} platform.} \\ \textbf{Rationale:} This is part of the specification.
+    \item \textit{This application shall conform to the terms of service of the \hyperref[Android]{\textbf{Android}} Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for \hyperref[Android]{\textbf{Android}} users to download it without sideloading is to be approved by the \hyperref[Android]{\textbf{Android}} Application Store.
     \item \textit{If a parallel iOS mobile application is developed, it shall conform to the terms of service of the Apple Application store.} \\ \textbf{Rationale:} Sideloading may be dangerous and will discourage users from downloading the application \cite{Trio}. The only way for Apple users to download it without sideloading is to be approved by the Apple Application Store.
     
 \end{enumerate}
@@ -1077,7 +1081,7 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:release_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{OE-R}1. ]
-	\item \textit{This application shall be released for Android devices by April 8, 2025.} \\ \textbf{Rationale:} This is the release deadline given by the specification.
+	\item \textit{This application shall be released for \hyperref[Android]{\textbf{Android}} devices by April 8, 2025.} \\ \textbf{Rationale:} This is the release deadline given by the specification.
 \end{enumerate}
 % End SubSubSection
 
@@ -1100,8 +1104,8 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 \label{ssub:supportability_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{MS-S}1. ]
-	\item \textit{The application shall be compatible with at least the last three major versions of Android and iOS.}
-	\\ \textbf{Rationale:} Users must be able to access the app on a range of devices, including those running recent but not necessarily the latest operating system versions. Ensuring compatibility with at least the last three major versions of Android and iOS allows more users to access the app without requiring immediate upgrades, improving accessibility and usability while maintaining app performance and security.
+	\item \textit{The application shall be compatible with at least the last three major versions of \hyperref[Android]{\textbf{Android}} and iOS.}
+	\\ \textbf{Rationale:} Users must be able to access the app on a range of devices, including those running recent but not necessarily the latest operating system versions. Ensuring compatibility with at least the last three major versions of \hyperref[Android]{\textbf{Android}} and iOS allows more users to access the app without requiring immediate upgrades, improving accessibility and usability while maintaining app performance and security.
 \end{enumerate}
 % End SubSubSection
 
@@ -1225,16 +1229,16 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 % Begin SubSubSection
 \begin{enumerate}[{LR-STD}1. ]
     \item \textit{The application should not use notifications for promotional or advertisement purposes.}
-    \\ \textbf{Rationale:} This is a standard for app quality in terms of the visual experience, as defined by Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. Notifications should be used appropriately to enhance user experience and should not be misused for cross-promotion or advertisements.
+    \\ \textbf{Rationale:} This is a standard for app quality in terms of the visual experience, as defined by Google's Core App Quality guidelines from \hyperref[Android]{\textbf{Android}} Developers \cite{GoogleCoreAppQuality}. Notifications should be used appropriately to enhance user experience and should not be misused for cross-promotion or advertisements.
 
     \item \textit{Touch targets in the app should have a size of at least 48dp.}
-    \\ \textbf{Rationale:} Ensuring that touch targets are at least 48dp improves accessibility and usability, as recommended by Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. This helps users interact more easily with UI elements and reduces frustration.
+    \\ \textbf{Rationale:} Ensuring that touch targets are at least 48dp improves accessibility and usability, as recommended by Google's Core App Quality guidelines from \hyperref[Android]{\textbf{Android}} Developers \cite{GoogleCoreAppQuality}. This helps users interact more easily with UI elements and reduces frustration.
 
     \item \textit{Any personal or sensitive data should not be logged to the system log or a log specific to the app.}
-    \\ \textbf{Rationale:} This is a standard for app quality in terms of privacy and security, as outlined in Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}. Logging sensitive data can lead to security vulnerabilities and data exposure, which must be avoided.
+    \\ \textbf{Rationale:} This is a standard for app quality in terms of privacy and security, as outlined in Google's Core App Quality guidelines from \hyperref[Android]{\textbf{Android}} Developers \cite{GoogleCoreAppQuality}. Logging sensitive data can lead to security vulnerabilities and data exposure, which must be avoided.
 
     \item \textit{The application's internal storage should be used to store any sensitive data.}
-    \\ \textbf{Rationale:} Storing sensitive data in internal storage enhances security and prevents unauthorized access, as per best practices defined in Google's Core App Quality guidelines from Android Developers \cite{GoogleCoreAppQuality}.
+    \\ \textbf{Rationale:} Storing sensitive data in internal storage enhances security and prevents unauthorized access, as per best practices defined in Google's Core App Quality guidelines from \hyperref[Android]{\textbf{Android}} Developers \cite{GoogleCoreAppQuality}.
 \end{enumerate}
 % End SubSubSection
 
@@ -1244,19 +1248,19 @@ Any other assumptions made that, if it fails to hold, could require you to chang
 
 \section{Innovative Feature}
 
-The chosen innovative feature is to inquire food items for which users seek classification by the region of its cusine, ingredients used to prepare it, and its style of preparation. 
-This feature benefits users who are curious about the origins of specific dishes, want to explore new cuisines, and seek to expand their culinary experiences.
+The chosen innovative feature is to inquire \hyperref[Dish]{\textbf{dishes}} for which users seek classification by the region of its cusine, ingredients used to prepare it, and its style of preparation. 
+This feature benefits users who are curious about the origins of specific \hyperref[Dish]{\textbf{dishes}}, want to explore new cuisines, and seek to expand their culinary experiences.
 This innovative feature will keep user actively involved because it offers an engaging way to learn about diverse food cultures.
 Other innovative features we came up with include:
 
 \begin{itemize}
-	\item Ability to add custom recipe to the system, allowing users to share their creation with others.
-	\item Request food recommendations based on the user's previous searches.
+	\item Ability to add custom \hyperref[Recipe]{\textbf{recipe}} to the system, allowing users to share their creation with others.
+	\item Request \hyperref[Dish]{\textbf{dish}} recommendations based on the user's previous searches.
 	\item Considerations of user's allergies and dietary restrictions.
-	\item A browsing format enabling users to see dishes previously classified by the application.
-	\item A rating system, allowing users to recommend to others which dishes to try and which to avoid
+	\item A browsing format enabling users to see \hyperref[Dish]{\textbf{dishes}} previously classified by the application.
+	\item A rating system, allowing users to recommend to others which \hyperref[Dish]{\textbf{dishes}} to try and which to avoid
 	\item Partnerships with restaurants, with an emphasis on small, local restaurants, which will support the restaraunt industry
-	through promoting their unique food offerings.
+	through promoting their unique \hyperref[Dish]{\textbf{dish}} offerings.
 \end{itemize}
 
 \appendix
