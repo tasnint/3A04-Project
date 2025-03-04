@@ -17,13 +17,15 @@
 \usepackage{float}
 \usepackage{svg}
 \usepackage{hyperref}
+\usepackage{soul,xcolor}
 %------------------------------------------------------------------------------
 
 % Header and Footer
 %------------------------------------------------------------------------------
 \pagestyle{plain}  
 \renewcommand\headrulewidth{0.4pt}                                      
-\renewcommand\footrulewidth{0.4pt}                                    
+\renewcommand\footrulewidth{0.4pt}  
+\setstcolor{red}                                  
 %------------------------------------------------------------------------------
 
 % Title Details
@@ -307,15 +309,15 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 			\item User \#1 \\
 				\textbf{Main Success Scenario:} 
 				\begin{enumerate}[{1.}]
-					\item User presses a button to inquire about a \hyperref[Dish]{\textbf{dish}}.
+					\item User \st{presses a button to} inquire\textcolor{red}{s} about a \hyperref[Dish]{\textbf{dish}}.
 					\item System prompts user to provide a photo of the \hyperref[Dish]{\textbf{dish}}.
 					\item User uploads a picture from their gallary or takes a photo of the \hyperref[Dish]{\textbf{dish}}.
 					\item System stores the picture.
 					\item System prompts the user to provide textual description of the \hyperref[Dish]{\textbf{dish}}.
-					\item User types in description of \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
+					\item User types in description of \hyperref[Dish]{\textbf{dish}} \st{and presses a button to continue}.
 					\item System stores the textual description.
 					\item System prompts user to provide the ingredients found on the \hyperref[Dish]{\textbf{dish}}.
-					\item User enters the ingredient(s) found in the \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
+					\item User enters the ingredient(s) found in the \hyperref[Dish]{\textbf{dish}} \st{and presses a button to continue}.
 					\item System stores the ingredient list.
 					\item System identifies the \hyperref[Dish]{\textbf{dish}} and displays the name of \hyperref[Dish]{\textbf{dish}} to the user as well as nutritional information.
 				\end{enumerate}
@@ -378,15 +380,15 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. The user also has some details of the \hyperref[Dish]{\textbf{dish}} to inquire about. \\
 		\textbf{Main Success Scenario:} 
 		\begin{enumerate}[{1.}]
-			\item User presses a button to inquire about a \hyperref[Dish]{\textbf{dish}}.
+			\item User \st{presses a button to} inquire\textcolor{red}{s} about a \hyperref[Dish]{\textbf{dish}}.
 			\item System prompts user to provide a photo of the \hyperref[Dish]{\textbf{dish}}.
 			\item User uploads a picture from their gallary or takes a photo of the \hyperref[Dish]{\textbf{dish}}.
 			\item System stores the picture.
 			\item System prompts the user to provide textual description of the \hyperref[Dish]{\textbf{dish}}.
-			\item User types in description of \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
+			\item User types in description of \hyperref[Dish]{\textbf{dish}} \st{and presses a button to continue}.
 			\item System stores the textual description.
 			\item System prompts user to provide the ingredients found on the \hyperref[Dish]{\textbf{dish}}.
-			\item User enters the ingredient(s) found in the \hyperref[Dish]{\textbf{dish}} and presses a button to continue.
+			\item User enters the ingredient(s) found in the \hyperref[Dish]{\textbf{dish}} \st{and presses a button to continue}.
 			\item System stores the ingredient list.
 			\item System identifies the \hyperref[Dish]{\textbf{dish}} and displays the name of \hyperref[Dish]{\textbf{dish}} to the user as well as nutritional information.
 		\end{enumerate}
@@ -533,7 +535,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 				\begin{enumerate}
 					\item[2.i.] User forgets password.
 					\begin{enumerate}
-						\item[2.i.1.] User presses button to reset password.
+						\item[2.i.1.] User \st{presses button to} reset\textcolor{red}{s} password.
 						\item[2.i.2.] System sends password reset link to the email that the user provided if the email is registered.
 					\end{enumerate}
 				\end{enumerate}
@@ -566,7 +568,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 		\begin{enumerate}
 			\item[2.i.] User forgets password.
 			\begin{enumerate}
-				\item[2.i.1.] User presses button to reset password.
+				\item[2.i.1.] User \st{presses button to} reset\textcolor{red}{s} password.
 				\item[2.i.2.] System sends password reset link to the email that the user provided if the email is registered.
 			\end{enumerate}
 			\item[3.i.] System authentication fails.
@@ -585,7 +587,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 				\item User \#1 \\
 					\textbf{Main Success Scenario:} 
 					\begin{enumerate}[{1.}]
-						\item User presses button to add a \hyperref[Recipe]{\textbf{recipe}}.
+						\item User \st{presses button to} add\textcolor{red}{s} a \hyperref[Recipe]{\textbf{recipe}}.
 						\item \hypertarget{BE4.VP1.2} System prompts to enter name of \hyperref[Recipe]{\textbf{recipe}}.
 						\item User enters name of \hyperref[Recipe]{\textbf{recipe}}.
 						\item System prompts serving size info.
@@ -626,7 +628,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 			\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. \\
 			\textbf{Main Success Scenario:} 
 			\begin{enumerate}[{1.}]
-				\item User presses button to add a \hyperref[Recipe]{\textbf{recipe}}.
+				\item User \st{presses button to} add\textcolor{red}{s} a \hyperref[Recipe]{\textbf{recipe}}.
 				\item \hypertarget{BE4.VP1.2} System prompts to enter name of \hyperref[Recipe]{\textbf{recipe}}.
 				\item User enters name of \hyperref[Recipe]{\textbf{recipe}}.
 				\item System prompts serving size info.
@@ -661,7 +663,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 				\item User \#1 \\
 					\textbf{Main Success Scenario:} 
 					\begin{enumerate}[{1.}]
-						\item User presses button for system to recommend \hyperref[Dish]{\textbf{dish}}.
+						\item User \st{presses button} \textcolor{red}{ask} for system to recommend \hyperref[Dish]{\textbf{dish}}.
 						\item System analyzes user data from user's database to recommend \hyperref[Dish]{\textbf{dish}} and stores result in user history.
 						\item \hypertarget{BE5.VP.1.3} System displays the recommened \hyperref[Dish]{\textbf{dish}} with pictures and text.
 					\end{enumerate}
@@ -680,7 +682,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 					\end{enumerate}
 				\item Restaurant \#3
 					\begin{enumerate}
-						\item[4.ii.] User presses button to get restaurant recommendation.
+						\item[4.ii.] User \st{presses button to get}\textcolor{red}{ask} restaurant recommendation.
 						\begin{enumerate}
 							\item[4.ii.1.] System asks user to enter a postal code to serach in.
 							\item[4.ii.2.] User enters postal code.
@@ -703,7 +705,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 			\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. \\
 			\textbf{Main Success Scenario:} 
 			\begin{enumerate}[{1.}]
-				\item User presses button for system to recommend \hyperref[Dish]{\textbf{dish}}.
+				\item User \st{presses button}\textcolor{red}{ask} for system to recommend \hyperref[Dish]{\textbf{dish}}.
 				\item System analyzes user data from user's database to recommend \hyperref[Dish]{\textbf{dish}} and stores result in user history.
 				\item \hypertarget{BE5.VP.1.3} System displays the recommened \hyperref[Dish]{\textbf{dish}} with pictures and text.
 			\end{enumerate}
@@ -721,7 +723,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 						\item[3.iii.1.] System saves the recommended \hyperref[Dish]{\textbf{dish}} in back-end data storage under user favorites.
 						\item[3.iii.2.] System provides similar recommendations.
 					\end{enumerate}
-				\item[4.ii.] User presses button to get restaurant recommendation.
+				\item[4.ii.] User \st{presses button to get}\textcolor{red}{ask} restaurant recommendation.
 					\begin{enumerate}
 						\item[4.ii.1.] System asks user to enter a postal code to serach in.
 						\item[4.ii.2.] User enters postal code.
@@ -738,7 +740,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 			\item User \#1 \\
 				\textbf{Main Success Scenario:} 
 				\begin{enumerate}[{1.}]
-					\item User presses button to search a \hyperref[Dish]{\textbf{dish}}.
+					\item User \st{presses button to} search\textcolor{red}{es} a \hyperref[Dish]{\textbf{dish}}.
 					\item System provides a text box and prompts user to enter the \hyperref[Dish]{\textbf{dish}} name.
 					\item User types the \hyperref[Dish]{\textbf{dish}} names and presses enter.
 					\item System searches in database and returns nutritional information of the \hyperref[Dish]{\textbf{dish}} and a \hyperref[Recipe]{\textbf{recipe}}.
@@ -757,7 +759,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 				\end{enumerate}
 			\item Restaurant \#3
 				\begin{enumerate}
-					\item[4.ii.] User presses button to get restaurant recommendation.
+					\item[4.ii.] User \st{presses button to get}\textcolor{red}{ask} restaurant recommendation.
 					\begin{enumerate}
 						\item[4.ii.1.] System asks user to enter a postal code to serach in.
 						\item[4.ii.2.] User enters postal code.
@@ -781,7 +783,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. \\
 		\textbf{Main Success Scenario:} 
 		\begin{enumerate}[{1.}]
-			\item User presses button to search a \hyperref[Dish]{\textbf{dish}}.
+			\item User \st{presses button to} search\textcolor{red}{es} a \hyperref[Dish]{\textbf{dish}}.
 			\item System provides a text box and prompts user to enter the \hyperref[Dish]{\textbf{dish}} name.
 			\item User types the \hyperref[Dish]{\textbf{dish}} names and presses enter.
 			\item System searches in database and returns nutritional information of the \hyperref[Dish]{\textbf{dish}} and a \hyperref[Recipe]{\textbf{recipe}}.
@@ -799,7 +801,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 					\item[3.iii.2.] System provides some recommendations, return to \hyperlink{BE5.VP.1.3}{BE5.VP.1.3}.
 				\end{enumerate}
 			\item[4.i.] System must provide nutritional data in accordance with Health Canada's nutrition labelling policies \cite{CanadaNutrition}.
-			\item[4.ii.] User presses button to get restaurant recommendation.
+			\item[4.ii.] User \st{presses button to get}\textcolor{red}{ask} restaurant recommendation.
 				\begin{enumerate}
 					\item[4.ii.1.] System asks user to enter a postal code to serach in.
 					\item[4.ii.2.] User enters postal code.
@@ -816,7 +818,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 			\item User \#1 \\
 				\textbf{Main Success Scenario:} 
 				\begin{enumerate}[{1.}]
-					\item User presses button for system to delete account.
+					\item User \st{presses button for system to} delete\textcolor{red}{s} account.
 					\item System warns user that they are deleting their account.
 					\item User confirms to delete the account.
 					\item System prompts reason of deleting the account.
@@ -861,7 +863,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 		\textbf{Pre-Condition:} User opens the application; they have an account and are logged in. \\
 		\textbf{Main Success Scenario:} 
 		\begin{enumerate}[{1.}]
-			\item User presses button for system to delete account.
+			\item User \st{presses button for system to} delete\textcolor{red}{s} account.
 			\item System warns user that they are deleting their account.
 			\item User confirms to delete the account.
 			\item System prompts reason of deleting the account.
@@ -1261,21 +1263,34 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 % End Section
 
 \section{Innovative Feature}
+\textcolor{red}{The main chosen innovative feature is providing dish recommendations to the user based on their inquiry history.
+This feature will keep the users engaged because it allows them to explore new cuisines and seek to expand their culinary experiences.}
 
-The chosen innovative feature is to inquire \hyperref[Dish]{\textbf{dishes}} for which users seek classification by the region of its cusine, ingredients used to prepare it, and its style of preparation. 
-This feature benefits users who are curious about the origins of specific \hyperref[Dish]{\textbf{dishes}}, want to explore new cuisines, and seek to expand their culinary experiences.
+\textcolor{red}{Another innovative feature is that users will be able to add their custom recipe to the application's database.
+This feature will allow users to share their creativity to everyone through the application, forming a food community within the application.}
+
+\textcolor{red}{In summary, the innovative features are:}
+
+
+\st{The chosen innovative feature is to inquire dishes for which users seek classification by the region of its cusine, ingredients used to prepare it, and its style of preparation. 
+This feature benefits users who are curious about the origins of specific dishes, want to explore new cuisines, and seek to expand their culinary experiences.
 This innovative feature will keep user actively involved because it offers an engaging way to learn about diverse food cultures.
-Other innovative features we came up with include:
+Other innovative features we came up with include:}
 
 \begin{itemize}
-	\item Ability to add custom \hyperref[Recipe]{\textbf{recipe}} to the system, allowing users to share their creation with others.
 	\item Request \hyperref[Dish]{\textbf{dish}} recommendations based on the user's previous searches.
-	\item Considerations of user's allergies, and dietary restrictions.
-	\item A browsing format enabling users to see \hyperref[Dish]{\textbf{dishes}} previously classified by the application.
-	\item A rating system, allowing users to recommend to others which \hyperref[Dish]{\textbf{dishes}} to try and which to avoid
-	\item Partnerships with restaurants, with an emphasis on small, local restaurants, which will support the restaraunt industry
-	through promoting their unique \hyperref[Dish]{\textbf{dish}} offerings.
+	\item Ability to add custom \hyperref[Recipe]{\textbf{recipe}} to the system, allowing users to share their creation with others.
+	\item \st{Considerations of user's allergies, and dietary restrictions.}
+	\item \st{A browsing format enabling users to see dishes previously classified by the application.}
+	\item \st{A rating system, allowing users to recommend to others which dishes to try and which to avoid}
+	\item \st{Partnerships with restaurants, with an emphasis on small, local restaurants, which will support the restaraunt industry through promoting their unique dish offerings.}
 \end{itemize}
+
+\section{Change Log}
+\begin{enumerate}
+	\item Removed "pressing a button" from BE scenarios.
+	\item Scoped innovatie feature to be specific.
+\end{enumerate}
 
 \appendix
 \section{Division of Labour}
