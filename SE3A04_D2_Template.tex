@@ -139,23 +139,187 @@ This section should provide an overview of the overall architectural design of y
 % Begin Section
 This section should contain all of your CRC cards.
 
-\begin{itemize}
-	\item Provide a CRC Card for each identified class
-	\item Please use the format outlined in tutorial, i.e., 
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
-		 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
-		\hline
-		\textbf{Responsibility:} & \textbf{Collaborators:} \\
-		\hline
-		\vspace{1in} & \\
-		\hline
-		\end{tabular}
-	\end{table}
-	
-\end{itemize}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item TODO
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item TODO
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+% Controller Classes
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Recommendation Controller}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Provides recommendation of dishes
+		\item  Provides restarants serving recommended dish
+		\item Updates internal user recommendation history
+		\item Updates user liked dishes
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Like Recommendation Boundary
+		\item Ask Recommendation Boundary
+		\item Restaurant Database
+		\item User History Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Account Management}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Manage accounts
+		\item Log into user profile
+		\item Extract user data
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Account Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Dish Determination}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Manage the determination of a dish process
+		\item Control the clients that determine the dish
+		\item Accept dish data
+		\item Provide dish information to Dish Inquiry Page
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Inquiry Page
+		\item Image Recognition
+		\item Ingredients Analysis
+		\item Text Analysis
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Image Recognition}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Predict dish from picture
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination
+		\item Food Picture Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Ingredients Analysis}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Predict dish from ingredients list.
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination
+		\item Recipe Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Text Analysis}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Predict dish from text semantic analysis
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination
+		\item Dish Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Recipe Management}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Manage the Recipe Database.
+		\item Accept new recipes
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Add Custom Recipe Boundary
+		\item Recipe Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+
 % End Section
 
 \appendix
@@ -182,6 +346,7 @@ This section should contain all of your CRC cards.
 \begin{enumerate}
 	\item Brainstorming and drawing the Analysis Class Diagram.
 	\item Wrote section 1.1 and 1.3.
+	\item Wrote CRC for controller classes
 \end{enumerate}
 
 \textbf{Signature:} SATHURSHAN ARULMOHAN \\
