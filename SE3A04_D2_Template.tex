@@ -313,11 +313,12 @@ This section should contain all of your CRC cards.
 \end{table}
 
 % Controller Classes
+
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name: Recommendation Controller}} \\
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recommendation Controller} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
@@ -343,18 +344,51 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name: Account Management}} \\
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Account Mangament} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Manage accounts
-		\item Log into user profile
-		\item Extract user data
+		\item Knows log in
+		\item  Provides restarants serving recommended dish
+		\item Updates internal user recommendation history
+		\item Updates user liked dishes
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
+		\item Like Recommendation Boundary
+		\item Ask Recommendation Boundary
+		\item Restaurant Database
+		\item User History Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+% Controllers
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Account Managmenent (Controller)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Log In
+		\item Knows Create Account
+		\item Knows Delete Account
+		\item Knows Account Database
+		\item Knows User History
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Log In
+		\item Create Account
+		\item Delete Account
 		\item Account Database
 	\end{itemize} \\
 	\hline
@@ -365,112 +399,28 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name: Dish Determination}} \\
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recommendation Controller }\\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Manage the determination of a dish process
-		\item Control the clients that determine the dish
-		\item Accept dish data
-		\item Provide dish information to Dish Inquiry Page
+		\item Knows Ask Recommendation
+		\item Knows Like Recommendation
+		\item Knows Restaurant Database
+		\item Knows User History
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Dish Inquiry Page
-		\item Image Recognition
-		\item Ingredients Analysis
-		\item Text Analysis
+		\item Ask Recommendation
+		\item Like Recommendation
+		\item Restaurant Database
+		\item User History
 	\end{itemize} \\
 	\hline
 	\end{tabular}
 \end{table}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name: Image Recognition}} \\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item Predict dish from picture
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item Dish Determination
-		\item Food Picture Database
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name: Ingredients Analysis}} \\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item Predict dish from ingredients list.
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item Dish Determination
-		\item Recipe Database
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name: Text Analysis}} \\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item Predict dish from text semantic analysis
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item Dish Determination
-		\item Dish Database
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name: Recipe Management}} \\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item Manage the Recipe Database.
-		\item Accept new recipes
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item Add Custom Recipe Boundary
-		\item Recipe Database
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
 
 
 % End Section
