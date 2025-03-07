@@ -274,7 +274,7 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Dish Inquiry (Boundary)} \\
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Dish Inquiry Page (Boundary)} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
@@ -295,13 +295,13 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Add Recipe (Boundary)} \\
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Add Custom Recipe (Boundary)} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Recipe Managmenent
+		\item Knows Recipe Management
 		\item Handles user request to add recipe
 	\end{itemize}
 	\vspace{1in} & 
@@ -416,6 +416,310 @@ This section should contain all of your CRC cards.
 		\item Like Recommendation
 		\item Restaurant Database
 		\item User History
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recommendation Controller }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Ask Recommendation
+		\item Knows Like Recommendation
+		\item Knows Restaurant Database
+		\item Knows User History
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Ask Recommendation
+		\item Like Recommendation
+		\item Restaurant Database
+		\item User History
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Dish Determination (Controller) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Dish Inquiry Page
+		\item Knows Image Recognition
+		\item Knows Ingredients Analysis
+		\item Knows Text Analysis
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Inquiry Page
+		\item Image Recognition
+		\item Ingredients Analysis
+		\item Text Analysis
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recipe Management (Controller) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Add Custom Recipe
+		\item Knows Recipe Database
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Add Custom Recipe 
+		\item Recipe Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Image Recognition(Controller) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Dish Determination
+		\item Knows Food Picture Database
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination 
+		\item Food Picture Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Image Analysis (Controller) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Dish Determination
+		\item Knows Recipe Database
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination 
+		\item Recipe Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Text Analysis (Controller) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Dish Determination
+		\item Knows Dish Database
+		\item Knows Recipe Database
+		\item Knows Food Nutrition Databse
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination 
+		\item Dish Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+% Entities
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Restaurant Database (Entity) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows data about restaurants (e.g. name, address, type)
+		\item Knows Recommendation Controller
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Recommendation Controller
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Account Database (Entity) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows data about accounts (e.g. username, password, email)
+		\item Knows Account Management
+		\item Knows Recommendation Controller
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Account Management
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} User History Database (Entity) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows history about accounts (e.g. like history, browsing history)
+		\item Knows Recommendation Controller
+		\item Knows Account Database
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Recommendation Controller
+		\item Account Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Food Picture Database (Entity) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows labels to stored pictures of foods 
+		\item Knows Image Analysis
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Image Analysis
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Dish Database (Entity) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows text keywords for dishes
+		\item Knows Text Analysis
+		\item Knows Recipe Database
+		\item Knows Food Nutrition Database
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Text Analysis
+		\item Recipe Database
+		\item Food Nutrition Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recipe Database (Entity) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows recipes for dishes
+		\item Knows Dish Database
+		\item Knows Ingredients Analysis
+		\item Knows Recipe Management
+		\item Knows Text Analysis
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Database
+		\item Ingredients Analysis
+		\item Recipe Management
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Food Nutrition Database (Entity) }\\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows nutrition facts for dishes
+		\item Knows Dish Database
+		\item Knows Text Analysis
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Database
 	\end{itemize} \\
 	\hline
 	\end{tabular}
