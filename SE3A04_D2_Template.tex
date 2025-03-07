@@ -159,6 +159,132 @@ This section should contain all of your CRC cards.
 	\end{tabular}
 \end{table}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Create Account (Boundary)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Acount Management
+		\item Creates accounts
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Account Management
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Delete account (Boundary)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Acount Management
+		\item Handles the event of a user deleting their account
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Account Management
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Like Recommendation (Boundary)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Recommendation Controller
+		\item Handles the "click" event of a user pressing the "Like" button
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Account Management
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Ask Recommendation (Boundary)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Recommendation Controller
+		\item Prompts a restaraunt user for recommendations (?)
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Account Management
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Dish Inquiry (Boundary)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Dish Determination
+		\item Handles the event of a user inputting dish information and the system outputting results to the user
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Add Recipe (Boundary)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Knows Recipe Managmenent
+		\item Handles user request to add recipe
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
 % Controller Classes
 \begin{table}[H]
 	\centering
