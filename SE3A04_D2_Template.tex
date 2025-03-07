@@ -128,7 +128,44 @@ This section should provide an overview of the overall architectural design of y
 \subsection{Subsystems}
 \label{sub:subsystems}
 % Begin SubSection
- Provide a list of your subsystems, with a brief description of each. Be sure to document its purpose and relationship to other subsystems.
+\subsection{Subsystems}
+
+The \textit{What’s That Dish} system is composed of multiple subsystems that work together to provide dish recommendations, manage user accounts, and process user inputs. Each subsystem operates within a loosely coupled architecture to ensure modularity, maintainability, and scalability.
+
+\subsubsection{Account Management Subsystem}
+The Account Management subsystem is responsible for handling user authentication, account creation, deletion, and profile management. It provides functionalities such as logging in, extracting user data, and managing stored profiles. The system maintains user information within the Account Database and ensures secure interactions with other subsystems.
+
+\textbf{Collaborates with:} Create Account (Boundary), Delete Account (Boundary), Like Recommendation (Boundary), Ask Recommendation (Boundary).
+
+\subsubsection{Recommendation Subsystem}
+The Recommendation Controller subsystem provides dish recommendations based on user preferences, past interactions, and restaurant availability. It updates internal user recommendation history, tracks liked dishes, and communicates with restaurant databases to find suitable dining options.
+
+\textbf{Collaborates with:} Like Recommendation (Boundary), Ask Recommendation (Boundary), Restaurant Database, User History Database.
+
+\subsubsection{Dish Determination Subsystem}
+The Dish Determination subsystem manages the process of dish identification based on user input. It collects dish-related data, processes it using various analytical techniques, and returns the final dish identification results to the Dish Inquiry Boundary. It acts as a central hub, controlling the analysis of dish-related data.
+
+\textbf{Collaborates with:} Dish Inquiry (Boundary), Image Recognition, Ingredients Analysis, Text Analysis.
+
+\subsubsection{Image Recognition Subsystem}
+The Image Recognition subsystem enables dish identification through image analysis. It uses a trained machine learning model to predict the dish name from an uploaded picture. The Food Picture Database is utilized to improve the accuracy of dish predictions.
+
+\textbf{Collaborates with:} Dish Determination, Food Picture Database.
+
+\subsubsection{Ingredients Analysis Subsystem}
+The Ingredients Analysis subsystem predicts dish names based on ingredient lists provided by users. It cross-references user-inputted ingredients with recipes in the Recipe Database to identify potential dish matches.
+
+\textbf{Collaborates with:} Dish Determination, Recipe Database.
+
+\subsubsection{Text Analysis Subsystem}
+The Text Analysis subsystem allows users to identify dishes based on textual descriptions. It performs semantic analysis on user-inputted text to predict the dish name accurately. The Dish Database stores structured dish information, which is used for comparisons.
+
+\textbf{Collaborates with:} Dish Determination, Dish Database.
+
+\subsubsection{Recipe Management Subsystem}
+The Recipe Management subsystem allows users to add and manage custom recipes. It ensures the proper organization and retrieval of user-submitted and system-generated recipes, storing all information in the Recipe Database.
+
+\textbf{Collaborates with:} Add Recipe (Boundary), Recipe Database.
 
 % End SubSection
 
