@@ -164,27 +164,6 @@ The Recipe Management subsystem allows users to add and manage custom recipes. I
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
 % Begin Section
-This section should contain all of your CRC cards.
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item TODO
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item TODO
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
 
 \begin{table}[H]
 	\centering
@@ -196,7 +175,6 @@ This section should contain all of your CRC cards.
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Acount Management
 		\item Creates accounts
 	\end{itemize}
 	\vspace{1in} & 
@@ -217,7 +195,6 @@ This section should contain all of your CRC cards.
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Acount Management
 		\item Handles the event of a user deleting their account
 	\end{itemize}
 	\vspace{1in} & 
@@ -238,12 +215,11 @@ This section should contain all of your CRC cards.
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Recommendation Controller
 		\item Handles the "click" event of a user pressing the "Like" button
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Account Management
+		\item Recommendation Controller
 	\end{itemize} \\
 	\hline
 	\end{tabular}
@@ -259,12 +235,11 @@ This section should contain all of your CRC cards.
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Recommendation Controller
 		\item Provides users recommendations based on user search history  (?)
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Account Management
+		\item Recommendation Controller
 	\end{itemize} \\
 	\hline
 	\end{tabular}
@@ -280,7 +255,6 @@ This section should contain all of your CRC cards.
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Dish Determination
 		\item Handles the event of a user inputting dish information and the system outputting results to the user
 	\end{itemize}
 	\vspace{1in} & 
@@ -301,12 +275,11 @@ This section should contain all of your CRC cards.
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Recipe Management
 		\item Handles user request to add recipe
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Dish Determination
+		\item Recipe Management
 	\end{itemize} \\
 	\hline
 	\end{tabular}
@@ -368,27 +341,49 @@ This section should contain all of your CRC cards.
 
 % Controllers
 
+% Controller Classes
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Account Managmenent (Controller)} \\
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Recommendation Controller}} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Log In
-		\item Knows Create Account
-		\item Knows Delete Account
-		\item Knows Account Database
-		\item Knows User History
+		\item Provides recommendation of dishes
+		\item Provides restarants serving recommended dish
+		\item Updates internal user recommendation history
+		\item Updates user liked dishes
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Log In
-		\item Create Account
-		\item Delete Account
+		\item Like Recommendation Boundary
+		\item Ask Recommendation Boundary
+		\item Restaurant Database
+		\item User History Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Account Management (Controller)}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Manage accounts
+		\item Handles log into user profile
+		\item Extract user data
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
 		\item Account Database
 	\end{itemize} \\
 	\hline
@@ -399,68 +394,16 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recommendation Controller }\\
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Dish Determination (Controller)}} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Ask Recommendation
-		\item Knows Like Recommendation
-		\item Knows Restaurant Database
-		\item Knows User History
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item Ask Recommendation
-		\item Like Recommendation
-		\item Restaurant Database
-		\item User History
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recommendation Controller }\\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item Knows Ask Recommendation
-		\item Knows Like Recommendation
-		\item Knows Restaurant Database
-		\item Knows User History
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item Ask Recommendation
-		\item Like Recommendation
-		\item Restaurant Database
-		\item User History
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Dish Determination (Controller) }\\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item Knows Dish Inquiry Page
-		\item Knows Image Recognition
-		\item Knows Ingredients Analysis
-		\item Knows Text Analysis
+		\item Manage the determination of a dish process
+		\item Control the clients that determine the dish
+		\item Accept dish data
+		\item Provide dish information to Dish Inquiry Page
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
@@ -477,40 +420,17 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Recipe Management (Controller) }\\
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Image Recognition (Controller)}} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Add Custom Recipe
-		\item Knows Recipe Database
+		\item Predict dish from picture
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Add Custom Recipe 
-		\item Recipe Database
-	\end{itemize} \\
-	\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{7cm}|p{7cm}|}
-	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Image Recognition(Controller) }\\
-	\hline
-	\textbf{Responsibility:} & \textbf{Collaborators:} \\
-	\hline
-	\raggedright
-	\begin{itemize}
-		\item Knows Dish Determination
-		\item Knows Food Picture Database
-	\end{itemize}
-	\vspace{1in} & 
-	\begin{itemize}
-		\item Dish Determination 
+		\item Dish Determination
 		\item Food Picture Database
 	\end{itemize} \\
 	\hline
@@ -521,18 +441,17 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Image Analysis (Controller) }\\
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Ingredients Analysis (Controller)}} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Dish Determination
-		\item Knows Recipe Database
+		\item Predict dish from ingredients list.
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Dish Determination 
+		\item Dish Determination
 		\item Recipe Database
 	\end{itemize} \\
 	\hline
@@ -543,21 +462,40 @@ This section should contain all of your CRC cards.
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
-	 \multicolumn{2}{|l|}{\textbf{Class Name:} Text Analysis (Controller) }\\
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Text Analysis (Controller)}} \\
 	\hline
 	\textbf{Responsibility:} & \textbf{Collaborators:} \\
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows Dish Determination
-		\item Knows Dish Database
-		\item Knows Recipe Database
-		\item Knows Food Nutrition Databse
+		\item Predict dish from text semantic analysis
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
-		\item Dish Determination 
+		\item Dish Determination
 		\item Dish Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name: Recipe Management (Controller)}} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Manage the Recipe Database.
+		\item Accept new recipes
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Add Custom Recipe Boundary
+		\item Recipe Database
 	\end{itemize} \\
 	\hline
 	\end{tabular}
@@ -576,7 +514,6 @@ This section should contain all of your CRC cards.
 	\raggedright
 	\begin{itemize}
 		\item Knows data about restaurants (e.g. name, address, type)
-		\item Knows Recommendation Controller
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
@@ -597,8 +534,7 @@ This section should contain all of your CRC cards.
 	\raggedright
 	\begin{itemize}
 		\item Knows data about accounts (e.g. username, password, email)
-		\item Knows Account Management
-		\item Knows Recommendation Controller
+		\item Stores subset data about user history.
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
@@ -619,8 +555,6 @@ This section should contain all of your CRC cards.
 	\raggedright
 	\begin{itemize}
 		\item Knows history about accounts (e.g. like history, browsing history)
-		\item Knows Recommendation Controller
-		\item Knows Account Database
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
@@ -642,7 +576,6 @@ This section should contain all of your CRC cards.
 	\raggedright
 	\begin{itemize}
 		\item Knows labels to stored pictures of foods 
-		\item Knows Image Analysis
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
@@ -662,10 +595,7 @@ This section should contain all of your CRC cards.
 	\hline
 	\raggedright
 	\begin{itemize}
-		\item Knows text keywords for dishes
-		\item Knows Text Analysis
-		\item Knows Recipe Database
-		\item Knows Food Nutrition Database
+		\item Contains Dish information such as name, food fasct, nutrients, recipes, and origin.
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
@@ -688,10 +618,6 @@ This section should contain all of your CRC cards.
 	\raggedright
 	\begin{itemize}
 		\item Knows recipes for dishes
-		\item Knows Dish Database
-		\item Knows Ingredients Analysis
-		\item Knows Recipe Management
-		\item Knows Text Analysis
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
@@ -714,8 +640,6 @@ This section should contain all of your CRC cards.
 	\raggedright
 	\begin{itemize}
 		\item Knows nutrition facts for dishes
-		\item Knows Dish Database
-		\item Knows Text Analysis
 	\end{itemize}
 	\vspace{1in} & 
 	\begin{itemize}
