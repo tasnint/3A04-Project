@@ -78,10 +78,10 @@ This document provides a highlevel overview of the system architecture for the W
 It provides insight into the classes required to build the application, along with the chosen architectural style for the system and its subsystems.
 \\
 \\
-This document is intended for internal stakeholders of What’s That Dish, which includes the software architects, software developers, QA testers, and the project manager.
+This document is intended for internal stakeholders of \textit{What’s That Dish}, which includes software architects, software developers, QA testers, and the project manager.
 \\
 \\
-It is recommended that Deliverable 1 to be reviewed in advance to gain a clear understanding of the application’s use cases, as well as its functional and non-functional requirements.
+It is recommended that Deliverable 1 be reviewed in advance to gain a clear understanding of the application’s use cases, as well as its functional and non-functional requirements.
 % End SubSection
 
 \subsection{System Description}
@@ -90,14 +90,14 @@ It is recommended that Deliverable 1 to be reviewed in advance to gain a clear u
 \textit{What’s That Dish} is a mobile application designed for food identification, recipe management, and personalized recommendations. The system follows a modified Model-View-Controller (MVC) architecture, where user interactions are processed through controllers before being directed to specialized subsystems. This approach was chosen for its clear separation of concerns, improving maintainability and scalability while allowing each subsystem to operate independently with its own specialized architecture.
 \\
 \\
-A variety of architectural styles, including Blackboard, Pipe-and-Filter, and Repository, can be seen across subsystems. The application's core functionality, Dish Determination, utilizes the Blackboard architecture, ensuring dynamic decision-making and expert collaboration for accurate food identification.
+A variety of architectural styles, including Blackboard, Pipe-and-Filter, and Repository, can be seen across the subsystems. The application's core functionality, Dish Determination, utilizes the Blackboard architecture, involving the hypothesis-driven decision making of 3 independent expert modules for accurate food identification.
 % End SubSection
 
 \subsection{Overview}
 \label{sub:overview}
 % Begin SubSection
 Section 2 presents the Analysis Class diagram for What's That Dish application.
-Section 3 outlines the architectural design covering both the system architecture and the subsytems.
+Section 3 outlines the architectural design covering both the overall system architecture and its individual subsytems.
 Section 4 provides Class Responsibility Collaboration cards for each class defined in the Analysis Class diagram.
 % End SubSection
 
@@ -121,7 +121,12 @@ This section should provide an overview of the overall architectural design of y
 \subsection{System Architecture}
 \label{sub:system_architecture}
 % Begin SubSection
-What’s That Dish follows a modified MVC (Model-View-Controller) approach, in which user interaction (View) first flows through a layer of Controllers that handle input and validation, then passes on to Model subsystems. Each model subsystem follows independent and individual architectural styles. Dish Determination uses a Blackboard setup for its expert-based, iterative logic. Recipe Management applies a Pipe \& Filter workflow to sequentially process user‐submitted recipes. Recommendation and Account Management both rely on Repository principles, centralizing data for dynamic suggestions and secure credential handling. This layered organization preserves clarity, maintainability, and scalability, while allowing each subsystem to follow a specialized architecture suited to its unique requirements.
+\textit{What’s That Dish} follows a modified MVC (Model-View-Controller) approach, in which user interaction (View) first flows through a layer of Controllers that handle input and validation, then passes onto respective Model subsystems based on the user input. 
+Each model subsystem follows independent and individual architectural styles. 
+Dish Determination uses a Blackboard setup for its expert-based, iterative logic. 
+Recipe Management applies a Pipe \& Filter workflow to sequentially process user‐submitted recipes. 
+Recommendation and Account Management both rely on Repository principles, centralizing data for dynamic suggestions and secure credential handling. 
+This layered organization preserves organization and clarity, allowing each subsystem to follow a specialized architecture suited to its unique requirements.
 \\
 \\
 \\
