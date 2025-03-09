@@ -76,17 +76,21 @@
 % Begin SubSection
 This document provides a highlevel overview of the system architecture for the What’s That Dish mobile application.
 It provides insight into the classes required to build the application, along with the chosen architectural style for the system and its subsystems.
-
+\\
+\\
 This document is intended for internal stakeholders of What’s That Dish, which includes the software architects, software developers, QA testers, and the project manager.
-
+\\
+\\
 It is recommended that Deliverable 1 to be reviewed in advance to gain a clear understanding of the application’s use cases, as well as its functional and non-functional requirements.
 % End SubSection
 
 \subsection{System Description}
 \label{sub:system_description}
 % Begin SubSection
-Give a brief description of the system. This could be a paragraph or two to give some context to this document.
-
+\textit{What’s That Dish} is a mobile application designed for food identification, recipe management, and personalized recommendations. The system follows a modified Model-View-Controller (MVC) architecture, where user interactions are processed through controllers before being directed to specialized subsystems. This approach was chosen for its clear separation of concerns, improving maintainability and scalability while allowing each subsystem to operate independently with its own specialized architecture.
+\\
+\\
+A variety of architectural styles, including Blackboard, Pipe-and-Filter, and Repository, can be seen across subsystems. The application's core functionality, Dish Determination, utilizes the Blackboard architecture, ensuring dynamic decision-making and expert collaboration for accurate food identification.
 % End SubSection
 
 \subsection{Overview}
@@ -733,7 +737,9 @@ The Recipe Management subsystem allows users to add and manage custom recipes. I
 
 \textbf{Tanisha Tasnin:}
 \begin{enumerate}
-	\item TODO
+	\item Wrote section 3.1 
+	\item Provided feedback for Analysis Class Diagram
+	\item Wrote section 1.2
 \end{enumerate}
 
 \textbf{Signature:} TANISHA TASNIN \\
