@@ -156,9 +156,8 @@ What’s That Dish is defined by the following subsystems:
 \textit{Please refer to section 3.2 for a more detailed classification of each subsystem.}
 \\
 \\
-Dish Determination is characterized by complex decision-making based on 3 expert modules acting as independent and swappable knowledge sources, making Blackboard the ideal architecture style for this subsystem. 
-The Dish Determination system actively evaluates and combines inputs from three modules, Image Recognition, Text Description, and Ingredient-Based Experts. 
-An internal controller embedded within this subsystem is responsible for aggregating inputs and managing confidence levels to determine the most accurate dish identification. 
+Dish Determination is characterized by complex decision-making based on 3 modules, Image Recognition, Text Description, and Ingredient-Based Experts, acting as independent and swappable knowledge sources, making Blackboard the ideal architecture style for this subsystem. 
+The Dish Determination system actively evaluates and combines inputs from the modules and has internal controller embedded within it that is responsible for aggregating these inputs and managing confidence levels to determine the most accurate dish identification. 
 This controller incorporates a Forum component, which is triggered when conflicting answers from expert modules arise.
 It then proceeds to resolve the conflicting inputs from experts, ensuring that the final output is the most reliable identification based on computed confidence scores. 
 The Forum here acts as a concluding mechanism by analyzing confidence levels in controller responses, a key property of the Blackboard model. 
