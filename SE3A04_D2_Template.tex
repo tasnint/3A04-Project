@@ -116,13 +116,60 @@ This section should provide an overview of the overall architectural design of y
 \subsection{System Architecture}
 \label{sub:system_architecture}
 % Begin SubSection
-\begin{itemize}
-	\item Identify and explain the overall architecture of your system
-	\item Be sure to clearly state the name of the architecture you used (this is the name of the architectural pattern, not the name of your system)
-	\item Provide the reasoning and justification of the choice of architecture
-	\item Provide a structural architecture diagram showing the relationship among the subsystems (if appropriate)
-	\item List any design alternatives you considered, but eliminated (and explain why you eliminated them)
-\end{itemize}
+What’s That Dish follows a modified MVC (Model-View-Controller) approach, in which user interaction (View) first flows through a layer of Controllers that handle input and validation, then passes on to Model subsystems. Each model subsystem follows independent and individual architectural styles. Dish Determination uses a Blackboard setup for its expert-based, iterative logic. Recipe Management applies a Pipe \& Filter workflow to sequentially process user‐submitted recipes. Recommendation and Account Management both rely on Repository principles, centralizing data for dynamic suggestions and secure credential handling. This layered organization preserves clarity, maintainability, and scalability, while allowing each subsystem to follow a specialized architecture suited to its unique requirements.
+\\
+\\
+\\
+What’s That Dish is defined by the following subsystems: 
+\\
+\\
+\begin{tabularx}{1.0\textwidth} { 
+  | >{\centering\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\centering\arraybackslash}X | }
+ \hline
+ \textbf{Subsystem} & \textbf{Purpose} & \textbf{Architecture} \\
+ \hline
+ Dish Determination  & Identifies dishes using images, text, or ingredients  & Blackboard  \\
+\hline
+ Recipe Management  & Allows users to add and manage personal recipes  & Pipe-and-Filter  \\
+\hline
+ Recommendation System  & Suggests food and restaurant options based on user preferences  & Repository  \\
+\hline
+ Account Management  & Handles user authentication, account creation, and data storage  & Repository  \\
+\hline
+
+\end{tabularx}
+\\
+\\
+\\
+\textit{Please refer to section 3.2 for a more detailed classification of each subsystem.}
+\\
+\\
+Dish Determination is characterized by complex decision-making based on multiple independent knowledge sources, making Blackboard the ideal architecture for these modules. The Dish Determination system dynamically evaluates and combines inputs from three modules, Image Recognition, Text Description, and Ingredient-Based Experts, acting as individual knowledge sources. An internal controller embedded within this subsystem is responsible for aggregating inputs and managing confidence levels to determine the most accurate dish identification. This controller also resolves conflicting inputs from experts, ensuring that the final output is the most reliable identification based on computed confidence scores. Additionally, it incorporates a Forum component, which is triggered when conflicting answers from expert modules arise. The Forum acts as a resolution mechanism by analyzing confidence levels in controller responses, a key property of the Blackboard model. This flexibility allows the system to aggregate expert inputs dynamically, ensuring a non-deterministic yet accurate output for dish identification.  To support this process, the Blackboard model’s asynchronous and parallel execution allows expert modules to efficiently handle incomplete or conflicting inputs without adhering to a rigid sequence of operations. It also offers scalability for future expansion, allowing new expert modules to be integrated easily without modifying the entire architecture.
+\\
+\\
+Each innovative feature is built on top of the main functionality and follows its own architectural style. Recipe Management implements the Pipe and Filter style. This architecture is well-suited for handling user-submitted recipes, as it allows data to flow through a sequence of independent processing stages (filters) connected by data streams (pipes). Each filter performs a specific function, such as validating inputs, analyzing ingredients, categorizing recipes, and storing data in the database, ensuring that recipes are properly formatted and classified. The Recommendation System adopts a Multi-Layered Architecture, allowing it to process user history, feedback, and external restaurant data separately from the storage layer. This separation is essential for dynamically generating, updating, and refining personalized recommendations based on evolving user interactions.
+\\
+\\
+Account Management uses the Repository architecture, where a centralized database stores user credentials and activity history. The database acts as a passive storage component, while the clients remain active, meaning that all processing and logic execution occur on the client side. This enables concurrent access and system-wide data sharing, providing real-time updates, and facilitating data integrity across different subsystems.
+\\
+\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{image/3.1_system_arch.pdf}
+    \caption{\textbf{Figure 2. System Architecture}}
+\end{figure}
+\textit{The remainder of  3.1 explores other architectural styles that were strongly considered but ultimately found unsuitable due to certain limitations.}
+\\
+\\
+An alternative architectural style considered for Dish Determination was the Pipe and Filter, where each expert module would function as a filter within the pipeline. However, Dish Determination requires modules to engage selectively based on the available input (e.g. bypassing Image Recognition when only an ingredient list is submitted), which conflicts with the rigid, linear data flow of Pipe and Filter. Another major drawback of Pipe and Filter is its lack of iterative refinement. Dish Determination often involves conflict resolution, where different expert modules may generate contradictory results that require reevaluation. For instance, Text-Based Analysis may classify a dish differently than Image Recognition, requiring an additional layer of validation before presenting a final result. Pipe and Filter does not naturally support this kind of dynamic feedback loop, as data flows in a single direction, preventing experts from revising their outputs based on additional context. This makes real-time accuracy adjustments and progressive refinement of identifications difficult.
+\\
+\\
+Batch Sequential was initially considered for Recipe Management, where user-submitted recipes would be processed in discrete batches rather than in a continuous flow. Under this approach, recipe submissions would be collected over time and processed periodically in bulk, undergoing validation, ingredient analysis, categorization, and storage as a group rather than individually. However, this method would introduce delays in recipe availability, reducing real-time user engagement. 
+\\
+\\
+For the Recommendation System, Model-View-Controller (MVC) was considered due to its separation of concerns, allowing the recommendation logic to function independently from the UI layer for improved maintainability. However, MVC is primarily suited for applications with frequent user interaction rather than systems that require complex, data-driven decision-making. The Recommendation System must dynamically analyze user preferences, feedback, and restaurant data, making the Multi-Layered Repository approach more suitable.
 % End SubSection
 
 \subsection{Subsystems}
