@@ -909,10 +909,10 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 \label{ssub:appearance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LF-A}1. ]
-    \item \textit{The application shall use a visually appealing color scheme.} \\ \textbf{Rationale:} A visually unappealing color scheme will drive users away from the application.
+    \item \textit{The application's color scheme shall be rated visually appealing by the quality assurance (QA) team.} \\ \textbf{Rationale:} A visually unappealing color scheme will drive users away from the application.
     \item \textit{The application shall have a high contrast between all text and background elements so users can easily read the text.} \\
     \textbf{Rationale:} If the text is not easily readable, users will be discouraged from using the application
-    \item \textit{No special prompt shall be required to display photos in application pages.} \\ \textbf{Rationale:} Requesting photos will make the usage more cumbersome, especially when browsing images of other \hyperref[Dish]{\textbf{dishes}} in the library.
+    \item \textit{On a application webpage, all images shall be displayed by default.} \\ \textbf{Rationale:} Requesting photos will make the usage more cumbersome, especially when browsing images of other \hyperref[Dish]{\textbf{dishes}} in the library.
 	%\item \textit{The application shall mimic the layout, font and colour scheme of widely-used food ordering applications} \\ \textbf{Rationale:} Widely-used food ordering applications have conducted psychological studies to determine the best layout, font, and color 
 \end{enumerate}
 % End SubSubSection
@@ -937,8 +937,8 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 \label{ssub:ease_of_use_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-EOU}1. ]
-    \item \textit{The application shall have an intuitive user interface (UI) such that a user will easily grasp how to use the application.} \\ \textbf{Rationale:} If a user struggles to use the application, they will most likely not use it.
-    \item \textit{The user experience (UX) shall be pleasant, especially for common use cases (e.g. taking or uploading pictures of a food item, inputting data for a food item, recieving the classification for a food item).}  \\ \textbf{Rationale:} If the user interface is not pleasant, it will incentivize users not to return to the application, and vice versa. Common use cases are emphasized because they occur far more often than their rare counterparts.
+    \item \textit{The application shall have an intuitive user interface (UI) such that a user will easily grasp how to use the application. Intuitivity shall be rated through surveying the QA team.} \\ \textbf{Rationale:} If a user struggles to use the application, they will most likely not use it.
+    \item \textit{The user experience (UX) shall be pleasant, especially for common use cases (e.g. taking or uploading pictures of a food item, inputting data for a food item, recieving the classification for a food item). The pleasantness of the UX shall be rated through surveying the QA team}  \\ \textbf{Rationale:} If the user interface is not pleasant, it will incentivize users not to return to the application, and vice versa. Common use cases are emphasized because they occur far more often than their rare counterparts.
 \end{enumerate}
 % End SubSubSection
 
@@ -1006,7 +1006,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
-	\item \textit{Virtually all information given in the application shall be verifiable by subject matter experts or generally reliable sources. The threshold for "virtually all" shall be no lesser than 99\%.} \\ \textbf{Rationale:} Incorrect information will mislead users, which may lead to devastating consequences and users may stop using the application after discovering it duped them.
+	\item N/A
 \end{enumerate}
 % End SubSubSection
 
@@ -1023,7 +1023,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 \label{ssub:robustness_or_fault_tolerance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RFT}1. ]
-	\item \textit{The application shall correct minor input and output errors when the intended meaning is obvious.} \\ \textbf{Rationale:} Humans and artificial intelligence make mistakes, and correcting minor errors will provide a smoother experience.
+	\item \textit{The application shall correct minor input and output errors when the intended meaning is obvious.} \\ \textbf{Rationale:} Humans make mistakes, and correcting minor errors will provide a smoother experience.
 \end{enumerate}
 % End SubSubSection
 
@@ -1032,7 +1032,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
 	\item \textit{No human experts shall be required to compliment the non-human experts when a user uploads a picture of a \hyperref[Dish]{\textbf{dish}} item, potentially with data about it to achieve a response.} \\ \textbf{Rationale:} This is part of the specification.
-	\item \textit{The application shall be scalable to handle up to five million (5,000,000) concurrent users.} \\ \textbf{Rationale:} This is an upper bound for a growing mobile application, which may become very popular rapidly and would thus would have to scale rapidly \cite{Zeba}.
+	\item \textit{The application shall be scalable to handle up to fifty thousand (50,000) concurrent users.} \\ \textbf{Rationale:} This is an upper bound for a growing mobile application, which may become very popular rapidly and would thus would have to scale rapidly \cite{Zeba}.
 \end{enumerate}
 % End SubSubSection
 
@@ -1040,7 +1040,7 @@ Any other assumptions made that, if it fails to hold, could require changes in t
 \label{ssub:scalability_or_extensibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SE}1. ]
-    \item \textit{The application shall be able to handle ten (10) classification requests per second without any added latency.} \\ \textbf{Rationale:} This is a reasonable upper bound for a non-critical system, like this one.
+    \item \textit{The application shall be able to handle ten (10) classification requests per second without any added latency.} \\ \textbf{Rationale:} This is a reasonable upper bound for a non-critical system, such as this system.
 \end{enumerate}
 % End SubSubSection
 
