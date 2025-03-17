@@ -1,0 +1,130 @@
+@startuml
+
+' Define classes for system architecture with attributes and methods
+
+class "DishDetermination" {
+    -confidenceLevel: float
+    -identifiedDish: String
+    +identifyDish(image: Image, text: String, ingredients: List<String>): String
+    +resolveConflicts()
+    +calculateConfidence()
+}
+
+class "ImageRecognition" {
+    -model: MLModel
+    +predictDish(image: Image): String
+    +trainModel(data: Dataset)
+}
+
+class "TextAnalysis" {
+    -languageModel: NLPModel
+    +analyzeText(text: String): String
+    +extractKeywords(text: String): List<String>
+}
+
+class "IngredientAnalysis" {
+    -ingredientDatabase: Map<String, List<String>>
+    +matchIngredients(ingredients: List<String>): String
+    +findSimilarIngredients(ingredient: String): List<String>
+}
+
+class "RecipeManagement" {
+    -recipeList: List<Recipe>
+    +addRecipe(name: String, ingredients: List<String>, steps: String)
+    +getRecipe(name: String): Recipe
+    +validateRecipe(recipe: Recipe): Boolean
+}
+
+class "RecommendationSystem" {
+    -userPreferences: Map<String, List<String>>
+    +suggestDishes(userHistory: List<String>): List<String>
+    +suggestRestaurants(dish: String): List<String>
+    +updatePreferences(userID: String, dish: String)
+}
+
+class "AccountManagement" {
+    -userDatabase: Map<String, User>
+    +createAccount(email: String, password: String)
+    +authenticate(email: String, password: String): Boolean
+    +deleteAccount(userID: String)
+    +updateProfile(userID: String, preferences: List<String>)
+}
+
+class "DishInquiryPage" {
+    +submitDishDetails(image: Image, text: String, ingredients: List<String>)
+    +displayDishResults(dish: Dish)
+}
+
+class "User" {
+    -userID: String
+    -email: String
+    -password: String
+    -preferences: List<String>
+    +updatePreferences(newPreferences: List<String>)
+}
+
+class "Recipe" {
+    -name: String
+    -ingredients: List<String>
+    -steps: String
+    +displayRecipe()
+}
+
+class "Dish" {
+    -name: String
+    -nutritionInfo: String
+    -origin: String
+    +getNutritionInfo(): String
+}
+
+class "FoodPictureDatabase" {
+    -images: Map<String, Image>
+    +storeImage(image: Image, dishName: String)
+    +retrieveImage(dishName: String): Image
+}
+
+class "DishDatabase" {
+    -dishes: Map<String, Dish>
+    +getDishByName(name: String): Dish
+    +getDishesByIngredients(ingredients: List<String>): List<Dish>
+}
+
+class "RecipeDatabase" {
+    -recipes: Map<String, Recipe>
+    +storeRecipe(recipe: Recipe)
+    +getRecipe(name: String): Recipe
+}
+
+class "UserHistoryDatabase" {
+    -history: Map<String, List<String>>
+    +getUserPreferences(userID: String): List<String>
+    +storeUserInteraction(userID: String, dishName: String)
+}
+
+' Relationships
+
+DishDetermination --> ImageRecognition : "uses"
+DishDetermination --> TextAnalysis : "uses"
+DishDetermination --> IngredientAnalysis : "uses"
+DishDetermination --> DishDatabase : "queries"
+
+ImageRecognition --> FoodPictureDatabase : "accesses"
+TextAnalysis --> DishDatabase : "queries"
+IngredientAnalysis --> RecipeDatabase : "matches"
+
+DishInquiryPage --> DishDetermination : "requests"
+
+RecommendationSystem --> UserHistoryDatabase : "reads"
+RecommendationSystem --> DishDatabase : "queries"
+RecommendationSystem --> RecipeDatabase : "uses"
+
+AccountManagement --> UserHistoryDatabase : "updates"
+User --> AccountManagement : "interacts with"
+
+RecipeManagement --> RecipeDatabase : "stores"
+Recipe --> RecipeManagement : "manages"
+
+Dish --> DishDatabase : "contained in"
+Dish --> RecommendationSystem : "used by"
+
+@enduml
