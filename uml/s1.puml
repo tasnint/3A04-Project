@@ -1,30 +1,49 @@
-@startuml
+@startuml detailedClassDiagram
 
 ' Define classes for system architecture with attributes and methods
+
+class "HomePage"{
+    - dishInquiryPage: DishInquiryPage
+    - recommendationSystem: RecommendationSystem
+    - accountManagement: AccountManagement
+    - recipeManagement: RecipeManagement
+    + dishInquiry()
+    + login()
+    + createAccount()
+    + deleteAccount()
+    + getRecommendation()
+    + addRecipe()
+}
 
 class "DishDetermination" {
     -confidenceLevel: float
     -identifiedDish: String
     +identifyDish(image: Image, text: String, ingredients: List<String>): String
-    +resolveConflicts()
-    +calculateConfidence()
+    -resolveConflicts()
+    -calculateConfidence()
+}
+
+abstract "DishPredictor"{
+    + predictDish()
 }
 
 class "ImageRecognition" {
     -model: MLModel
+    +pareImage(image: Image): Image
     +predictDish(image: Image): String
     +trainModel(data: Dataset)
 }
 
 class "TextAnalysis" {
     -languageModel: NLPModel
-    +analyzeText(text: String): String
+    +pareText(text: String): String
+    +predictDish(text: String): String
     +extractKeywords(text: String): List<String>
 }
 
 class "IngredientAnalysis" {
-    -ingredientDatabase: Map<String, List<String>>
-    +matchIngredients(ingredients: List<String>): String
+    +predictDish(ingredients: List<String>): String
+    +pareIngredients(ingredients: List<String>): List<String>
     +findSimilarIngredients(ingredient: String): List<String>
 }
 
@@ -43,9 +62,10 @@ class "RecommendationSystem" {
 }
 
 class "AccountManagement" {
-    -userDatabase: Map<String, User>
+    - user: Map<String, User>
+    - userHistory: Map<User, UserHistory>
     +createAccount(email: String, password: String)
-    +authenticate(email: String, password: String): Boolean
+    +logIn(email: String, password: String): Boolean
     +deleteAccount(userID: String)
     +updateProfile(userID: String, preferences: List<String>)
 }
@@ -63,11 +83,20 @@ class "User" {
     +updatePreferences(newPreferences: List<String>)
 }
 
+class "UserHistory" {
+    - user: User
+    - likeHistory: List<Dish>
+    - searchHistory: List<Dish>
+    + getUserLikeHistory(user: User): List<Dish>
+    + getUserSearchHistory(user: User): List<Dish>
+}
+
 class "Recipe" {
     -name: String
     -ingredients: List<String>
-    -steps: String
+    -steps: List<String>
     +displayRecipe()
+    +getIngredientsList()
 }
 
 class "Dish" {
@@ -89,42 +118,85 @@ class "DishDatabase" {
     +getDishesByIngredients(ingredients: List<String>): List<Dish>
 }
 
-class "RecipeDatabase" {
-    -recipes: Map<String, Recipe>
-    +storeRecipe(recipe: Recipe)
-    +getRecipe(name: String): Recipe
+class Address{
+    - unit: int
+    - roadName: String
+    - city: String
+    - pronvince: String
+    - postalCode: String
+    - phoneNumber: int
+    + getAddress()
 }
 
-class "UserHistoryDatabase" {
-    -history: Map<String, List<String>>
-    +getUserPreferences(userID: String): List<String>
-    +storeUserInteraction(userID: String, dishName: String)
+class Restarant {
+    - name: String
+    - address: Address
+    - servedDishes: Dish
+    + getAddress(): Address
+    + getServedDishes(category: String): List<Dish>
 }
+
+class "RestaurantDatabase" {
+    -restarant: Restarant
+    +distanceToRestarant(currentLocation: Address): float
+    +getServedDishes(): List<Dish>
+}
+
+class "RecipeDatabase" {
+    -recipes: Map<Dish, Recipe>
+    +storeRecipe(recipe: Recipe)
+    +getRecipe(dishName: Dish): Recipe
+}
+
+class "FoodNutrition" {
+    - food: String
+    - nutrients: Map<String, int>
+    + getNutrientInfo(food: String)
+}
+
+class "FoodNutritionDatabase" {
+    - foodNutrients: Map<string, FoodNutrition>
+    + getNutrientInfo(food: String)
+}
+
 
 ' Relationships
 
-DishDetermination --> ImageRecognition : "uses"
-DishDetermination --> TextAnalysis : "uses"
-DishDetermination --> IngredientAnalysis : "uses"
-DishDetermination --> DishDatabase : "queries"
+HomePage *-- DishInquiryPage
+HomePage *-- AccountManagement
+HomePage *-- RecipeManagement
+HomePage *-- RecommendationSystem
 
-ImageRecognition --> FoodPictureDatabase : "accesses"
-TextAnalysis --> DishDatabase : "queries"
-IngredientAnalysis --> RecipeDatabase : "matches"
+DishInquiryPage --> DishDetermination 
+DishDetermination "1"*--"3+" DishPredictor
+DishPredictor <|-- ImageRecognition
+DishPredictor <|-- TextAnalysis
+DishPredictor <|-- IngredientAnalysis
 
-DishInquiryPage --> DishDetermination : "requests"
+ImageRecognition --> FoodPictureDatabase 
+TextAnalysis --> DishDatabase 
+IngredientAnalysis --> RecipeDatabase
 
-RecommendationSystem --> UserHistoryDatabase : "reads"
-RecommendationSystem --> DishDatabase : "queries"
-RecommendationSystem --> RecipeDatabase : "uses"
+RecommendationSystem --> RestaurantDatabase
+RecommendationSystem --> UserHistory 
 
-AccountManagement --> UserHistoryDatabase : "updates"
-User --> AccountManagement : "interacts with"
+AccountManagement --> User
+AccountManagement --> UserHistory
 
-RecipeManagement --> RecipeDatabase : "stores"
-Recipe --> RecipeManagement : "manages"
+RecipeManagement --> RecipeDatabase 
 
-Dish --> DishDatabase : "contained in"
-Dish --> RecommendationSystem : "used by"
+
+' Databases
+DishDatabase --> Dish
+DishDatabase *-- RecipeDatabase
+DishDatabase *-- FoodNutritionDatabase
+FoodNutritionDatabase o-- FoodNutrition
+
+RestaurantDatabase o-- Restarant
+Restarant *-- Address
+Restarant --> Dish
+
+RecipeDatabase o-- Recipe
+
 
 @enduml
