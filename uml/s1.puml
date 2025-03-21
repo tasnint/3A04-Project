@@ -39,7 +39,9 @@ class "AskRecommendation" {
 
 class "LikeRecommendation" {
     - recommendationController: RecommendationController
-    + askRecommendation()
+
+    ' Fix# 1 Rename “askRecommendation” in LikeRecommendation
+    + likeRecommendation()
 }
 
 class "DishDetermination" {
@@ -47,6 +49,10 @@ class "DishDetermination" {
     -identifiedDish: String
     +identifyDish(image: Image, text: String, ingredients: List<String>): String
     -calculateConfidence(): float
+
+    ' Fix# 2 Add a Conflict-Resolution Method in DishDetermination (Blackboard)
+    +resolveConflicts(expertPredictions: Map<String, float>): String
+    +notifyExperts()
 }
 
 abstract "DishPredictor"{
@@ -78,6 +84,10 @@ class "RecipeManagement" {
     +addRecipe(name: String, ingredients: List<String>, steps: String)
     +getRecipe(name: String): Recipe
     +validateRecipe(recipe: Recipe): Boolean
+    
+    ' Fix# 3 Additional methods to illustrate Pipe-and-Filter
+    +categorizeRecipe(recipe: Recipe): String
+    +storeRecipe(recipe: Recipe): void
 }
 
 class "RecommendationController" {
@@ -113,8 +123,14 @@ class "UserHistory" {
     - user: User
     - likeHistory: List<Dish>
     - searchHistory: List<Dish>
+
     + getUserLikeHistory(user: User): List<Dish>
     + getUserSearchHistory(user: User): List<Dish>
+
+    ' FIX#4 Write/update methods
+    + addLike(dish: Dish): void
+    + removeLike(dish: Dish): void
+    + recordSearch(dish: Dish): void
 }
 
 class "Recipe" {
