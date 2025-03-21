@@ -215,32 +215,26 @@ This architecture supports efficient data flow, modular processing, and adaptabi
 \label{sub:subsystems}
 % Begin SubSection
 
-The \textit{What’s That Dish} system is composed of multiple subsystems that work together to manage user accounts, provide dish recommendations, identify dishes, and manage databases. Each subsystem operates within a loosely coupled architecture to ensure modularity, maintainability, and scalability.
+The \textit{What’s That Dish} system is composed of four primary subsystems that work together to manage user accounts, identify dishes, provide dish recommendations, and handle user-submitted recipes. Each subsystem follows a loosely coupled architecture to ensure modularity, maintainability, and scalability.
 
 \subsubsection{Account Management Subsystem}
-The Account Management subsystem is responsible for handling user authentication, account creation, deletion, and profile management. It provides functionalities such as logging in, extracting user data, and managing stored profiles. The system maintains user information within the Account Database.
+The Account Management subsystem handles user authentication, account creation, deletion, and profile management. It manages stored profiles and user data through interactions with the Account Database. This subsystem ensures secure credential handling and supports real-time updates to user information.
 
 \subsubsection{Recommendation Subsystem}
-The Recommendation Controller subsystem provides dish recommendations based on user preferences, past interactions, and restaurant availability. It updates internal user recommendation history, tracks liked dishes, and communicates with restaurant databases to find suitable dining options.
+The Recommendation subsystem provides personalized food and restaurant suggestions based on user preferences, past interactions, and external data. It maintains a history of liked dishes, analyzes user feedback, and communicates with restaurant databases to generate dynamic recommendations. This functionality is centralized through the Recommendation Controller, which interacts with both the User History and Restaurant Databases.
 
 \subsubsection{Dish Determination Subsystem}
-The Dish Determination subsystem manages the process of dish identification based on user input. It collects dish-related data, processes it using various analytical techniques, and returns the final dish identification results to the Dish Inquiry page. It acts as a central hub, controlling the analysis of dish-related data.
-
-
-\subsubsection{Image Recognition Subsystem}
-The Image Recognition subsystem enables dish identification through image analysis. It uses a trained machine learning model to predict the dish name from an user uploaded picture. The Food Picture Database is utilized to improve the accuracy of dish predictions.
-
-
-\subsubsection{Ingredients Analysis Subsystem}
-The Ingredients Analysis subsystem predicts dish names based on ingredient lists provided by users. It cross-references user-inputted ingredients with recipes in the Recipe Database to identify potential dish matches.
-
-
-\subsubsection{Text Analysis Subsystem}
-The Text Analysis subsystem allows users to identify dishes based on textual descriptions. It performs semantic analysis on user-inputted text to predict the dish name accurately. The Dish Database stores structured dish information, which is used for comparisons.
-
+The Dish Determination subsystem identifies dishes based on user-submitted inputs such as images, ingredient lists, or textual descriptions. It employs a Blackboard architecture that coordinates multiple expert modules:
+\begin{itemize}
+    \item \textbf{Image Recognition}: Uses machine learning to analyze food images and predict dish names.
+    \item \textbf{Ingredients Analysis}: Matches user-provided ingredients to known recipes.
+    \item \textbf{Text Analysis}: Performs semantic analysis on text descriptions to identify dishes.
+\end{itemize}
+The subsystem aggregates results from these modules and resolves conflicts using a controller mechanism to return the most confident prediction to the user.
 
 \subsubsection{Recipe Management Subsystem}
-The Recipe Management subsystem allows users to add and manage custom recipes. It ensures the proper organization and retrieval of user-submitted and system-generated recipes, storing all information in the Recipe Database.
+The Recipe Management subsystem enables users to add, organize, and retrieve custom or system-generated recipes. It utilizes a Pipe-and-Filter architecture, where user-submitted recipes pass through a sequence of filters for validation, categorization, and storage. All recipes are maintained in the Recipe Database for future access and refinement.
+
 
 % End SubSection
 
