@@ -123,14 +123,8 @@ class "UserHistory" {
     - user: User
     - likeHistory: List<Dish>
     - searchHistory: List<Dish>
-
     + getUserLikeHistory(user: User): List<Dish>
     + getUserSearchHistory(user: User): List<Dish>
-
-    ' FIX#4 Write/update methods
-    + addLike(dish: Dish): void
-    + removeLike(dish: Dish): void
-    + recordSearch(dish: Dish): void
 }
 
 class "Recipe" {
