@@ -214,25 +214,19 @@ This architecture supports efficient data flow, modular processing, and adaptabi
 \label{sub:subsystems}
 % Begin SubSection
 
-The \textit{What’s That Dish} system is composed of four primary subsystems that work together to manage user accounts, identify dishes, provide dish recommendations, and handle user-submitted recipes. Each subsystem follows a loosely coupled architecture to ensure modularity, maintainability, and scalability.
+The \textit{What’s That Dish} system has been subdivided into four distinct subsystems: Account Management, Recommendation, Dish Determination, and Recipe Management. Each subsystem fulfills a specialized role within the larger context of the modified Model-View-Controller (MVC) architecture, promoting separation of concerns, scalability, and maintainability.
 
 \subsubsection{Account Management Subsystem}
-The Account Management subsystem handles user authentication, account creation, deletion, and profile management. It manages stored profiles and user data through interactions with the Account Database. This subsystem ensures secure credential handling and supports real-time updates to user information.
+The Account Management subsystem is responsible for user authentication, account creation, deletion, and profile updates. It interacts directly with the Account Database to securely store user credentials and personal information. This subsystem adheres to the repository architectural style and ensures real-time updates to user data across the application.
 
 \subsubsection{Recommendation Subsystem}
-The Recommendation subsystem provides personalized food and restaurant suggestions based on user preferences, past interactions, and external data. It maintains a history of liked dishes, analyzes user feedback, and communicates with restaurant databases to generate dynamic recommendations. This functionality is centralized through the Recommendation Controller, which interacts with both the User History and Restaurant Databases.
+The Recommendation subsystem provides personalized food and restaurant suggestions based on user preferences, feedback, and past interactions. It retrieves relevant data from both the User History and Restaurant Databases and processes this information to generate dynamic recommendations. This subsystem also follows a repository architecture and serves as a central point for analyzing user behavior.
 
 \subsubsection{Dish Determination Subsystem}
-The Dish Determination subsystem identifies dishes based on user-submitted inputs such as images, ingredient lists, or textual descriptions. It employs a Blackboard architecture that coordinates multiple expert modules:
-\begin{itemize}
-    \item \textbf{Image Recognition}: Uses machine learning to analyze food images and predict dish names.
-    \item \textbf{Ingredients Analysis}: Matches user-provided ingredients to known recipes.
-    \item \textbf{Text Analysis}: Performs semantic analysis on text descriptions to identify dishes.
-\end{itemize}
-The subsystem aggregates results from these modules and resolves conflicts using a controller mechanism to return the most confident prediction to the user.
+The Dish Determination subsystem handles the identification of dishes based on various types of user input, including images, ingredient lists, and textual descriptions. It employs the blackboard architectural style, coordinating input from three expert modules: Image Recognition, Ingredient Analysis, and Text Analysis. These modules contribute to a shared decision-making process, and the final dish prediction is returned based on a confidence-driven aggregation of results.
 
 \subsubsection{Recipe Management Subsystem}
-The Recipe Management subsystem enables users to add, organize, and retrieve custom or system-generated recipes. It utilizes a Pipe-and-Filter architecture, where user-submitted recipes pass through a sequence of filters for validation, categorization, and storage. All recipes are maintained in the Recipe Database for future access and refinement.
+The Recipe Management subsystem enables users to submit, organize, and retrieve both custom and system-generated recipes. It applies the pipe-and-filter architectural style, where recipes are passed through a series of filters for validation, categorization, and storage. This ensures that all recipe data is properly formatted before being saved in the Recipe Database for future access.
 
 
 % End SubSection
