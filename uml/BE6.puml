@@ -1,0 +1,59 @@
+@startuml
+title Inquiry of Dish
+
+' ----- General Diagram Settings -----
+skinparam backgroundColor white
+skinparam shadowing true
+
+' ----- Sequence/Lifeline Settings -----
+skinparam sequence {
+  ArrowColor black
+  LifeLineBorderColor black
+  LifeLineBackgroundColor white
+  LifeLineStyle dotted
+  ParticipantBorderColor black
+  ParticipantBackgroundColor #ECE9F7  ' Light purple fill
+  ActorBorderColor black
+  ActorBackgroundColor #ECE9F7        ' Light purple fill for actor
+
+  ' Group box styling for "Determination Pass"
+  GroupBorderColor black
+  GroupBackgroundColor white
+  GroupTitleBackgroundColor white
+}
+
+' Define participants in left-to-right order
+actor "User" as U
+participant "Dish Inquiry Page" as DIP
+participant "Dish Determination" as DD
+participant "Expert Modules" as EM
+participant "Dish Database" as DB
+
+' ----- Outside Determination Pass -----
+U -> U: Enter Dish Info
+U -> DIP: Submit Dish Inquiry
+DIP -> DD: Send Dish Data
+DD -> DD: Validate Input
+
+' ----- Determination Pass box spanning all participants -----
+group Determination Pass
+  ' 1) Solid arrow from DD -> EM
+  DD -> EM
+
+  ' 2) Dotted arrow from EM -> DB labeled "Fetch Knowledge"
+  EM -[#black,dashed]> DB: Fetch Knowledge
+
+  ' 3) Dotted arrow from DB -> EM labeled "Dish Data"
+  DB -[#black,dashed]> EM: Dish Data
+
+  ' 4) Dotted arrow from EM -> DD labeled "Predictions"
+  EM -[#black,dashed]> DD: Predictions
+
+  ' 5) Solid arrow from DD -> DIP labeled "Identified Dish"
+  DD -> DIP: Identified Dish
+
+  ' 6) Solid arrow from DIP -> U labeled "Show Result"
+  DIP -> U: Show Result
+end
+
+@enduml

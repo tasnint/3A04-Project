@@ -1,0 +1,59 @@
+@startuml
+title Ask Dish Recommendation
+
+' ----- General Diagram Settings -----
+skinparam backgroundColor white
+skinparam shadowing true
+
+' ----- Sequence/Lifeline Settings -----
+skinparam sequence {
+  ArrowColor black
+  LifeLineBorderColor black
+  LifeLineBackgroundColor white
+  LifeLineStyle dotted
+  ParticipantBorderColor black
+  ParticipantBackgroundColor #ECE9F7  ' Light purple fill
+  ActorBorderColor black
+  ActorBackgroundColor #ECE9F7        ' Light purple fill for actor
+
+  ' Group box styling for "Recommendation Pass"
+  GroupBorderColor black
+  GroupBackgroundColor white
+  GroupTitleBackgroundColor white
+}
+
+' Define participants in left-to-right order
+actor "User" as U
+participant "Ask Recommendation" as AR
+participant "Recommendation Controller" as RC
+participant "User History DB" as UH
+participant "Restaurant DB" as RD
+
+' ----- Outside Recommendation Pass -----
+U -> U: Enter Preferences
+U -> AR: Ask Recommendation
+AR -> RC: Send Request
+RC -> RC: Validate Request
+
+' ----- Recommendation Pass box spanning all participants -----
+group Recommendation Pass
+  ' 1) Solid arrow (unlabeled) from RC -> UH
+  RC -> UH
+
+  ' 2) Dotted arrow from UH -> RC labeled "Return Preferences"
+  UH -[#black,dashed]> RC: Return Preferences
+
+  ' 3) Dotted arrow from RC -> RD labeled "Retrieve Options"
+  RC -[#black,dashed]> RD: Retrieve Options
+
+  ' 4) Solid arrow from RD -> RC labeled "Recommended Items"
+  RD -> RC: Recommended Items
+
+  ' 5) Dotted arrow from RC -> AR labeled "Return Recommendation"
+  RC -[#black,dashed]> AR: Return Recommendation
+
+  ' 6) Solid arrow from AR -> U labeled "Display Recommendation"
+  AR -> U: Display Recommendation
+end
+
+@enduml
