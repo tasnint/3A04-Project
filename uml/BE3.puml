@@ -1,0 +1,41 @@
+@startuml
+title Login
+
+' ----- General Diagram Settings -----
+skinparam backgroundColor white
+skinparam shadowing true
+
+' ----- Sequence/Lifeline Settings -----
+skinparam sequence {
+  ArrowColor black
+  LifeLineBorderColor black
+  LifeLineBackgroundColor white
+  LifeLineStyle dotted
+  ParticipantBorderColor black
+  ParticipantBackgroundColor white
+  ActorBorderColor black
+  ActorBackgroundColor white
+
+  ' Group styling for "Validation Pass"
+  GroupBorderColor black
+  GroupBackgroundColor white
+  GroupTitleBackgroundColor white
+}
+
+' Define participants in left-to-right order
+actor "User" as U
+participant "Encryption Manager" as EM
+participant "Account Management" as AM
+
+' ----- Message Flow -----
+U -> U: Enter User Info
+U -> EM: Login
+EM -> AM: Encrypt Message
+AM -> AM: Validate Account
+
+group Validation Pass
+  AM -[#black,dashed]> EM: Send Confirmation
+  EM -> U: Decrypt Message
+end
+
+@enduml

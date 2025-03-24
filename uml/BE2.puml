@@ -1,0 +1,52 @@
+@startuml
+title Create Account
+
+' ----- General Diagram Settings -----
+skinparam backgroundColor white
+skinparam shadowing true
+
+' ----- Sequence/Lifeline Settings -----
+skinparam sequence {
+  ArrowColor black
+  LifeLineBorderColor black
+  LifeLineBackgroundColor white
+  LifeLineStyle dotted
+  ParticipantBorderColor black
+  ParticipantBackgroundColor #ECE9F7  ' Light purple fill
+  ActorBorderColor black
+  ActorBackgroundColor #ECE9F7        ' Light purple fill for actor
+
+  ' Group box styling for "Validation Pass"
+  GroupBorderColor black
+  GroupBackgroundColor white
+  GroupTitleBackgroundColor white
+}
+
+' Define participants in left-to-right order
+actor "User" as U
+participant "Encryption Manager" as EM
+participant "Account Management" as AM
+participant "Account DB" as DB
+
+' ----- Outside Validation Pass -----
+U -> U: Enter User Info
+U -> EM: Create Account
+EM -> AM: Encrypt Message
+AM -> AM: Validate Account
+
+' ----- Validation Pass box spanning all participants -----
+group Account Creation Pass
+  ' 1) Solid arrow (unlabeled) from AM -> DB
+  AM -> DB
+
+  ' 2) Dotted arrow from DB -> AM labeled "Store Account"
+  DB -[#black,dashed]> AM: Store Account
+
+  ' 3) Dotted arrow from AM -> EM labeled "Send Confirmation"
+  AM -[#black,dashed]> EM: Send Confirmation
+
+  ' 4) Solid arrow from EM -> U labeled "Decrypt Message"
+  EM -> U: Decrypt Message
+end
+
+@enduml

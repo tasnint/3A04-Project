@@ -1,0 +1,52 @@
+@startuml
+title Add Custom Recipe
+
+' ----- General Diagram Settings -----
+skinparam backgroundColor white
+skinparam shadowing true
+
+' ----- Sequence/Lifeline Settings -----
+skinparam sequence {
+  ArrowColor black
+  LifeLineBorderColor black
+  LifeLineBackgroundColor white
+  LifeLineStyle dotted
+  ParticipantBorderColor black
+  ParticipantBackgroundColor #ECE9F7  ' Light purple fill
+  ActorBorderColor black
+  ActorBackgroundColor #ECE9F7        ' Light purple fill for actor
+
+  ' Group box styling for "Validation Pass"
+  GroupBorderColor black
+  GroupBackgroundColor white
+  GroupTitleBackgroundColor white
+}
+
+' Define participants in left-to-right order
+actor "User" as U
+participant "Add Custom Recipe" as ACR
+participant "Recipe Management" as RM
+participant "Recipe DB" as RB
+
+' ----- Outside Validation Pass -----
+U -> U: Enter Image, Ingredients,\nRecipe Steps
+U -> ACR: Submit Recipe
+ACR -> RM: Send Recipe Data
+RM -> RM: Validate Input
+
+' ----- Validation Pass box spanning all participants -----
+group Validation Pass
+  ' 1) Solid arrow from RM -> RB
+  RM -> RB: Store Recipe
+
+  ' 2) Dotted arrow from RB -> RM labeled "Recipe Stored"
+  RB -[#black,dashed]> RM: Recipe Stored
+
+  ' 3) Solid arrow from RM -> ACR labeled "Recipe Confirmed"
+  RM -> ACR: Recipe Confirmed
+
+  ' 4) Solid arrow from ACR -> U labeled "Show Confirmation"
+  ACR -> U: Show Confirmation
+end
+
+@enduml
