@@ -120,12 +120,10 @@ Section 4 provides Class Responsibility Collaboration cards for each class defin
 \subsection{System Architecture}
 \label{sub:system_architecture}
 % Begin SubSection
-\textit{What’s That Dish} follows a modified MVC (Model-View-Controller) approach, in which user interaction (View) first flows through a layer of Controllers that handle input and validation, then passes onto respective Model subsystems based on the user input. 
-Each model subsystem follows independent and individual architectural styles. 
-Dish Determination uses a Blackboard setup for its expert-based, iterative logic. 
-Recipe Management applies a Pipe \& Filter workflow to sequentially process user‐submitted recipes. 
-Recommendation and Account Management both rely on Repository principles, centralizing data for dynamic suggestions and secure credential handling. 
-This layered organization preserves organization and clarity, allowing each subsystem to follow a specialized architecture suited to its unique requirements.
+\textit{What’s That Dish} is architecturally centered around the Blackboard model, aligning with the system’s primary goal of food identification through multiple expert inputs. As this is the core functionality of the application, the Blackboard architecture serves as the foundation for the overall system, orchestrating complex decision-making and conflict resolution in an asynchronous and modular environment.
+\\
+\\
+The overall structure adopts a modified Model-View-Controller (MVC) approach to manage user interaction, routing input from the View layer through Controllers to the appropriate Model subsystems. These subsystems operate independently using distinct architectural patterns tailored to their functional requirements, with Dish Determination, the most essential subsystem, following the Blackboard architecture.
 \\
 \\
 \\
@@ -769,6 +767,13 @@ The Recipe Management subsystem enables users to submit, organize, and retrieve 
 
 
 % End Section
+\section{Change Log}
+\begin{enumerate}
+	\item Improved section 3.1 to highlight Blackboard Architecture more
+	\item fix 3.2 from D2 based on feedback (D2)
+	\item fix figure error from D2 based on feedback (D2)
+	\item fix missing 2 CRC from D2 based on feedback (D2)
+\end{enumerate}
 
 \appendix
 \section{Division of Labour}
