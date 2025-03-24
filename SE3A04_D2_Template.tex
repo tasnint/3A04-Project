@@ -278,6 +278,27 @@ The Recipe Management subsystem enables users to submit, organize, and retrieve 
 \end{table}
 
 \begin{table}[H]
+    \centering
+    \begin{tabular}{|p{7cm}|p{7cm}|}
+        \hline 
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Log In (Boundary)} \\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:} \\
+        \hline
+        \raggedright
+        \begin{itemize}
+            \item Handles the event of a user logging into their account
+        \end{itemize}
+        \vspace{1in} &
+        \begin{itemize}
+            \item Account Management
+        \end{itemize} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|p{7cm}|p{7cm}|}
 	\hline 
@@ -716,6 +737,28 @@ The Recipe Management subsystem enables users to submit, organize, and retrieve 
 	\vspace{1in} & 
 	\begin{itemize}
 		\item Dish Database
+	\end{itemize} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+	\hline 
+	 \multicolumn{2}{|l|}{\textbf{Class Name:} Image Recognition (Controller)} \\
+	\hline
+	\textbf{Responsibility:} & \textbf{Collaborators:} \\
+	\hline
+	\raggedright
+	\begin{itemize}
+		\item Predict dish from food image
+		\item Apply machine learning model to identify dish features
+	\end{itemize}
+	\vspace{1in} & 
+	\begin{itemize}
+		\item Dish Determination
+		\item Food Picture Database
 	\end{itemize} \\
 	\hline
 	\end{tabular}
